@@ -53,7 +53,6 @@ export const SectionMain = () => {
                 style={
                   {
                     animationDelay: `${index * 0.6}s`,
-                    backgroundColor: btn.color,
                     "--btn-color": btn.color,
                   } as CSSProperties
                 }

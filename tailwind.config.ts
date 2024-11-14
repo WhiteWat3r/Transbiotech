@@ -18,7 +18,7 @@ export default {
       },
       animation: {
         slideIn: "slideIn 0.5s forwards",
-        glow: "glow 2.4s ease-in-out infinite",
+        glow: "glow 3s ease-in-out infinite",
       },
 
       // backgroundImage: {
