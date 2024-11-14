@@ -1,0 +1,27 @@
+@import "./assets/fonts/WixMadeforDisplay/WixMadeforDisplay.css";
+@import "./assets/fonts/Geologica/Geologica.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .geologica-text {
+    /* @apply font-black text-[48px] leading-[60px] text-white text-shadow; */
+    font-family: "Geologica";
+  }
+}
+
+:root {
+  font-family: Wix Madefor Display, Geologica, system-ui, Avenir, Helvetica,
+    Arial, sans-serif;
+
+
+  padding: 0;
+}
+
+
+body {
+background-color: rgba(0,0,0,0.06);
+}
+
