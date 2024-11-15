@@ -60,8 +60,9 @@ export const SectionTechnologies = () => {
               />
             </div>
             <ul className="flex gap-[5px]">
-              {tech.keys.map((key) => (
+              {tech.keys.map((key, index) => (
                 <li
+                  key={index}
                   className={`flex justify-center items-center h-[15px] rounded-[25px] px-[5px] text-[10px] 
                   leading-[10px] font-semibold border-[0.5px] tracking-[-0.5px]`}
                   style={{ borderColor: tech.color, color: tech.color }}

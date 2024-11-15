@@ -26,13 +26,21 @@ const buttons = [
 
 export const SectionMain = () => {
   return (
-    <div className="relative w-full min-h-[750px]">
-      <img
+    <div className="relative w-full bg-main-sec-bg bg-cover min-h-[675px] bg-top-2 bg-no-repeat sm:bg-main-desk"
+    style={{
+      maskImage: "linear-gradient(to bottom, black, black 90%, transparent)",
+    }}
+    
+    
+    >
+
+      
+      {/* <img
         src={bgMain}
         alt="asd"
-        className="w-full h-full cover absolute top-[-120px] left-0 z-[1]"
-      />
-      <div className="w-full h-full px-5 relative z-[2]">
+        className=" absolute top-[-115px] left-0 z-[1]"
+      /> */}
+      <div className="w-full h-full px-5 relative z-[2] mt-[38px]">
         <div className="text-[14px] leading-[16px] text-[#565656] max-w-[218px] ml-auto mb-[200px]">
           <p className="">
             {

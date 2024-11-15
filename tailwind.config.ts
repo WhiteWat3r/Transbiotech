@@ -21,9 +21,16 @@ export default {
         glow: "glow 3s ease-in-out infinite",
       },
 
-      // backgroundImage: {
-      //   "main-bg": "url('src/assets/bg/bg-main.png')",
-      // },
+      backgroundImage: {
+        "one-task-bg": "url('src/assets/bg/bg-second.png')",
+        "main-sec-bg": "url('src/assets/bg/bg-main.png')",
+        "main-desk": "url('src/assets/bg/main-desktop.png')",
+        "second-desktop-bg": "url('src/assets/bg/second-desktop.png')",
+        "footer-desktop-bg": "url('src/assets/bg/footer-desktop.png')",
+      },
+      backgroundPosition: {
+        "top-2": "center top -90px",
+      },
     },
   },
   plugins: [],

@@ -1,4 +1,6 @@
 import footerBg from "../assets/bg/footer.png";
+import footerDesktopBg from "../assets/bg/footer-desktop.png";
+import useIsMobile from "../hooks/usIsMobile";
 
 const requisites = [
   {
@@ -16,10 +18,13 @@ const requisites = [
 ];
 
 export const Footer = () => {
+
+  const isMobile = useIsMobile()
+
   return (
-    <div className="relative w-full min-h-[750px] flex flex-col px-[20px]">
+    <div className="relative w-full min-h-[750px] flex flex-col px-[20px]" >
       <img
-        src={footerBg}
+        src={isMobile ? footerBg : footerDesktopBg}
         alt="asd"
         className="w-full absolute bottom-0 left-0 z-[1]"
       />

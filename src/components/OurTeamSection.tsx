@@ -49,7 +49,7 @@ export const OurTeamSection = () => {
         <span className="rounded-[30px] border-[1px] border-[#6A78C1] px-[8px]">{`цели\u00A0и\u00A0ценности`}</span>
       </div>
 
-      <ul className="w-full flex flex-wrap gap-[20px]">
+      <ul className="w-full flex flex-wrap gap-[20px] justify-between">
         {team.map((item) => (
           <li key={item.id} className="w-[150px] h-[160px]">
             <img src={item.photo} alt="" />

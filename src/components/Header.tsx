@@ -51,7 +51,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="px-[20px] py-[40px] flex justify-between sticky top-0 left-0 z-20">
+      <header className="px-[20px] pt-[40px] flex justify-between sticky top-0 left-0 z-20">
         <img src={logo} alt="Логотип" />
         <img
           src={menuButton}
