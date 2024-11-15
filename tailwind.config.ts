@@ -22,11 +22,10 @@ export default {
       },
 
       backgroundImage: {
-        "one-task-bg": "url('src/assets/bg/bg-second.png')",
-        "main-sec-bg": "url('src/assets/bg/bg-main.png')",
-        "main-desk": "url('/assets/bg/main-desktop.png')",
-        "second-desktop-bg": "url('src/assets/bg/second-desktop.png')",
-        "footer-desktop-bg": "url('src/assets/bg/footer-desktop.png')",
+        "one-task-bg": "url('/tailwindBackgrounds/bg-second.png')",
+        "main-sec-bg": "url('/tailwindBackgrounds/bg-main.png')",
+        "main-desk": "url('/tailwindBackgrounds/main-desktop.png')",
+        "second-desktop-bg": "url('/tailwindBackgrounds/second-desktop.png')",
       },
       backgroundPosition: {
         "top-2": "center top -90px",
