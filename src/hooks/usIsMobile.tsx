@@ -1,23 +1,32 @@
 import { useEffect, useState } from "react";
 
-// <640px — мобильная версия
+type Breakpoint = "mobile" | "tablet" | "desktop";
 
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
+const useBreakpoint = (): Breakpoint => {
+  const [breakpoint, setBreakpoint] = useState<Breakpoint>(() => {
+    const width = window.innerWidth;
+    if (width < 640) return "mobile";
+    if (width < 1200) return "tablet";
+    return "desktop";
+  });
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 639px)");
-    const handleChange = () => setIsMobile(mediaQuery.matches);
+    const updateBreakpoint = () => {
+      const width = window.innerWidth;
+      if (width < 640) setBreakpoint("mobile");
+      else if (width < 1200) setBreakpoint("tablet");
+      else setBreakpoint("desktop");
+    };
 
-    handleChange();
-    mediaQuery.addEventListener("change", handleChange);
+    updateBreakpoint();
+    window.addEventListener("resize", updateBreakpoint);
 
     return () => {
-      mediaQuery.removeEventListener("change", handleChange);
+      window.removeEventListener("resize", updateBreakpoint);
     };
   }, []);
 
-  return isMobile;
+  return breakpoint;
 };
 
-export default useIsMobile;
+export default useBreakpoint;

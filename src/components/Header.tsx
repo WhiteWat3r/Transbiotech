@@ -1,99 +1,82 @@
-import React, { useEffect, useRef, useState } from "react";
-import menuButton from "../assets/menu.svg";
-import logo from "../assets/logo.svg";
-import close from "../assets/close.svg";
-import { Accordion } from "./Accordion";
+import fullLogo from "../assets/logos/full-logo.svg";
+import logo from "../assets/logos/logo.svg";
 
-const menuItems = [
-  {
-    id: 1,
-    title: "о компании",
-    links: [
-      { linkId: 1, text: "документы", href: "" },
-      { linkId: 2, text: "миссия и ценности", href: "" },
-      { linkId: 3, text: "новости", href: "" },
-    ],
-  },
-  {
-    id: 2,
-    title: "технологии",
-    links: [{ linkId: 1, text: "документы", href: "" }],
-  },
-  {
-    id: 3,
-    title: "продукты",
-    links: [{ linkId: 1, text: "документы", href: "" }],
-  },
-  {
-    id: 4,
-    title: "контакты",
-    links: [{ linkId: 1, text: "документы", href: "" }],
-  },
-  {
-    id: 5,
-    title: "новости",
-    links: [{ linkId: 1, text: "документы", href: "" }],
-  },
-];
+import { menuItems } from "./MobileHeader";
+import { HeaderMenuPopover } from "./HeaderMenuPopover";
+import { useEffect, useRef, useState } from "react";
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openAccordionId, setOpenAccordionId] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [headerWidth, setHeaderWidth] = useState("100%");
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
-  };
+  useEffect(() => {
+    const calculateHeaderWidth = () => {
+      const logoWidth = 82;
+      const menuWidth = 671;
+      const totalWidth = logoWidth + menuWidth;
 
-  const handleAccordionToggle = (id: number) => {
-    setOpenAccordionId(openAccordionId === id ? null : id);
-  };
+      setHeaderWidth(`${totalWidth + 86}px`);
+    };
+
+    calculateHeaderWidth();
+    window.addEventListener("resize", calculateHeaderWidth);
+    return () => window.removeEventListener("resize", calculateHeaderWidth);
+  }, [isScrolled]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  console.log("headerWidth", headerWidth);
 
   return (
-    <>
-      <header className="px-[20px] pt-[40px] flex justify-between sticky top-0 left-0 z-20">
-        <img src={logo} alt="Логотип" />
+    <header
+      ref={headerRef}
+      className={`sticky top-0 flex items-center px-[42px]  transition-all ease-out duration-1000 z-20 justify-between mx-auto ${
+        isScrolled ? "pt-[55px]" : "pt-[65px]"
+      }`}
+      style={{
+        width: isScrolled ? headerWidth : "100%",
+      }}
+    >
+      <a
+        className={`pr-[14px] rounded-[42px] transition-all duration-500 relative pl-[18px] ml-[20px] flex items-center ${
+          isScrolled
+            ? "animate-appearBorder h-[50px]"
+            : "animate-disappearBorder border-none"
+        }`}
+        href="#"
+      >
         <img
-          src={menuButton}
-          alt="Меню"
-          onClick={toggleMenu}
-          className="cursor-pointer"
+          src={isScrolled ? logo : fullLogo}
+          alt="Transbiotech"
+          className={`transition-all duration-500 pointer h-[23px]`}
         />
-      </header>
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-30 flex justify-center items-center">
-          <div className="flex flex-col bg-[#DDDDDD] w-full max-w-md h-full overflow-y-auto p-[20px]">
-            <button
-              onClick={toggleMenu}
-              className="text-right text-gray-700 ml-auto mt-[28px] mb-[45px]"
-            >
-              <img src={close} alt="Закрыть" />
-            </button>
+      </a>
 
-            <h2 className="geologica-text text-[46px] leading-[44px] text-[#565656] font-semibold mb-[40px]">
-              Меню
-            </h2>
-
-            <ul className="flex flex-col gap-[20px]">
-              {menuItems.map((item, index) => (
-                <Accordion
-                  key={index}
-                  id={item.id}
-                  title={item.title}
-                  items={item.links}
-                  delay={index * 0.1}
-                  isOpen={openAccordionId === item.id}
-                  onToggle={handleAccordionToggle}
-                  isDisabled={
-                    openAccordionId !== null && openAccordionId !== item.id
-                  }
-                />
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-    </>
+      <nav
+        className={`transition-all duration-500 rounded-[42px] whitespace-nowrap py-[12px] px-[38px]  ${
+          isScrolled
+            ? "animate-appearBorder"
+            : "animate-disappearBorder border-none"
+        }`}
+      >
+        <ul className="flex gap-[37px] h-[22px]">
+          {menuItems.map((item) => (
+            <HeaderMenuPopover chapter={item} key={item.id} />
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 };
-

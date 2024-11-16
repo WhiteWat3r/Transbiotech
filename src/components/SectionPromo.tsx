@@ -4,7 +4,7 @@ import bgSecond from "../assets/bg/bg-second.png";
 export const SectionPromo = () => {
   return (
     <div
-      className="relative w-full min-h-[812px] flex bg-second-desktop-bg bg-cover bg-center"
+      className="relative w-full min-h-[812px] flex bg-second-desktop-bg bg-cover bg-center z-10"
       style={{
         maskImage: "linear-gradient(to bottom, transparent, black 90px, black)",
       }}

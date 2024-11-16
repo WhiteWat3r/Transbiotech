@@ -19,12 +19,12 @@ const requisites = [
 
 export const Footer = () => {
 
-  const isMobile = useIsMobile()
+  const breakpoint = useIsMobile()
 
   return (
     <div className="relative w-full min-h-[750px] flex flex-col px-[20px]" >
       <img
-        src={isMobile ? footerBg : footerDesktopBg}
+        src={breakpoint === 'mobile' ? footerBg : footerDesktopBg}
         alt="asd"
         className="w-full absolute bottom-0 left-0 z-[1]"
       />
