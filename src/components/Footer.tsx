@@ -22,7 +22,7 @@ export const Footer = () => {
   const breakpoint = useIsMobile()
 
   return (
-    <div className="relative w-full min-h-[750px] flex flex-col px-[20px]" >
+    <div className="relative w-full min-h-screen flex flex-col px-[20px]" >
       <img
         src={breakpoint === 'mobile' ? footerBg : footerDesktopBg}
         alt="asd"

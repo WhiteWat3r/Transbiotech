@@ -56,7 +56,7 @@ export const Header = () => {
         <img
           src={isScrolled ? logo : fullLogo}
           alt="Transbiotech"
-          className={`transition-all duration-500 pointer h-[23px]`}
+          className={`transition-all duration-500 pointer h-[24px] mt-[2px]`}
         />
       </a>
 

@@ -1,9 +1,21 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import techLogoFirst from "../assets/technologies/tech-logo-first.svg";
 import techLogoSecond from "../assets/technologies/tech-logo-second.svg";
 import techLogoThird from "../assets/technologies/tech-logo-third.svg";
 import techLogoFourth from "../assets/technologies/tech-logo-fourth.svg";
+
+import techLogoFirstMobile from "../assets/technologies/tech-logo-first-mobile.svg";
+import techLogoSecondMobile from "../assets/technologies/tech-logo-second-mobile.svg";
+import techLogoThirdMobile from "../assets/technologies/tech-logo-third-mobile.svg";
+import techLogoFourthMobile from "../assets/technologies/tech-logo-fourth-mobile.svg";
+
+import techBgFirst from "../assets/technologies/bg-first.svg";
+import techBgSecond from "../assets/technologies/bg-second.svg";
+import techBgThird from "../assets/technologies/bg-third.svg";
+import techBgFourth from "../assets/technologies/bg-fourth.svg";
+
+import useIsMobile from "../hooks/usIsMobile";
 
 const technologies = [
   {
@@ -11,66 +23,113 @@ const technologies = [
     title: "Перфузионные технологии",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#6A78C1",
-    logo: techLogoFirst,
+    logo: techLogoFirstMobile,
+    mobileLogo: techLogoFirst,
+    bg: techBgFirst,
+    desc: "Эффективное протезирование функции сердца и легких.",
   },
   {
     id: 2,
     title: "Кардио хирургия",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#90882B",
-    logo: techLogoSecond,
+    logo: techLogoSecondMobile,
+    mobileLogo: techLogoSecond,
+    bg: techBgSecond,
+    desc: "Лечение острых и хронических заболеваний сердечно-сосудистой системы.",
   },
   {
     id: 3,
     title: "Аритмология",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#E04918",
-    logo: techLogoThird,
+    logo: techLogoThirdMobile,
+    mobileLogo: techLogoThird,
+    bg: techBgThird,
+    desc: "Работа над восстановлением сердечного ритма.",
   },
   {
     id: 4,
     title: "Скорая помощь",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#EA7A92",
-    logo: techLogoFourth,
+    logo: techLogoFourthMobile,
+    mobileLogo: techLogoFourth,
+    bg: techBgFourth,
+    desc: "Оптимизация рабочего пространства в машинах скорой помощи.",
   },
 ];
 
 export const SectionTechnologies = () => {
+  const breakpoint = useIsMobile();
+
+  const isDesktop = breakpoint === "desktop";
+
   return (
-    <div className="relative w-full h-screen flex px-[20px] flex-col pb-[20px]">
-      <h2 className="text-[#565656] geologica-text font-medium text-[32px] leading-[22px] mt-[115px] mb-[40px]">
+    <div className="relative flex min-h-screen w-full flex-col bg-[#E9E9E9] px-[20px] pb-[20px] desktop:px-[80px]">
+      <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[45px] desktop:mt-[160px] desktop:text-[72px] desktop:leading-[65px]">
         технологии
       </h2>
 
-      <ul className="bg-[#dddddd] w-full p-10 pr-[30px] rounded-[45px] flex flex-col gap-[30px]">
+      <ul className="flex w-full flex-col gap-[30px] rounded-[45px] bg-[#dddddd] p-10 pr-[30px] desktop:h-[370px] desktop:flex-row desktop:gap-[20px] desktop:bg-transparent desktop:p-0">
         {technologies.map((tech) => (
-          <li key={tech.id}>
-            <div className="flex justify-between mb-[10px]">
+          <li
+            key={tech.id}
+            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] desktop:pointer-events-auto desktop:rounded-[36px] desktop:bg-[#dddddd] desktop:p-[30px]`}
+            style={
+              {
+                "--hover-color": tech.color,
+              } as CSSProperties
+            }
+          >
+            {isDesktop && (
+              <img
+                src={tech.bg}
+                alt={tech.title}
+                className="card-image -z-1 absolute right-0 top-0 w-full opacity-0 transition-all duration-500"
+                style={{
+                  transform:
+                    tech.id < 3
+                      ? "translateX(16px) translateY(16px)"
+                      : "translateX(8px) translateY(-16px) scale(1.1)",
+                }}
+              />
+            )}
+            <img
+              src={isDesktop ? tech.logo : tech.mobileLogo}
+              alt={tech.title}
+              className="absolute right-0 desktop:left-[30px]"
+            />
+            <div className="mt-[10px relative z-10 flex flex-col desktop:mt-auto">
               <h3
-                className="geologica-text text-[27px] leading-[27px] font-light mt-[10px] tracking-[-0.5px] max-w-[210px]"
-                style={{ color: tech.color }}
+                className="geologica-text font-light] mb-[10px] flex max-w-[210px] justify-between text-[27px] leading-[27px] tracking-[-0.5px] transition-all duration-500 desktop:text-[24px] desktop:font-medium desktop:leading-[24px]"
+                style={{
+                  color: isDesktop ? "#565656" : tech.color,
+                }}
               >
                 {tech.title}
               </h3>
-              <img
-                src={tech.logo}
-                alt={tech.title}
-                className="w-[42px] h-[42px]"
-              />
+
+              <ul className="flex gap-[5px] desktop:mb-[20px] desktop:flex-wrap">
+                {tech.keys.map((key, index) => (
+                  <li
+                    key={index}
+                    className={`desktop:text-[12px]d esktop:leading-[12.5px] flex h-[15px] items-center justify-center rounded-[25px] border-[0.5px] px-[5px] text-[10px] font-semibold leading-[10px] tracking-[-0.5px] transition-all duration-500`}
+                    style={{
+                      borderColor: isDesktop ? "#808080" : tech.color,
+                      color: isDesktop ? "#808080" : tech.color,
+                    }}
+                  >
+                    {key}
+                  </li>
+                ))}
+              </ul>
+              {isDesktop && (
+                <p className="line-clamp-4 h-[72px] text-[15px] leading-[18px] tracking-[-0.5px] text-[#565656] transition-all duration-500">
+                  {tech.desc}
+                </p>
+              )}
             </div>
-            <ul className="flex gap-[5px]">
-              {tech.keys.map((key, index) => (
-                <li
-                  key={index}
-                  className={`flex justify-center items-center h-[15px] rounded-[25px] px-[5px] text-[10px] 
-                  leading-[10px] font-semibold border-[0.5px] tracking-[-0.5px]`}
-                  style={{ borderColor: tech.color, color: tech.color }}
-                >
-                  {key}
-                </li>
-              ))}
-            </ul>
           </li>
         ))}
       </ul>

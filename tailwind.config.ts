@@ -5,8 +5,9 @@ export default {
     extend: {
       screens: {
         mobile: "275px",
-        desktop: "1040px",
         "400px": "400px",
+        tablet: "640px",
+        desktop: "1040px",
       },
       letterSpacing: {
         tighter: "-0.36px",

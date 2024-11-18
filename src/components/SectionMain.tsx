@@ -42,20 +42,19 @@ export const SectionMain = () => {
               ? "linear-gradient(to bottom, black, black 90%, transparent)"
               : "",
           top:
-            breakpoint === "mobile"
-              ? "-100px"
-              : breakpoint === "tablet"
-              ? "120px"
-              : "-143px",
+          //  breakpoint === "mobile" ? 
+          "-12%" 
+          // : "-12%",
         }}
       />
       <div
-        className="w-full px-5 relative z-[3] pt-[38px] 
-        desktop:px-[80px]  desktop:mt-0"
+        className="w-full px-5 relative z-[3] pt-[38px] flex flex-col justify-between min-h-[63%] 
+        tablet:pt-[10px]
+        desktop:min-h-[56%] desktop:px-[80px]  desktop:pt-0"
       >
         <div
-          className="text-[14px] leading-[16px] text-[#565656] max-w-[218px] ml-auto mb-[200px]
-         desktop:text-[22px] desktop:leading-[26px] desktop:max-w-[333px] desktop:mr-[265px] desktop:mt-[52px] desktop:mb-[138px]
+          className="text-[14px] leading-[16px] text-[#565656] max-w-[218px] ml-auto
+         desktop:text-[22px] desktop:leading-[26px] desktop:max-w-[333px] desktop:mr-[265px] desktop:mt-[52px]
          "
         >
           <p className="">

@@ -6,6 +6,20 @@
 @tailwind utilities;
 
 @layer utilities {
+  .card:hover h3,
+  .card:hover li,
+  .card:hover p {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  .card:hover .card-image {
+    opacity: 1;
+    transform: translateX(0) translateY(0) !important;
+  }
+}
+
+@layer utilities {
   .geologica-text {
     /* @apply font-black text-[48px] leading-[60px] text-white text-shadow; */
     font-family: "Geologica";
@@ -16,12 +30,13 @@
   font-family: Wix Madefor Display, Geologica, system-ui, Avenir, Helvetica,
     Arial, sans-serif;
 
-
   padding: 0;
 }
 
-
 body {
-background-color: rgba(0,0,0,0.06);
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
+/* .swiper-wrapper {
+  flex-direction: row !important;
+} */

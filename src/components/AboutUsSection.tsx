@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import bg from "../assets/bg/about-us-bg.png";
+import bgDesktop from "../assets/bg-desktop.png";
 import bubble from "../assets/bubble.png";
+import bubbleDesktop from "../assets/desk-bubble.svg";
+import useIsMobile from "../hooks/usIsMobile";
 
 const achievements = [
   {
@@ -20,58 +23,55 @@ const achievements = [
   },
   {
     id: 4,
-    title: "В 2024 году вышли на международный рынок",
+    title: `В 2024 году вышли\nна\u00A0международный рынок`,
   },
 ];
 
 export const AboutUsSection = () => {
   // const [open, setOpen] = useState(false);
+  const breakpoint = useIsMobile();
 
   return (
-    <div className="relative w-full min-h-[750px] flex flex-col px-[20px]">
+    <div className="relative min-h-screen w-full px-[20px] pb-[20px] desktop:px-[80px]">
       <img
-        src={bg}
+        src={breakpoint === "desktop" ? bgDesktop : bg}
         alt="О нас"
-        className="w-full h-full cover absolute top-0 left-0 z-[1]"
+        className="cover absolute right-0 top-0 z-[1] desktop:h-screen"
         // onClick={() => setOpen(!open)}
-
       />
       <img
-        src={bubble}
-        alt=""
-        className="h-[190px] absolute top-[510px] left-0"
+        src={breakpoint === "desktop" ? bubbleDesktop : bubble}
+        alt="О нас"
+        className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[7%] desktop:left-[5%] desktop:top-auto"
       />
+      <div className="flex flex-col">
+        <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
+          о нас
+        </h2>
 
-      <h2
-        className="text-[#565656] geologica-text font-medium text-[32px] leading-[22px] mt-[115px] mb-[40px]"
-      >
-        о нас
-      </h2>
-
-      {/* {open && ( */}
-        <ul className="w-full flex flex-col gap-[30px]">
+        {/* {open && ( */}
+        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[60px] desktop:pl-[20vw]">
           {achievements.map((item, index) => (
             <li
-              className="border-solid border-t-[2px] border-[#92929280] flex justify-between relative 
-        opacity-0 translate-x-[-50px] animate-slideIn 
-        "
+              className="relative flex translate-x-[-50px] animate-slideIn justify-between border-t-[2px] border-solid border-[#92929280] opacity-0"
               key={item.id}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <span
-                className="w-[10px] h-[10px] bg-[#929292] rounded-[50%] absolute top-[-6px] z-2"
-                style={{ left: item.id === 1 ? "0" : `${item.id * 60}px` }}
+                className="z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292]"
+                style={{ left: item.id === 1 ? "0" : `${item.id * 20}%` }}
               />
-              <span className=" text-[#92929280] font-medium geologica-text text-[60px] leading-[72px]">
+              <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-[#DDDDDD]">
                 0{item.id}
               </span>
-              <p className="max-w-[217px] text-[#6A78C1] text-[14px] leading-[17px] font-semibold uppercase mt-[20px]">
+              <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-[#6A78C1] desktop:min-w-[49.5vw] desktop:text-[18px] desktop:leading-[22px]">
                 {item.title}
               </p>
             </li>
           ))}
         </ul>
-      {/* )} */}
+        {/* )} */}
+      </div>
     </div>
   );
 };

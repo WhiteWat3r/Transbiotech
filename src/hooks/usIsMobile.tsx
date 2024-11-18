@@ -6,7 +6,7 @@ const useBreakpoint = (): Breakpoint => {
   const [breakpoint, setBreakpoint] = useState<Breakpoint>(() => {
     const width = window.innerWidth;
     if (width < 640) return "mobile";
-    if (width < 1200) return "tablet";
+    if (width < 1040) return "tablet";
     return "desktop";
   });
 
@@ -14,7 +14,7 @@ const useBreakpoint = (): Breakpoint => {
     const updateBreakpoint = () => {
       const width = window.innerWidth;
       if (width < 640) setBreakpoint("mobile");
-      else if (width < 1200) setBreakpoint("tablet");
+      else if (width < 1040) setBreakpoint("tablet");
       else setBreakpoint("desktop");
     };
 
