@@ -30,12 +30,12 @@ export const Footer = () => {
       />
 
       <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw] desktop:mt-[30px]">
-        <div className="geologica-text mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[60px] desktop:text-[#565656]">
+        <div className="geologica-text mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[60px] desktop:text-[#565656] relative z-30">
           {`Продлевая жизнь ${breakpoint === "desktop" ? "В" : "в"}месте`}
           <span className="text-[#6A78C1]">{` с\u00A0вами`}</span>
         </div>
 
-        <ul className="mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px]">
+        <ul className="mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px] relative z-30">
           <li className="flex gap-[50px] desktop:gap-[65px]">
             <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080] desktop:text-[24px] desktop:leading-[29px]">
               контакты
@@ -67,7 +67,7 @@ export const Footer = () => {
           </li> */}
         </ul>
 
-        <ul className="mt-[125px] flex flex-col gap-[5px] desktop:ml-[35vw] desktop:mt-[0.5px] desktop:gap-0">
+        <ul className="mt-[125px] flex flex-col gap-[5px] desktop:ml-[35vw] desktop:mt-[0.5px] desktop:gap-0 relative z-30">
           {requisites.map((req) => (
             <li
               key={req.id}
@@ -82,7 +82,7 @@ export const Footer = () => {
           <img
             src={footerLogo}
             alt={"Transbiotech"}
-            className="absolute bottom-[83px] left-[89px]"
+            className="absolute bottom-[83px] left-[89px] z-30"
           />
         )}
       </div>
