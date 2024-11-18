@@ -10,7 +10,7 @@ export const SectionService = () => {
         className="max-h-[450px] object-cover desktop:h-screen desktop:max-h-full desktop:w-[50%]"
       />
 
-      <div className="flex flex-col px-[20px] desktop:justify-center desktop:px-[45px]">
+      <div className="flex flex-col px-[20px] desktop:justify-center desktop:bg-[#dddddd] desktop:px-[45px]">
         <p className="geologica-text mb-[15px] mt-[40px] text-[27px] leading-[27px] text-[#929292] desktop:text-[56px] desktop:leading-[57px]">
           {"Отдельное направление нашей\u00A0работы\u00A0—"}
           <span className="block text-[#565656]">сервис.</span>

@@ -40,15 +40,15 @@ export const Header = () => {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 flex items-center px-[42px]  transition-all ease-out duration-1000 z-20 justify-between mx-auto pt-[65px]`}
+      className={`sticky top-0 z-20 mx-auto flex items-center justify-between px-[42px] pt-[65px] transition-all duration-1000 ease-out`}
       style={{
         width: isScrolled ? headerWidth : "100%",
       }}
     >
       <a
-        className={`pr-[14px] rounded-[42px] transition-all duration-500 relative pl-[18px] ml-[20px] flex items-center ${
+        className={`relative ml-[20px] flex items-center rounded-[42px] pl-[18px] pr-[14px] transition-all duration-500 ${
           isScrolled
-            ? "animate-appearBorder h-[50px]"
+            ? "h-[50px] animate-appearBorder"
             : "animate-disappearBorder border-none"
         }`}
         href="#"
@@ -56,18 +56,16 @@ export const Header = () => {
         <img
           src={isScrolled ? logo : fullLogo}
           alt="Transbiotech"
-          className={`transition-all duration-500 pointer h-[24px] mt-[2px]`}
+          className={`pointer mt-[2px] h-[24px] transition-all duration-500`}
         />
       </a>
 
       <nav
-        className={`transition-all duration-500 rounded-[42px] whitespace-nowrap py-[12px] px-[38px]  ${
-          isScrolled
-            ? "animate-appearBorder"
-            : "animate-disappearBorder"
+        className={`whitespace-nowrap rounded-[42px] px-[38px] py-[12px] transition-all duration-500 ${
+          isScrolled ? "animate-appearBorder" : "animate-disappearBorder"
         }`}
       >
-        <ul className="flex gap-[37px] h-[22px]">
+        <ul className="flex h-[22px] gap-[37px]">
           {menuItems.map((item) => (
             <HeaderMenuPopover chapter={item} key={item.id} />
           ))}

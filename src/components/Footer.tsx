@@ -1,4 +1,5 @@
 import footerBg from "../assets/bg/footer.png";
+import footerLogo from "../assets/logos/footer-logo.svg";
 import footerDesktopBg from "../assets/bg/footer-desktop.png";
 import useIsMobile from "../hooks/usIsMobile";
 
@@ -18,63 +19,72 @@ const requisites = [
 ];
 
 export const Footer = () => {
-
-  const breakpoint = useIsMobile()
+  const breakpoint = useIsMobile();
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col px-[20px]" >
+    <div className="relative flex h-screen w-full flex-col px-[20px] desktop:pl-[80px] desktop:pr-0 justify-center">
       <img
-        src={breakpoint === 'mobile' ? footerBg : footerDesktopBg}
+        src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
         alt="asd"
-        className="w-full absolute bottom-0 left-0 z-[1]"
+        className="absolute left-[50%] translate-x-[-50%] object-contain z-20  desktop:bottom-0"
       />
 
-      <div className="p-[40px] w-full bg-white rounded-t-[25px] mt-[115px] h-[635px]">
-        <span className="text-[#929292] geologica-text font-semibold text-[32px] leading-[36px] mt-[60px]">
-          Продлевая жизнь вместе
+      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw] desktop:mt-[30px]">
+        <div className="geologica-text mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[60px] desktop:text-[#565656]">
+          {`Продлевая жизнь ${breakpoint === "desktop" ? "В" : "в"}месте`}
           <span className="text-[#6A78C1]">{` с\u00A0вами`}</span>
-        </span>
+        </div>
 
-        <ul className="mt-[40px] flex flex-col gap-[5px]">
-          <li className="flex gap-[50px]">
-            <p className="text-[14px] leading-[17px] font-medium text-[#808080] geologica-text">
+        <ul className="mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px]">
+          <li className="flex gap-[50px] desktop:gap-[65px]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080] desktop:text-[24px] desktop:leading-[29px]">
               контакты
             </p>
-            <div className="flex flex-col gap-[10px] text-[14px] text-[#565656]">
+            <div className="flex flex-col gap-[10px] text-[14px] text-[#565656] desktop:max-w-[258px] desktop:gap-[15px] desktop:text-[18px] desktop:leading-[22px]">
               <span>
                 г. Санкт-Петербург, Звенигородская ул., д. 8-10, лит. Б, офис 42
               </span>
-              <span className="underline">+7 (915) 291-75-19</span>
+              <span className="underline desktop:no-underline">
+                +7 (915) 291-75-19
+              </span>
               <a
-                className="underline  mb-[20px]"
+                className="mb-[20px] underline"
                 href="mailto:info@transbiotech.ru"
               >
                 info@transbiotech.ru
               </a>
             </div>
           </li>
-          <li className="flex gap-[50px]">
-            <p className="text-[14px] leading-[17px] font-medium text-[#808080] geologica-text">
+          <li className="flex gap-[50px] desktop:gap-[65px]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080] desktop:text-[24px] desktop:leading-[29px]">
               документы
             </p>
           </li>
-          <li className="flex gap-[50px]">
-            <p className="text-[14px] leading-[17px] font-medium text-[#808080] geologica-text">
+          {/* <li className="flex gap-[50px]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080]">
               новости
             </p>
-          </li>
+          </li> */}
         </ul>
 
-        <div className="flex flex-col gap-[5px] mt-[125px]">
+        <ul className="mt-[125px] flex flex-col gap-[5px] desktop:ml-[35vw] desktop:mt-[0.5px] desktop:gap-0">
           {requisites.map((req) => (
-            <span
+            <li
               key={req.id}
-              className="font-semibold text-[#D9D9D9] text-[10px] leading-[12px]"
+              className="text-[10px] font-semibold leading-[12px] text-[#D9D9D9] desktop:text-[15px] desktop:leading-[18px]"
             >
               {req.text}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {breakpoint === "desktop" && (
+          <img
+            src={footerLogo}
+            alt={"Transbiotech"}
+            className="absolute bottom-[83px] left-[89px]"
+          />
+        )}
       </div>
     </div>
   );

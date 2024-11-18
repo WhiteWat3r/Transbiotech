@@ -66,8 +66,8 @@ export const SectionTechnologies = () => {
   const isDesktop = breakpoint === "desktop";
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-[#E9E9E9] px-[20px] pb-[20px] desktop:px-[80px]">
-      <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[45px] desktop:mt-[160px] desktop:text-[72px] desktop:leading-[65px]">
+    <div className="relative flex min-h-screen w-full flex-col bg-[#E9E9E9] px-[20px] pb-[20px] desktop:justify-center desktop:px-[80px] desktop:pb-[15vh]">
+      <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]">
         технологии
       </h2>
 
@@ -110,11 +110,11 @@ export const SectionTechnologies = () => {
                 {tech.title}
               </h3>
 
-              <ul className="flex gap-[5px] desktop:mb-[20px] desktop:flex-wrap">
+              <ul className="flex gap-[6px] desktop:mb-[20px] desktop:flex-wrap">
                 {tech.keys.map((key, index) => (
                   <li
                     key={index}
-                    className={`desktop:text-[12px]d esktop:leading-[12.5px] flex h-[15px] items-center justify-center rounded-[25px] border-[0.5px] px-[5px] text-[10px] font-semibold leading-[10px] tracking-[-0.5px] transition-all duration-500`}
+                    className={`desktop:text-[12px]d esktop:leading-[12.5px] flex h-[15px] flex-col items-center justify-center rounded-[25px] border-[0.5px] px-[5px] pt-[1px] text-[10px] font-semibold leading-[10px] tracking-[-0.5px] transition-all duration-500 desktop:h-[18px] desktop:text-[12px] desktop:leading-[12.5px]`}
                     style={{
                       borderColor: isDesktop ? "#808080" : tech.color,
                       color: isDesktop ? "#808080" : tech.color,

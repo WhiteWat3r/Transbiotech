@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Grid, Navigation } from "swiper/modules";
@@ -73,7 +73,7 @@ const persons = [
 
 export const TeamSwiper = () => {
   const swiperRef = useRef<ISwiper | null>(null);
-  const slidesPerView = 6;
+  const [slidesPerView, setSlidesPerView] = useState(6);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
@@ -81,6 +81,20 @@ export const TeamSwiper = () => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setSlidesPerView(Math.max(Math.floor(width / 200), 2));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -107,7 +121,8 @@ export const TeamSwiper = () => {
           <SwiperSlide key={person.id} className="flex justify-center">
             <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[20px]">
               <span className="absolute inset-0 translate-y-full rounded-[20px] bg-[#9DAAEB] opacity-0 transition-all delay-300 duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0" />
-              <div className="absolute inset-0 mb-[10%] flex translate-y-full flex-col gap-[10px] rounded-[20px] bg-[#6A78C1] p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-[10%] group-hover:opacity-100 group-hover:delay-500">
+
+              <div className="absolute inset-0 flex h-[91%] translate-y-full flex-col gap-[10px] rounded-[20px] bg-[#6A78C1] p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-[10%] group-hover:opacity-100 group-hover:delay-500">
                 <p className="geologica-text mt-auto text-[22px] leading-[22px]">
                   {person.name}
                 </p>
