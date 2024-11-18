@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Grid, Navigation } from "swiper/modules";
 import type ISwiper from "swiper";
+import useIsMobile from "../hooks/usIsMobile";
 
 import arrowLeft from "../assets/arrows/arrow-left.svg";
 import arrowRight from "../assets/arrows/arrow-right.svg";
@@ -76,6 +77,7 @@ export const TeamSwiper = () => {
   const [slidesPerView, setSlidesPerView] = useState(6);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+  const breakpoint = useIsMobile();
 
   const handleSlideChange = (swiper: ISwiper) => {
     setIsBeginning(swiper.isBeginning);
@@ -99,17 +101,15 @@ export const TeamSwiper = () => {
   return (
     <>
       <Swiper
-        modules={[Navigation, Grid]}
+        modules={[Grid]}
         spaceBetween={15}
         slidesPerView={slidesPerView}
-        className="h-[57vh] w-full"
+        className="w-full"
         grid={{
           rows: 3,
           fill: "row",
         }}
-        pagination={{
-          clickable: true,
-        }}
+        allowTouchMove={breakpoint !== "desktop"}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           setIsBeginning(swiper.isBeginning);
