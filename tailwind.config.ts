@@ -6,6 +6,7 @@ export default {
       screens: {
         mobile: "275px",
         desktop: "1040px",
+        "400px": "400px",
       },
       letterSpacing: {
         tighter: "-0.36px",
@@ -32,10 +33,14 @@ export default {
         appearBorder: {
           "0%": {
             backgroundColor: "transparent",
+            border: "2px solid transparent",
+
             backdropFilter: "blur(0px)",
           },
           "60%": {
             backgroundColor: "transparent",
+            border: "2px solid transparent",
+
             backdropFilter: "blur(0px)",
           },
           "80%": {
@@ -58,14 +63,17 @@ export default {
           "10%": {
             backgroundColor: "transparent",
             backdropFilter: "blur(0px)",
+            border: "2px solid transparent",
           },
           "90%": {
             backgroundColor: "transparent",
             backdropFilter: "blur(0px)",
+            border: "2px solid transparent",
           },
           "100%": {
             backgroundColor: "transparent",
             backdropFilter: "blur(0px)",
+            border: "2px solid transparent",
           },
         },
         fadeIn: {

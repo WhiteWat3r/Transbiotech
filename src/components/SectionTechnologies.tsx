@@ -38,7 +38,7 @@ const technologies = [
 
 export const SectionTechnologies = () => {
   return (
-    <div className="relative w-full min-h-[750px] flex px-[20px] flex-col">
+    <div className="relative w-full h-screen flex px-[20px] flex-col pb-[20px]">
       <h2 className="text-[#565656] geologica-text font-medium text-[32px] leading-[22px] mt-[115px] mb-[40px]">
         технологии
       </h2>

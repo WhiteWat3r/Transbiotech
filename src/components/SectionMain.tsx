@@ -31,7 +31,7 @@ export const SectionMain = () => {
   const breakpoint = useIsMobile();
 
   return (
-    <div className="relative w-full bg-cover min-h-[675px]">
+    <div className="relative w-full bg-cover h-[calc(100vh-75px)]">
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
@@ -43,14 +43,14 @@ export const SectionMain = () => {
               : "",
           top:
             breakpoint === "mobile"
-              ? "-115px"
+              ? "-100px"
               : breakpoint === "tablet"
               ? "120px"
               : "-143px",
         }}
       />
       <div
-        className="w-full h-full px-5 relative z-[3] mt-[38px] 
+        className="w-full px-5 relative z-[3] pt-[38px] 
         desktop:px-[80px]  desktop:mt-0"
       >
         <div

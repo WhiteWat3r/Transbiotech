@@ -37,14 +37,10 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log("headerWidth", headerWidth);
-
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 flex items-center px-[42px]  transition-all ease-out duration-1000 z-20 justify-between mx-auto ${
-        isScrolled ? "pt-[55px]" : "pt-[65px]"
-      }`}
+      className={`sticky top-0 flex items-center px-[42px]  transition-all ease-out duration-1000 z-20 justify-between mx-auto pt-[65px]`}
       style={{
         width: isScrolled ? headerWidth : "100%",
       }}
@@ -68,7 +64,7 @@ export const Header = () => {
         className={`transition-all duration-500 rounded-[42px] whitespace-nowrap py-[12px] px-[38px]  ${
           isScrolled
             ? "animate-appearBorder"
-            : "animate-disappearBorder border-none"
+            : "animate-disappearBorder"
         }`}
       >
         <ul className="flex gap-[37px] h-[22px]">
