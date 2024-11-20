@@ -45,7 +45,7 @@ export const AboutUsSection = () => {
         className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[7%] desktop:left-[5%] desktop:top-auto"
       />
       <div className="flex flex-col">
-        <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
+        <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
           о нас
         </h2>
 
@@ -61,10 +61,10 @@ export const AboutUsSection = () => {
                 className="z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292]"
                 style={{ left: item.id === 1 ? "0" : `${item.id * 20}%` }}
               />
-              <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-[#DDDDDD]">
+              <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-gainsboro">
                 0{item.id}
               </span>
-              <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-[#6A78C1] desktop:min-w-[49.5vw] desktop:text-[18px] desktop:leading-[22px]">
+              <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-indigo desktop:min-w-[49.5vw] desktop:text-[18px] desktop:leading-[22px]">
                 {item.title}
               </p>
             </li>

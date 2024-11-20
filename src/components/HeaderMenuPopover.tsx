@@ -46,7 +46,7 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
       <button
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className="text-[#808080] text-[18px] leading-[21.6px] geologica-text font-medium hover:text-[#212121] transition-colors 
+        className="text-grey-2 text-[18px] leading-[21.6px] geologica-text font-medium hover:text-black-default transition-colors 
           duration-300 tracking-tighter"
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
@@ -72,8 +72,8 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
             <li key={link.linkId}>
               <a
                 href={link.href}
-                className="text-[#808080] text-[18px] leading-[2px] geologica-text
-                 hover:text-[#212121] transition-colors duration-300"
+                className="text-grey-2 text-[18px] leading-[2px] geologica-text
+                 hover:text-black-default transition-colors duration-300"
               >
                 {link.text}
               </a>

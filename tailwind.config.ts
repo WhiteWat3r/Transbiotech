@@ -9,6 +9,23 @@ export default {
         tablet: "640px",
         desktop: "1040px",
       },
+
+      colors: {
+        "black-default": "#212121",
+        "grey-1": "#565656",
+        "grey-2": "#808080",
+        gainsboro: "#DDDDDD",
+        platinum: "#E9E9E9",
+        white: "#FFFFFF",
+        "purplish-pink": "#EA7A92",
+        "light-purplish-pink": "#FFA3B7",
+        indigo: "#6A78C1",
+        "light-indigo": "#9DAAEB",
+        "greenish-yellow": "#90882B",
+        "light-greenish-yellow": "#CCC471",
+        titian: "#E04918",
+        "light-titian": "#FA9270",
+      },
       letterSpacing: {
         tighter: "-0.36px",
       },
@@ -21,15 +38,6 @@ export default {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121" },
           "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF" },
         },
-
-        // shrinkHeader: {
-        //   "0%": { width: "100%" },
-        //   "100%": { width: "max-content" },
-        // },
-        // expandHeader: {
-        //   "0%": { width: "74.5%" },
-        //   "100%": { width: "100%" },
-        // },
 
         appearBorder: {
           "0%": {
@@ -91,9 +99,6 @@ export default {
         glow: "glow 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.3s ease-out",
         fadeOut: "fadeOut 0.3s ease-out",
-        // shrinkHeader: "shrinkHeader 0.5s ease-out forwards",
-        // expandHeader: "expandHeader 0.5s ease-out forwards",
-
         appearBorder: "appearBorder 0.5s ease-out forwards",
         disappearBorder: "disappearBorder 0.5s ease-out forwards",
       },

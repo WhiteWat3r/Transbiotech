@@ -18,7 +18,7 @@ export const SectionPromo = () => {
         style={{maskImage: 'linear-gradient(to bottom, transparent, black 90px, black)'}}
       /> */}
 
-      <span className="geologica-text flex flex-col px-[30px] text-center text-[27px] leading-[27px] text-[#E9E9E9] desktop:ml-auto desktop:mr-[77px] desktop:max-w-[350px] desktop:gap-[40px] desktop:text-start desktop:text-[46px] desktop:leading-[40px]">
+      <span className="geologica-text flex flex-col px-[30px] text-center text-[27px] leading-[27px] text-platinum desktop:ml-auto desktop:mr-[77px] desktop:max-w-[350px] desktop:gap-[40px] desktop:text-start desktop:text-[46px] desktop:leading-[40px]">
         {"четыре направления\u00A0–"}
         <p className="text-[white]">{" одна задача"}</p>
       </span>

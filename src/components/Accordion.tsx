@@ -42,7 +42,7 @@ export const Accordion = ({
       >
         <button
           onClick={toggleAccordion}
-          className={`w-full font-medium text-[#808080] text-[32px] geologica-text leading-[38px] flex justify-between 
+          className={`w-full font-medium text-grey-2 text-[32px] geologica-text leading-[38px] flex justify-between 
             items-center border-b-2 border-[#929292] pb-[5px] ${
               isDisabled ? "cursor-not-allowed" : ""
             }`}
@@ -75,7 +75,7 @@ export const Accordion = ({
             {items.map((item) => (
               <li
                 key={item.linkId}
-                className="text-[#808080] text-[18px] leading-[22px] geologica-text font-medium"
+                className="text-grey-2 text-[18px] leading-[22px] geologica-text font-medium"
               >
                 {item.text}
               </li>

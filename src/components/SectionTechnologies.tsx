@@ -60,14 +60,15 @@ const technologies = [
   },
 ];
 
-export const SectionTechnologies = () => {
+export const SectionTechnologies = ({fromTechPage}: {fromTechPage?: boolean}) => {
   const breakpoint = useIsMobile();
 
   const isDesktop = breakpoint === "desktop";
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-[#E9E9E9] px-[20px] pb-[20px] desktop:justify-center desktop:px-[80px] desktop:pb-[15vh]">
-      <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-[#565656] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]">
+    <div className={`relative flex w-full flex-col bg-platinum px-[20px] pb-[20px] desktop:justify-center 
+    desktop:px-[80px] desktop:pb-[15vh] ${fromTechPage ? "h-[calc(100vh-115px)]" : "min-h-screen"}`}>
+      <h2 className="geologica-text text-grey-1 mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]">
         технологии
       </h2>
 
@@ -102,7 +103,7 @@ export const SectionTechnologies = () => {
             />
             <div className="mt-[10px relative z-10 flex flex-col desktop:mt-auto">
               <h3
-                className="geologica-text font-light] mb-[10px] flex max-w-[210px] justify-between text-[27px] leading-[27px] tracking-[-0.5px] transition-all duration-500 desktop:text-[24px] desktop:font-medium desktop:leading-[24px]"
+                className={`geologica-text mb-[10px] flex max-w-[210px] justify-between text-[27px] font-light leading-[27px] tracking-[-0.5px] transition-all duration-500 desktop:text-[24px] desktop:font-medium desktop:leading-[24px] ${isDesktop ? "text-grey-1" : ""}`}
                 style={{
                   color: isDesktop ? "#565656" : tech.color,
                 }}

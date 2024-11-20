@@ -17,24 +17,31 @@
     opacity: 1;
     transform: translateX(0) translateY(0) !important;
   }
-}
 
-@layer utilities {
   .geologica-text {
     /* @apply font-black text-[48px] leading-[60px] text-white text-shadow; */
     font-family: "Geologica";
   }
 }
 
+@layer utilities {
+}
+
 :root {
-  font-family: Wix Madefor Display, Geologica, system-ui, Avenir, Helvetica,
-    Arial, sans-serif;
+  font-family:
+    Wix Madefor Display,
+    Geologica,
+    system-ui,
+    Avenir,
+    Helvetica,
+    Arial,
+    sans-serif;
 
   padding: 0;
 }
 
 body {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color:#E9E9E9;
 }
 
 /* .swiper-wrapper {

@@ -22,25 +22,25 @@ export const Footer = () => {
   const breakpoint = useIsMobile();
 
   return (
-    <div className="relative flex h-screen w-full flex-col px-[20px] desktop:pl-[80px] desktop:pr-0 justify-center">
+    <footer className="relative flex h-screen w-full flex-col justify-center px-[20px] desktop:pl-[80px] desktop:pr-0">
       <img
         src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
         alt="asd"
-        className="absolute left-[50%] translate-x-[-50%] object-contain z-20  desktop:bottom-0"
+        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain desktop:bottom-0"
       />
 
-      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw] desktop:mt-[30px]">
-        <div className="geologica-text mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[60px] desktop:text-[#565656] relative z-30">
+      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:mt-[30px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw]">
+        <div className="geologica-text desktop:text-grey-1 relative z-30 mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[60px]">
           {`Продлевая жизнь ${breakpoint === "desktop" ? "В" : "в"}месте`}
-          <span className="text-[#6A78C1]">{` с\u00A0вами`}</span>
+          <span className="text-indigo">{` с\u00A0вами`}</span>
         </div>
 
-        <ul className="mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px] relative z-30">
+        <ul className="relative z-30 mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px]">
           <li className="flex gap-[50px] desktop:gap-[65px]">
-            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080] desktop:text-[24px] desktop:leading-[29px]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2 desktop:text-[24px] desktop:leading-[29px]">
               контакты
             </p>
-            <div className="flex flex-col gap-[10px] text-[14px] text-[#565656] desktop:max-w-[258px] desktop:gap-[15px] desktop:text-[18px] desktop:leading-[22px]">
+            <div className="text-grey-1 flex flex-col gap-[10px] text-[14px] desktop:max-w-[258px] desktop:gap-[15px] desktop:text-[18px] desktop:leading-[22px]">
               <span>
                 г. Санкт-Петербург, Звенигородская ул., д. 8-10, лит. Б, офис 42
               </span>
@@ -56,18 +56,18 @@ export const Footer = () => {
             </div>
           </li>
           <li className="flex gap-[50px] desktop:gap-[65px]">
-            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080] desktop:text-[24px] desktop:leading-[29px]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2 desktop:text-[24px] desktop:leading-[29px]">
               документы
             </p>
           </li>
           {/* <li className="flex gap-[50px]">
-            <p className="geologica-text text-[14px] font-medium leading-[17px] text-[#808080]">
+            <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2">
               новости
             </p>
           </li> */}
         </ul>
 
-        <ul className="mt-[125px] flex flex-col gap-[5px] desktop:ml-[35vw] desktop:mt-[0.5px] desktop:gap-0 relative z-30">
+        <ul className="relative z-30 mt-[125px] flex flex-col gap-[5px] desktop:ml-[35vw] desktop:mt-[0.5px] desktop:gap-0">
           {requisites.map((req) => (
             <li
               key={req.id}
@@ -86,6 +86,6 @@ export const Footer = () => {
           />
         )}
       </div>
-    </div>
+    </footer>
   );
 };
