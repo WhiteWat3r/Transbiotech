@@ -59,7 +59,7 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
       {chapter.id === 1 && (
         <div
           ref={popoverRef}
-          className={`absolute z-50 rounded-[42px] bg-[#F8F8F8] px-[44px] py-[25px] backdrop-blur-[10px] transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-100"} `}
+          className={`absolute z-50 rounded-[42px] bg-[#F8F8F8] px-[44px] py-[25px] backdrop-blur-[10px] transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
           style={
             {
               // borderImageSource:
