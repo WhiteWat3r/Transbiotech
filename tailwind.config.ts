@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        'tech-shadow': '0px -10px 35px 0px #C6C6C6', 
+      },
       screens: {
         mobile: "275px",
         "400px": "400px",

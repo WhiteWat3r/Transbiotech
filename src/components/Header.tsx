@@ -52,7 +52,7 @@ export const Header = () => {
             ? "h-[50px] animate-appearBorder"
             : "animate-disappearBorder border-none"
         }`}
-        to="/technologies"
+        to="/"
       >
         <img
           src={isScrolled ? logo : fullLogo}

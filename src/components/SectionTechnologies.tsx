@@ -71,23 +71,20 @@ export const SectionTechnologies = ({
 
   return (
     <div
-      className={`bg-platinum relative flex w-full flex-col px-[20px] pb-[20px] 
-        justify-center desktop:px-[80px]
-        ${fromTechPage ? "h-[calc(100vh-75px)] desktop:h-[calc(100vh-115px)]" : "min-h-screen"}`}
+      className={`bg-platinum relative flex w-full flex-col justify-center px-[20px] pb-[20px] desktop:px-[80px] ${fromTechPage ? "h-[calc(100vh-75px)] desktop:h-[calc(100vh-115px)]" : "min-h-screen"}`}
     >
       <h2
-        className={`geologica-text text-grey-1 mb-[40px]
-   
-           text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]`}
+        className={`geologica-text mt-[80px] text-grey-1 mb-[40px] text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]`}
       >
         технологии
       </h2>
 
-      <ul className="flex w-full flex-col gap-[30px] rounded-[45px] bg-[#dddddd] p-10 pr-[30px] desktop:h-[370px] desktop:flex-row desktop:gap-[20px] desktop:bg-transparent desktop:p-0">
+      <ul className="flex w-full flex-col rounded-[45px] desktop:h-[370px] desktop:flex-row desktop:gap-[20px]">
         {technologies.map((tech) => (
           <li
             key={tech.id}
-            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] desktop:pointer-events-auto desktop:rounded-[36px] desktop:bg-[#dddddd] desktop:p-[30px]`}
+            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] 
+              desktop:pointer-events-auto desktop:rounded-[36px] desktop:mt-0 desktop:pb-[30px] ${tech.id > 1 ? "shadow-tech-shadow mt-[-60px]" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""}`}
             style={
               {
                 "--hover-color": tech.color,
@@ -110,7 +107,7 @@ export const SectionTechnologies = ({
             <img
               src={isDesktop ? tech.logo : tech.mobileLogo}
               alt={tech.title}
-              className="absolute right-0 desktop:left-[30px]"
+              className="absolute right-[30px] desktop:left-[30px] desktop:right-auto"
             />
             <div className="mt-[10px relative z-10 flex flex-col desktop:mt-auto">
               <h3
@@ -126,7 +123,7 @@ export const SectionTechnologies = ({
                 {tech.keys.map((key, index) => (
                   <li
                     key={index}
-                    className={`desktop:text-[12px]d esktop:leading-[12.5px] flex h-[15px] flex-col items-center justify-center rounded-[25px] border-[0.5px] px-[5px] pt-[1px] text-[10px] font-semibold leading-[10px] tracking-[-0.5px] transition-all duration-500 desktop:h-[18px] desktop:text-[12px] desktop:leading-[12.5px]`}
+                    className={`flex h-[22px] flex-col items-center justify-center rounded-[25px] border-[0.5px] px-[5px] pt-[1px] text-[12px] font-semibold leading-[14px] tracking-[-0.5px] transition-all duration-500 desktop:h-[18px] desktop:text-[12px] desktop:leading-[12.5px]`}
                     style={{
                       borderColor: isDesktop ? "#808080" : tech.color,
                       color: isDesktop ? "#808080" : tech.color,

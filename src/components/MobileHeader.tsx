@@ -58,8 +58,8 @@ export const MobileHeader = () => {
 
   return (
     <>
-      <header className="px-[20px] pt-[40px] flex justify-between sticky top-0 left-0 z-20">
-        <Link to="/technologies"><img src={logo} alt="Transbiotech" /></Link>
+      <header className="px-[20px] h-[75px] flex justify-between items-center sticky top-0 left-0 z-20 bg-[#E9E9E94D] bg-blur-[30px] backdrop-blur-[30px]">
+        <Link to="/"><img src={logo} alt="Transbiotech" /></Link>
         <img
           src={menuButton}
           alt="Меню"
