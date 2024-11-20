@@ -60,15 +60,26 @@ const technologies = [
   },
 ];
 
-export const SectionTechnologies = ({fromTechPage}: {fromTechPage?: boolean}) => {
+export const SectionTechnologies = ({
+  fromTechPage,
+}: {
+  fromTechPage?: boolean;
+}) => {
   const breakpoint = useIsMobile();
 
   const isDesktop = breakpoint === "desktop";
 
   return (
-    <div className={`relative flex w-full flex-col bg-platinum px-[20px] pb-[20px] desktop:justify-center 
-    desktop:px-[80px] desktop:pb-[15vh] ${fromTechPage ? "h-[calc(100vh-115px)]" : "min-h-screen"}`}>
-      <h2 className="geologica-text text-grey-1 mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]">
+    <div
+      className={`bg-platinum relative flex w-full flex-col px-[20px] pb-[20px] 
+        justify-center desktop:px-[80px]
+        ${fromTechPage ? "h-[calc(100vh-75px)] desktop:h-[calc(100vh-115px)]" : "min-h-screen"}`}
+    >
+      <h2
+        className={`geologica-text text-grey-1 mb-[40px]
+   
+           text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]`}
+      >
         технологии
       </h2>
 

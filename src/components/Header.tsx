@@ -4,6 +4,7 @@ import logo from "../assets/logos/logo.svg";
 import { menuItems } from "./MobileHeader";
 import { HeaderMenuPopover } from "./HeaderMenuPopover";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,20 +46,20 @@ export const Header = () => {
         width: isScrolled ? headerWidth : "100%",
       }}
     >
-      <a
+      <Link
         className={`relative ml-[20px] flex items-center rounded-[42px] pl-[18px] pr-[14px] transition-all duration-500 ${
           isScrolled
             ? "h-[50px] animate-appearBorder"
             : "animate-disappearBorder border-none"
         }`}
-        href="#"
+        to="/technologies"
       >
         <img
           src={isScrolled ? logo : fullLogo}
           alt="Transbiotech"
           className={`pointer mt-[2px] h-[24px] transition-all duration-500`}
         />
-      </a>
+      </Link>
 
       <nav
         className={`whitespace-nowrap rounded-[42px] px-[38px] py-[12px] transition-all duration-500 ${

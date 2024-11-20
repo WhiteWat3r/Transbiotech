@@ -3,6 +3,7 @@ import menuButton from "../assets/menu.svg";
 import logo from "../assets/logos/mobile-logo.svg";
 import close from "../assets/close.svg";
 import { Accordion } from "./Accordion";
+import { Link } from "react-router-dom";
 
 export interface IMenuItem {
   id: number;
@@ -58,7 +59,7 @@ export const MobileHeader = () => {
   return (
     <>
       <header className="px-[20px] pt-[40px] flex justify-between sticky top-0 left-0 z-20">
-        <img src={logo} alt="Transbiotech" />
+        <Link to="/technologies"><img src={logo} alt="Transbiotech" /></Link>
         <img
           src={menuButton}
           alt="Меню"

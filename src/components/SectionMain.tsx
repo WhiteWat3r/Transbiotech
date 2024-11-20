@@ -29,18 +29,20 @@ const buttons = [
 
 export const SectionMain = () => {
   const breakpoint = useIsMobile();
+  const isDesktop = breakpoint === "desktop";
 
   return (
-    <div className="relative h-[calc(100vh-115px)] w-full bg-cover">
+    <div
+      className={`deskop:h-[calc(100vh-115px)] relative h-[calc(100vh-75px)] w-full bg-cover`}
+    >
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
         className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
         style={{
-          maskImage:
-            breakpoint !== "desktop"
-              ? "linear-gradient(to bottom, black, black 90%, transparent)"
-              : "",
+          maskImage: !isDesktop
+            ? "linear-gradient(to bottom, black, black 90%, transparent)"
+            : "",
           top:
             //  breakpoint === "mobile" ?
             "-12%",
@@ -48,7 +50,7 @@ export const SectionMain = () => {
         }}
       />
       <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:px-[80px] desktop:pt-0">
-        <div className="ml-auto max-w-[218px] text-[14px] leading-[16px] text-grey-1 desktop:mr-[265px] desktop:mt-[52px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
+        <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[265px] desktop:mt-[52px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
           <p className="">
             {
               "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
@@ -63,7 +65,7 @@ export const SectionMain = () => {
           {buttons.map((btn, index) => (
             <li key={btn.id}>
               <button
-                className={`geologica-text " flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium text-black-default transition-all duration-300 desktop:h-[38px] desktop:animate-none desktop:text-[18px] desktop:leading-[22px] desktop:hover:translate-y-[-10px] desktop:hover:transform desktop:hover:bg-[var(--btn-color)] desktop:hover:text-white`}
+                className={`geologica-text " text-black-default flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium transition-all duration-300 desktop:h-[38px] desktop:animate-none desktop:text-[18px] desktop:leading-[22px] desktop:hover:translate-y-[-10px] desktop:hover:transform desktop:hover:bg-[var(--btn-color)] desktop:hover:text-white`}
                 style={
                   {
                     animationDelay: `${index * 0.6}s`,
@@ -77,7 +79,7 @@ export const SectionMain = () => {
           ))}
         </ul>
       </div>
-      <h1 className="geologica-text z-1 px-5 text-[46px] font-semibold leading-[44px] text-grey-1 desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
+      <h1 className="geologica-text z-1 text-grey-1 px-5 text-[46px] font-semibold leading-[44px] desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
         Transbiotech. Продлевая жизнь
       </h1>
     </div>
