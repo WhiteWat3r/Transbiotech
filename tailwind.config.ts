@@ -37,6 +37,10 @@ export default {
           "0%": { opacity: "0", transform: "translateX(-50px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        slideOut: {
+          "0%": { opacity: "1", transform: "translateX(0)" },
+          "100%": { opacity: "0", transform: "translateX(-50px)" },
+        },
         glow: {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121" },
           "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF" },
@@ -99,6 +103,7 @@ export default {
       },
       animation: {
         slideIn: "slideIn 0.5s forwards",
+        slideOut: "slideOut 0.5s forwards",
         glow: "glow 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.3s ease-out",
         fadeOut: "fadeOut 0.3s ease-out",

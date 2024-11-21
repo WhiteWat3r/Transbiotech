@@ -2,7 +2,7 @@ import { TeamSwiper } from "./TeamSwiper";
 
 export const OurTeamSection = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col px-[20px] desktop:px-[80px]">
+    <div className="relative flex min-h-screen w-full flex-col px-[20px] desktop:px-[80px] z-30">
       <div className="mt-[115px] flex flex-col desktop:mt-[21vh] desktop:flex-row desktop:justify-between">
         <h2 className="geologica-text text-[32px] font-medium leading-[22px] text-grey-1 desktop:text-[72px] desktop:leading-[65px]">
           команда

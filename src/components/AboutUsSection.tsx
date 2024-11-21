@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import bg from "../assets/bg/about-us-bg.png";
 import bgDesktop from "../assets/bg-desktop.png";
 import bubble from "../assets/bubble.png";
 import bubbleDesktop from "../assets/desk-bubble.svg";
 import useIsMobile from "../hooks/usIsMobile";
+import useIntersection from "../hooks/useIntersection";
 
 const achievements = [
   {
@@ -30,6 +31,9 @@ const achievements = [
 export const AboutUsSection = () => {
   // const [open, setOpen] = useState(false);
   const breakpoint = useIsMobile();
+  const sectionRef = useRef(null);
+
+  const { hasAnimated } = useIntersection(sectionRef, { threshold: 0.7 });
 
   return (
     <div className="relative min-h-screen w-full px-[20px] pb-[20px] desktop:px-[80px]">
@@ -50,10 +54,12 @@ export const AboutUsSection = () => {
         </h2>
 
         {/* {open && ( */}
-        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[60px] desktop:pl-[20vw]">
+        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[60px] desktop:pl-[20vw]"
+        ref={sectionRef}
+        >
           {achievements.map((item, index) => (
             <li
-              className="relative flex translate-x-[-50px] animate-slideIn justify-between border-t-[2px] border-solid border-[#92929280] opacity-0"
+              className={`relative flex translate-x-[-50px]  justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${hasAnimated ? "animate-slideIn" : ""}`}
               key={item.id}
               style={{ animationDelay: `${index * 0.1}s` }}
             >

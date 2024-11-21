@@ -58,7 +58,7 @@ export const MobileHeader = () => {
 
   return (
     <>
-      <header className="px-[20px] h-[75px] flex justify-between items-center sticky top-0 left-0 z-20 bg-[#E9E9E94D] bg-blur-[30px] backdrop-blur-[30px]">
+      <header className="px-[20px] h-[75px] flex justify-between items-center sticky top-0 left-0 z-40 bg-[#E9E9E94D] bg-blur-[30px] backdrop-blur-[30px]">
         <Link to="/"><img src={logo} alt="Transbiotech" /></Link>
         <img
           src={menuButton}
@@ -68,7 +68,7 @@ export const MobileHeader = () => {
         />
       </header>
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-30 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex justify-center items-center">
           <div className="flex flex-col bg-gainsboro w-full max-w-md h-full overflow-y-auto p-[20px]">
             <button
               onClick={toggleMenu}

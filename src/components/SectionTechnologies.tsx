@@ -79,12 +79,12 @@ export const SectionTechnologies = ({
         технологии
       </h2>
 
-      <ul className="flex w-full flex-col rounded-[45px] desktop:h-[370px] desktop:flex-row desktop:gap-[20px]">
+      <ul className="flex w-full flex-col rounded-[45px] desktop:flex-row desktop:gap-[20px]">
         {technologies.map((tech) => (
           <li
             key={tech.id}
             className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] 
-              desktop:pointer-events-auto desktop:rounded-[36px] desktop:mt-0 desktop:pb-[30px] ${tech.id > 1 ? "shadow-tech-shadow mt-[-60px]" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""}`}
+              desktop:pointer-events-auto desktop:rounded-[36px] desktop:w-[calc((100vw-60px-160px)/4)] desktop:h-[calc((100vw-60px-160px)/4*1.5)] desktop:mt-0 desktop:pb-[30px] ${tech.id > 1 ? "shadow-tech-shadow mt-[-60px]" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""}`}
             style={
               {
                 "--hover-color": tech.color,
