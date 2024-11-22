@@ -7,7 +7,7 @@ const useScrollToTop = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 500); // Задержка для завершения анимации
+    }, 500); 
 
     return () => clearTimeout(timeout);
   }, [pathname]);
