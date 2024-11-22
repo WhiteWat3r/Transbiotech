@@ -5,7 +5,11 @@ const useScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500); // Задержка для завершения анимации
+
+    return () => clearTimeout(timeout);
   }, [pathname]);
 };
 

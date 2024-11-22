@@ -69,7 +69,7 @@ export const MobileHeader = () => {
       </header>
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex justify-center items-center">
-          <div className="flex flex-col bg-gainsboro w-full max-w-md h-full overflow-y-auto p-[20px]">
+          <div className="flex flex-col bg-gainsboro w-full h-full overflow-y-auto p-[20px]">
             <button
               onClick={toggleMenu}
               className="text-right text-gray-700 ml-auto mt-[28px] mb-[45px]"
