@@ -33,7 +33,7 @@ export const SectionMain = () => {
 
   return (
     <div
-      className={`deskop:h-[calc(100vh-115px)] relative h-[calc(100vh-75px)] w-full bg-cover`}
+      className={`relative h-[calc(750px-75px)] w-full bg-cover desktop:h-[calc(1080px-115px)]`}
     >
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
@@ -49,39 +49,41 @@ export const SectionMain = () => {
           // : "-12%",
         }}
       />
-      <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:px-[80px] desktop:pt-0">
-        <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[265px] desktop:mt-[52px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
-          <p className="">
-            {
-              "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
-            }
-          </p>
-          <p className="font-semibold">
-            {"Мы —\u00A0компания, готовая предложить большее."}
-          </p>
-        </div>
+      <div className="mx-auto w-full max-w-[1440px]">
+        <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[115px] desktop:px-[80px] desktop:pt-0">
+          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[265px] desktop:mt-[52px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
+            <p className="">
+              {
+                "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
+              }
+            </p>
+            <p className="font-semibold">
+              {"Мы —\u00A0компания, готовая предложить большее."}
+            </p>
+          </div>
 
-        <ul className="mb-[20px] flex max-w-[240px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[100%] desktop:gap-[20px]">
-          {buttons.map((btn, index) => (
-            <li key={btn.id}>
-              <button
-                className={`geologica-text " text-black-default flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium transition-all duration-300 desktop:h-[38px] desktop:animate-none desktop:text-[18px] desktop:leading-[22px] desktop:hover:translate-y-[-10px] desktop:hover:transform desktop:hover:bg-[var(--btn-color)] desktop:hover:text-white`}
-                style={
-                  {
-                    animationDelay: `${index * 0.6}s`,
-                    "--btn-color": btn.color,
-                  } as CSSProperties
-                }
-              >
-                {btn.text}
-              </button>
-            </li>
-          ))}
-        </ul>
+          <ul className="mb-[20px] flex max-w-[240px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[100%] desktop:gap-[20px]">
+            {buttons.map((btn, index) => (
+              <li key={btn.id}>
+                <button
+                  className={`geologica-text " text-black-default desktop:animate-glow-desc flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium transition-all duration-300 desktop:h-[38px] desktop:text-[18px] desktop:leading-[22px]`}
+                  style={
+                    {
+                      animationDelay: `${index * 0.6}s`,
+                      "--btn-color": btn.color,
+                    } as CSSProperties
+                  }
+                >
+                  {btn.text}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <h1 className="geologica-text z-1 text-grey-1 px-5 text-[46px] font-semibold leading-[44px] desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
+          Transbiotech. <span className="block">Продлевая жизнь</span>
+        </h1>
       </div>
-      <h1 className="geologica-text z-1 text-grey-1 px-5 text-[46px] font-semibold leading-[44px] desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
-        Transbiotech. Продлевая жизнь
-      </h1>
     </div>
   );
 };

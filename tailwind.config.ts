@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        'tech-shadow': '0px -10px 35px 0px #C6C6C6', 
+        "tech-shadow": "0px -10px 35px 0px #C6C6C6",
       },
       screens: {
         mobile: "275px",
@@ -45,7 +45,10 @@ export default {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121" },
           "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF" },
         },
-
+        "glow-desc": {
+          "0%, 50%, 100%": { backgroundColor: "white", color: "#212121",  transform: "translatey(0)" },
+          "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF",  transform: "translatey(-10px)"},
+        },
         appearBorder: {
           "0%": {
             backgroundColor: "transparent",
@@ -105,6 +108,7 @@ export default {
         slideIn: "slideIn 0.5s forwards",
         slideOut: "slideOut 0.5s forwards",
         glow: "glow 3s ease-in-out infinite",
+        "glow-desc": "glow-desc 3s ease-in-out infinite",
         fadeIn: "fadeIn 0.3s ease-out",
         fadeOut: "fadeOut 0.3s ease-out",
         appearBorder: "appearBorder 0.5s ease-out forwards",
