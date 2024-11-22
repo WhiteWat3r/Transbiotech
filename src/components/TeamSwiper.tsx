@@ -84,19 +84,23 @@ export const TeamSwiper = () => {
     setIsEnd(swiper.isEnd);
   };
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const width = window.innerWidth;
+  //     setSlidesPerView(Math.max(Math.floor(width / 200), 2));
+  //   };
+
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setSlidesPerView(Math.max(Math.floor(width / 200), 2));
-    };
+    breakpoint === "desktop" ? setSlidesPerView(6) : setSlidesPerView(2)
+  }, [breakpoint])
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <>
