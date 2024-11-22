@@ -36,7 +36,7 @@ export const AboutUsSection = () => {
   const { hasAnimated } = useIntersection(sectionRef, { threshold: 0.7 });
 
   return (
-    <div className="relative h-[750px] desktop:h-[1080px] w-full  pb-[20px]">
+    <div className="relative h-[750px] desktop:h-[800px] w-full  pb-[20px]">
       <img
         src={breakpoint === "desktop" ? bgDesktop : bg}
         alt="О нас"

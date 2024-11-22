@@ -11,7 +11,7 @@ export const SectionPromo = () => {
 
   return (
     <div
-      className={`relative z-10 flex h-[750px] w-full items-center justify-center bg-one-task-bg bg-cover bg-center transition-all duration-500 400px:bg-second-desktop-bg desktop:h-[1080px] ${
+      className={`relative z-10 flex h-[750px] w-full items-center justify-center bg-one-task-bg bg-cover bg-center transition-all duration-500 400px:bg-second-desktop-bg desktop:h-[800px] ${
         hasAnimated ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
       }`}
       style={{
