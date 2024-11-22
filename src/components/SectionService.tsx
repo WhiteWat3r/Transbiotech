@@ -3,11 +3,11 @@ import bgThird from "../assets/bg/bg-third.png";
 
 export const SectionService = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col desktop:flex-row">
+    <div className="relative flex h-[750px] desktop:h-[1080px] flex-col desktop:flex-row mx-auto w-full max-w-[1440px]">
       <img
         src={bgThird}
         alt=""
-        className="max-h-[450px] object-cover desktop:h-screen desktop:max-h-full desktop:w-[50%]"
+        className="max-h-[450px] object-cover desktop:h-full desktop:max-h-full desktop:w-[50%]"
       />
 
       <div className="flex flex-col px-[20px] desktop:justify-center desktop:bg-[#dddddd] desktop:px-[45px]">

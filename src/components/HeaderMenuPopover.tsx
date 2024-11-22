@@ -51,7 +51,7 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
         className="text-grey-2 geologica-text hover:text-black-default text-[18px] font-medium leading-[21.6px] tracking-tighter transition-colors duration-300"
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
-        onClick={() => chapter.id === 1 && navigate("/technologies")}
+        onClick={() => chapter.id === 2 && navigate("/technologies")}
       >
         {chapter.title}
       </button>

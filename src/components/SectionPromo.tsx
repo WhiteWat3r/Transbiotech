@@ -6,10 +6,8 @@ export const SectionPromo = () => {
   const sectionRef = useRef(null);
 
   const { isVisible, hasAnimated } = useIntersection(sectionRef, {
-    threshold: 0.8,
+    threshold: 0.7,
   });
-
-  console.log("isVisible", isVisible);
 
   return (
     <div

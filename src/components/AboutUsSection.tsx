@@ -36,11 +36,11 @@ export const AboutUsSection = () => {
   const { hasAnimated } = useIntersection(sectionRef, { threshold: 0.7 });
 
   return (
-    <div className="relative min-h-screen w-full px-[20px] pb-[20px] desktop:px-[80px]">
+    <div className="relative h-[750px] desktop:h-[1080px] w-full  pb-[20px]">
       <img
         src={breakpoint === "desktop" ? bgDesktop : bg}
         alt="О нас"
-        className="cover absolute right-0 top-0 z-[1] desktop:h-screen"
+        className="cover absolute right-0 top-0 z-[1] h-full"
         // onClick={() => setOpen(!open)}
       />
       <img
@@ -48,7 +48,7 @@ export const AboutUsSection = () => {
         alt="О нас"
         className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[7%] desktop:left-[5%] desktop:top-auto"
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col mx-auto w-full max-w-[1440px] px-[20px] desktop:px-[80px]">
         <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
           о нас
         </h2>
@@ -70,7 +70,7 @@ export const AboutUsSection = () => {
               <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-gainsboro">
                 0{item.id}
               </span>
-              <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-indigo desktop:min-w-[49.5vw] desktop:text-[18px] desktop:leading-[22px]">
+              <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-indigo desktop:min-w-[600px] desktop:text-[18px] desktop:leading-[22px]">
                 {item.title}
               </p>
             </li>
