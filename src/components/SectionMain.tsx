@@ -50,8 +50,8 @@ export const SectionMain = () => {
         }}
       />
       <div className="mx-auto w-full max-w-[1440px]">
-        <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[115px] desktop:px-[80px] desktop:pt-0">
-          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[265px] desktop:mt-[52px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
+        <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
+          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[260px] desktop:mt-[50px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
             <p className="">
               {
                 "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
