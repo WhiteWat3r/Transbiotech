@@ -5,8 +5,10 @@ import { SectionTechnologies } from "../components/SectionTechnologies";
 import { SectionService } from "../components/SectionService";
 import { AboutUsSection } from "../components/AboutUsSection";
 import { OurTeamSection } from "../components/OurTeamSection";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 export const Home = () => {
+  useScrollToTop();
   return (
     <main>
       <SectionMain />

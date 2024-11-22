@@ -7,6 +7,7 @@ import { MobileHeader } from "./components/MobileHeader";
 import useIsMobile from "./hooks/usIsMobile";
 import { Home } from "./pages/Home";
 import { Technologies } from "./pages/Technologies";
+import useScrollToTop from "./hooks/useScrollToTop";
 
 function App() {
   const breakpoint = useIsMobile();
