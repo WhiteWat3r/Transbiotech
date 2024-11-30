@@ -33,25 +33,25 @@ export const SectionMain = () => {
 
   return (
     <div
-      className={`relative h-[calc(750px-75px)] w-full bg-cover desktop:h-[calc(1080px-115px)]`}
+      className={`relative h-[calc(750px-75px)] w-full bg-cover desktop:h-[calc(1080px-75px)]`}
     >
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
-        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
+        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain h-full"
         style={{
           maskImage: !isDesktop
             ? "linear-gradient(to bottom, black, black 90%, transparent)"
             : "",
           top:
             //  breakpoint === "mobile" ?
-            "-12%",
+            "-9%",
           // : "-12%",
         }}
       />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
-          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[260px] desktop:mt-[50px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
+          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[260px] desktop:mt-[38px] desktop:mb-[20px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
             <p className="">
               {
                 "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
