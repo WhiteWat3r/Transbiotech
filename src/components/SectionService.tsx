@@ -6,17 +6,17 @@ export const SectionService = () => {
     <div className="relative flex h-[750px] desktop:h-[800px] flex-col desktop:flex-row mx-auto w-full max-w-[1440px]">
       <img
         src={bgThird}
-        alt=""
+        alt="Сервис"
         className="max-h-[450px] object-cover desktop:h-full desktop:max-h-full desktop:w-[50%]"
       />
 
-      <div className="flex flex-col px-[20px] desktop:justify-center desktop:bg-[#dddddd] desktop:px-[45px] desktop:w-[50%]">
-        <p className="geologica-text mb-[15px] mt-[40px] text-[27px] leading-[27px] text-[#929292] desktop:text-[56px] desktop:leading-[57px]">
+      <div className="flex flex-col px-[20px] pr-[80px] desktop:justify-center desktop:pr-[45px] desktop:bg-[#dddddd] desktop:px-[45px] desktop:w-[50%]">
+        <p className="geologica-text tracking-tighter mb-[15px] mt-[40px] text-[27px] leading-[27px] text-[#929292] desktop:text-[56px] desktop:leading-[57px]">
           {"Отдельное направление нашей\u00A0работы\u00A0—"}
           <span className="text-grey-1 block">сервис.</span>
         </p>
 
-        <p className="text-grey-1 mb-[25px] text-[14px] leading-[17px] desktop:mb-[35px] desktop:text-[22px] desktop:leading-[22px]">
+        <p className="text-grey-1 mb-[25px]  text-[14px] leading-[17px] desktop:mb-[35px]  desktop:text-[22px] desktop:leading-[22px]">
           Мы предоставляем сервисное
           <span className="block font-semibold">
             обслуживание ко всей поставляемой нами продукции.

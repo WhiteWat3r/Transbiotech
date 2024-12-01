@@ -69,7 +69,7 @@ export const AboutUsSection = () => {
                 style={{ left: item.id === 1 ? "0" : `${item.id * 20}%`, animationDelay: `${index * 0.1}s`}}
                 
               />
-              <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-gainsboro">
+              <span className="geologica-text text-[46px] mt-[20px] font-semibold leading-[46px] text-[#808080] opacity-30 desktop:font-normal desktop:mt-[10px] desktop:text-[56px] desktop:leading-[56px]">
                 0{item.id}
               </span>
               <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-indigo desktop:min-w-[600px] desktop:text-[18px] desktop:leading-[22px]">

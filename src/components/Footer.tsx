@@ -26,11 +26,11 @@ export const Footer = () => {
       <img
         src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
         alt="asd"
-        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain desktop:bottom-0 desktop:top-[70px] 1440:top-auto"
+        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[70px] 1440:top-auto"
       />
 
       <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:mt-[30px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw]">
-        <div className="geologica-text desktop:text-grey-1 relative z-30 mt-[60px] text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[72px]">
+        <div className="geologica-text desktop:text-grey-1 relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[72px]">
           {`Продлевая жизнь`}
           <p className="">{`вместе `}
             <span className="text-indigo">{`с\u00A0вами`}</span>

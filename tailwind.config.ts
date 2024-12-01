@@ -112,7 +112,7 @@ export default {
       animation: {
         slideIn: "slideIn 0.8s forwards",
         slideOut: "slideOut 0.8s forwards",
-        glow: "glow 3s ease-in-out infinite",
+        glow: "glow 3s ease-in-out",
         "glow-desc": "glow-desc 3s ease-in-out",
         fadeIn: "fadeIn 0.3s ease-out",
         fadeOut: "fadeOut 0.3s ease-out",
