@@ -8,14 +8,15 @@ export const OurTeamSection = () => {
           команда
         </h2>
 
-        <div className="mb-[42px] mt-[20px] max-w-[217px] self-end text-[14px] leading-[17px] text-[#929292] desktop:mb-[50px] desktop:mt-0 desktop:max-w-[44vw] desktop:text-[22px] desktop:leading-[26px] desktop:text-grey-2">
-          <p className="mb-[20px] desktop:mb-[28px]">
-            Transbiotech — это дружная команда единомышленников.
-          </p>
+        <div className="mb-[42px] mt-[20px] max-w-[217px] self-end text-[14px] leading-[17px] text-[#808080] desktop:mb-[50px] desktop:mt-0 desktop:max-w-[510px] desktop:text-[22px] desktop:leading-[26px] desktop:text-grey-2">
           <p className="">
-            Нас всех объединяют единые{" "}
-            <span className="rounded-[30px] border-[1px] border-indigo px-[8px]">{`цели\u00A0и\u00A0ценности`}</span>
+            Transbiotech — это дружная команда единомышленников. 
+            <span className="font-semibold">
+            {" "}Нас всех объединяют единые{" "}
+            {`цели\u00A0и\u00A0ценности`}
+          </span>
           </p>
+
         </div>
       </div>
 

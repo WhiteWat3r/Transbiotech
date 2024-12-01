@@ -123,14 +123,21 @@ export const TeamSwiper = () => {
       >
         {persons.map((person) => (
           <SwiperSlide key={person.id} className="flex justify-center">
-            <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[20px]">
-              <span className="absolute inset-0 translate-y-full rounded-[20px] bg-light-indigo opacity-0 transition-all delay-300 duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0" />
+            <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
+              {/* <span className="absolute inset-0 translate-y-full rounded-[20px] bg-light-indigo opacity-0 
+              transition-all delay-300 duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 
+              group-hover:delay-0" /> */}
 
-              <div className="absolute inset-0 flex h-[91%] translate-y-full flex-col gap-[10px] rounded-[20px] bg-indigo p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-[10%] group-hover:opacity-100 group-hover:delay-500">
-                <p className="geologica-text mt-auto text-[22px] leading-[22px]">
+              <div className="absolute inset-0 flex h-full translate-y-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3
+               text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 
+               group-hover:delay-0">
+                             {/* <div className="absolute inset-0 flex h-full  flex-col gap-[6px] rounded-[20px] bg-indigo p-[15px]
+               text-white transition-all delay-0 duration-700 ease-in-out translate-y-0 opacity-100 
+               group-hover:delay-0"> */}
+                <p className="geologica-text mt-auto text-[24px] leading-[24px] font-medium tracking-tighter">
                   {person.name}
                 </p>
-                <p className="text-[15px] lowercase leading-[18px]">
+                <p className="text-[15px] lowercase leading-[18px] font-normal tracking-tighter">
                   {person.specialization}
                 </p>
               </div>

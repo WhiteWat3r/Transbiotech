@@ -50,6 +50,10 @@ export default {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121",  transform: "translatey(0)" },
           "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF",  transform: "translatey(-10px)"},
         },
+        "circle-slideIn" : {
+          "0%": { opacity: "0", transform: "translateX(-150px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
         appearBorder: {
           "0%": {
             backgroundColor: "transparent",
@@ -106,14 +110,15 @@ export default {
         },
       },
       animation: {
-        slideIn: "slideIn 0.5s forwards",
-        slideOut: "slideOut 0.5s forwards",
+        slideIn: "slideIn 0.8s forwards",
+        slideOut: "slideOut 0.8s forwards",
         glow: "glow 3s ease-in-out infinite",
         "glow-desc": "glow-desc 3s ease-in-out",
         fadeIn: "fadeIn 0.3s ease-out",
         fadeOut: "fadeOut 0.3s ease-out",
         appearBorder: "appearBorder 0.5s ease-out forwards",
         disappearBorder: "disappearBorder 0.5s ease-out forwards",
+        "circle-slideIn": "circle-slideIn 0.8s forwards",
       },
 
       backgroundImage: {

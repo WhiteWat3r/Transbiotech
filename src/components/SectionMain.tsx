@@ -38,15 +38,15 @@ export const SectionMain = () => {
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
-        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain h-full"
+        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain 1440:max-w-[1400px]"
         style={{
-          maskImage: !isDesktop
-            ? "linear-gradient(to bottom, black, black 90%, transparent)"
-            : "",
+          maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(circle, black 70%, transparent 100%)",
           top:
             //  breakpoint === "mobile" ?
             "-9%",
           // : "-12%",
+          
         }}
       />
       <div className="mx-auto w-full max-w-[1440px]">

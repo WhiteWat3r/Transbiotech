@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Footer } from "./components/Footer";
@@ -7,7 +6,7 @@ import { MobileHeader } from "./components/MobileHeader";
 import useIsMobile from "./hooks/usIsMobile";
 import { Home } from "./pages/Home";
 import { Technologies } from "./pages/Technologies";
-import useScrollToTop from "./hooks/useScrollToTop";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   const breakpoint = useIsMobile();
@@ -15,11 +14,14 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       {breakpoint !== "desktop" ? <MobileHeader /> : <Header />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/technologies" element={<Technologies />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/technologies" element={<Technologies />} />
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );

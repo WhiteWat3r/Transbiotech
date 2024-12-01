@@ -5,7 +5,7 @@ import useIntersection from "../hooks/useIntersection";
 export const SectionPromo = () => {
   const sectionRef = useRef(null);
 
-  const { isVisible, hasAnimated } = useIntersection(sectionRef, {
+  const { hasAnimated } = useIntersection(sectionRef, {
     threshold: 0.7,
   });
 

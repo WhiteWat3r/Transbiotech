@@ -58,14 +58,16 @@ export const AboutUsSection = () => {
         ref={sectionRef}
         >
           {achievements.map((item, index) => (
+          
             <li
               className={`relative flex translate-x-[-50px]  justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${hasAnimated ? "animate-slideIn" : ""}`}
               key={item.id}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <span
-                className="z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292]"
-                style={{ left: item.id === 1 ? "0" : `${item.id * 20}%` }}
+                className={`z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292] ${index !== 0 &&  hasAnimated ? "animate-circle-slideIn" : ""}`}
+                style={{ left: item.id === 1 ? "0" : `${item.id * 20}%`, animationDelay: `${index * 0.1}s`}}
+                
               />
               <span className="geologica-text text-[60px] font-medium leading-[72px] text-[#92929280] desktop:text-gainsboro">
                 0{item.id}

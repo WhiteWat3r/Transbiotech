@@ -75,12 +75,13 @@ export const SectionTechnologies = ({
         ${fromTechPage ? "h-[calc(750px-75px)]  desktop:h-[calc(800px-75px)]" : "h-[750px] desktop:h-[800px]"} mx-auto w-full max-w-[1440px]`}
     >
       <h2
-        className={`geologica-text mt-[80px] text-grey-1 mb-[40px] text-[32px] font-medium leading-[22px] desktop:mb-[45px] desktop:text-[72px] desktop:leading-[65px]`}
+        className={`geologica-text text-grey-1 mb-[40px] text-[32px] font-medium leading-[22px] desktop:mb-[40px] desktop:text-[72px]
+           desktop:leading-[65px]`}
       >
         технологии
       </h2>
 
-      <ul className="flex w-full flex-col rounded-[45px] desktop:flex-row desktop:gap-[20px] justify-between 1440:gap-[60px]">
+      <ul className={`flex w-full flex-col rounded-[45px] desktop:flex-row desktop:gap-[20px] justify-between 1440:gap-[60px] ${fromTechPage ? "mb-[72px]" : ""}`}>
         {technologies.map((tech) => (
           <li
             key={tech.id}
