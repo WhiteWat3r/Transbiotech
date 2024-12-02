@@ -60,7 +60,7 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
         <div
           ref={popoverRef}
           className={`absolute z-50 rounded-[42px] bg-[#F8F8F8D9]  transition-opacity
-            duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-100"} `}
+            duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
           style={
             {
               // borderImageSource:
