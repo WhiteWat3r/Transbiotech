@@ -60,7 +60,7 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
         <div
           ref={popoverRef}
           className={`absolute z-50 rounded-[42px] bg-[#F8F8F8D9]  transition-opacity
-            duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} `}
+            duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-100"} `}
           style={
             {
               // borderImageSource:
@@ -73,10 +73,10 @@ export const HeaderMenuPopover = ({ chapter }: { chapter: IMenuItem }) => {
         >
           <ul className="flex flex-col gap-[20px] backdrop-blur-xl px-[44px] py-[25px] rounded-[42px]">
             {chapter.links.map((link) => (
-              <li key={link.linkId} className="max-w-[100px]">
+              <li key={link.linkId} className="">
                 <a
                   href={link.href}
-                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[2px] transition-colors duration-300 text-wrap"
+                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[2px] transition-colors duration-300 max-w-[100px] text-wrap break-words"
                 >
                   {link.text}
                 </a>

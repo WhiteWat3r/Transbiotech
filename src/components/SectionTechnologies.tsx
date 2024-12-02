@@ -30,7 +30,7 @@ const technologies = [
   },
   {
     id: 2,
-    title: "Кардио хирургия",
+    title: "Кардиохирургия",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#90882B",
     logo: techLogoSecondMobile,
