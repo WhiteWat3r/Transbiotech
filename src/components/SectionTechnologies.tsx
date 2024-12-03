@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useRef } from "react";
 
 import techLogoFirst from "../assets/technologies/tech-logo-first.svg";
 import techLogoSecond from "../assets/technologies/tech-logo-second.svg";
@@ -16,11 +16,12 @@ import techBgThird from "../assets/technologies/bg-third.svg";
 import techBgFourth from "../assets/technologies/bg-fourth.svg";
 
 import useIsMobile from "../hooks/usIsMobile";
+import useIntersection from "../hooks/useIntersection";
 
 const technologies = [
   {
     id: 1,
-    title: "Перфузионные технологии",
+    title: "Перфузион\u00ADные технологии",
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#6A78C1",
     logo: techLogoFirstMobile,
@@ -30,7 +31,7 @@ const technologies = [
   },
   {
     id: 2,
-    title: "Кардиохирургия",
+    title:`Кардио\u00ADхирургия`,
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#90882B",
     logo: techLogoSecondMobile,
@@ -65,30 +66,35 @@ export const SectionTechnologies = ({
 }: {
   fromTechPage?: boolean;
 }) => {
-  const breakpoint = useIsMobile();
+  const sectionRef = useRef(null);
 
+  const breakpoint = useIsMobile();
+  const { hasAnimated } = useIntersection(sectionRef, {
+    threshold: 0.7,
+  });
   const isDesktop = breakpoint === "desktop";
 
   return (
     <div
-      className={`bg-platinum relative flex w-full flex-col justify-center px-[20px] pb-[20px] desktop:px-[80px] 
-        ${fromTechPage ? "h-[calc(750px-75px)]  desktop:h-[calc(800px-75px)]" : "h-[750px] desktop:h-[800px]"} mx-auto w-full max-w-[1440px]`}
+      className={`relative flex w-full flex-col justify-center bg-platinum px-[20px] pb-[20px] desktop:px-[80px] ${fromTechPage ? "h-[calc(750px-75px)] desktop:h-[calc(800px-75px)]" : "h-[750px] desktop:h-[800px]"} mx-auto w-full max-w-[1440px]`}
+      ref={sectionRef}
     >
       <h2
-        className={`geologica-text text-grey-1 mb-[40px] text-[32px] font-medium leading-[22px] desktop:mb-[40px] desktop:text-[72px]
-           desktop:leading-[65px]`}
+        className={`geologica-text mb-[40px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[40px] desktop:text-[72px] desktop:leading-[65px]`}
       >
         технологии
       </h2>
 
-      <ul className={`flex w-full flex-col rounded-[45px] desktop:flex-row desktop:gap-[20px] justify-between 1440:gap-[60px] ${fromTechPage ? "mb-[72px]" : ""}`}>
-        {technologies.map((tech) => (
+      <ul
+        className={`flex w-full flex-col justify-between rounded-[45px] desktop:flex-row desktop:gap-[20px] 1440:gap-[60px] ${fromTechPage ? "mb-[72px]" : ""}`}
+      >
+        {technologies.map((tech, index) => (
           <li
             key={tech.id}
-            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] 
-              desktop:pointer-events-auto desktop:rounded-[36px] desktop:w-full desktop:h-[370px] desktop:mt-0 desktop:pb-[30px] desktop:shadow-none ${tech.id > 1 ? "shadow-tech-shadow mt-[-60px]" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""}`}
+            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] desktop:pointer-events-auto desktop:mt-0 desktop:h-[370px] desktop:w-full desktop:rounded-[36px] desktop:pb-[30px] desktop:shadow-none ${tech.id > 1 ? "mt-[-60px] shadow-tech-shadow" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""} animate-technologies-slide-in desktop:animate-none`}
             style={
               {
+                animationDelay: !isDesktop ? `${index * 0.1}s` : "",
                 "--hover-color": tech.color,
               } as CSSProperties
             }

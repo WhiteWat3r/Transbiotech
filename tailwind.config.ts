@@ -54,6 +54,10 @@ export default {
           "0%": { opacity: "0", transform: "translateX(-150px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        "technologies-slide-in" : {
+          "0%": { transform: "translateY(120px)", opacity: 0 },
+          "100%": { transform: "translateY(0)",opacity: 1 },
+        },
         appearBorder: {
           "0%": {
             backgroundColor: "transparent",
@@ -119,6 +123,7 @@ export default {
         appearBorder: "appearBorder 0.5s ease-out forwards",
         disappearBorder: "disappearBorder 0.5s ease-out forwards",
         "circle-slideIn": "circle-slideIn 0.8s forwards",
+        "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards"
       },
 
       backgroundImage: {
