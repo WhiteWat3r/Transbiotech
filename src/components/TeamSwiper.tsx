@@ -98,7 +98,7 @@ export const TeamSwiper = () => {
   //   };
   // }, []);
   useEffect(() => {
-    breakpoint === "desktop" ? setSlidesPerView(6) : setSlidesPerView(2)
+    breakpoint === "desktop" ? setSlidesPerView(6) : breakpoint === "tablet" ? setSlidesPerView(4) : setSlidesPerView(2)
   }, [breakpoint])
 
 
