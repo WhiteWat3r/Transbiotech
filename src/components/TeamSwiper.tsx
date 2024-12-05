@@ -104,7 +104,7 @@ export const TeamSwiper = () => {
 
   return (
     <>
-      <Swiper
+      {/* <Swiper
         modules={[Grid]}
         spaceBetween={15}
         slidesPerView={slidesPerView}
@@ -120,9 +120,10 @@ export const TeamSwiper = () => {
           setIsEnd(swiper.isEnd);
         }}
         onSlideChange={handleSlideChange}
-      >
+      > */}
+      <div className="flex flex-wrap gap-5 justify-center">
         {persons.map((person) => (
-          <SwiperSlide key={person.id} className="flex justify-center">
+          <div key={person.id} className="flex justify-center w-[157px]">
             <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
               {/* <span className="absolute inset-0 translate-y-full rounded-[20px] bg-light-indigo opacity-0 
               transition-all delay-300 duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 
@@ -148,10 +149,11 @@ export const TeamSwiper = () => {
                 alt={`Врач ${person.id}`}
               />
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
-      <div className="mt-[20px] flex justify-center gap-[18px] pb-[22px]">
+        </div>
+      {/* </Swiper> */}
+      {/* <div className="mt-[20px] flex justify-center gap-[18px] pb-[22px]">
         <button
           onClick={() => {
             if (swiperRef.current) {
@@ -178,7 +180,7 @@ export const TeamSwiper = () => {
         >
           <img src={arrowRight} alt={"Вперед"} />
         </button>
-      </div>
+      </div> */}
     </>
   );
 };

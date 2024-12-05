@@ -24,7 +24,7 @@ export const Header = () => {
     window.addEventListener("resize", calculateHeaderWidth);
     return () => window.removeEventListener("resize", calculateHeaderWidth);
   }, [isScrolled]);
-
+// устанавливать src картинки через useEffect
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
