@@ -28,7 +28,6 @@ import person27 from "../assets/doctors/27.png";
 import person28 from "../assets/doctors/28.png";
 import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
-import { useEffect, useRef, useState } from "react";
 
 const persons = [
   { id: 1, photo: person1, name: "Доктор А", specialization: "Кардиолог" },
@@ -64,53 +63,12 @@ const persons = [
 ];
 
 export const TeamSwiper = () => {
-  const CARD_WIDTH = 156; // Ширина карточки (в пикселях)
-  const GAP = 20; // Промежуток между карточками (в пикселях)
-
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [cardsPerRow, setCardsPerRow] = useState(0);
-
-  useEffect(() => {
-    const calculateCardsPerRow = () => {
-      if (containerRef.current) {
-        const containerWidth = containerRef.current.offsetWidth;
-        const totalCardWidth = CARD_WIDTH + GAP;
-        const cards = Math.floor((containerWidth + GAP) / totalCardWidth);
-        setCardsPerRow(cards);
-      }
-    };
-
-    calculateCardsPerRow();
-    window.addEventListener("resize", calculateCardsPerRow);
-
-    return () => window.removeEventListener("resize", calculateCardsPerRow);
-  }, []);
-
-  const additionalCards = cardsPerRow
-    ? (cardsPerRow - (persons.length % cardsPerRow)) % cardsPerRow
-    : 0;
-
-  const filledPersons = [
-    ...persons,
-    ...Array(additionalCards).fill({ id: "placeholder", isPlaceholder: true }),
-  ];
-
   return (
-    <div
-      ref={containerRef}
-      className="flex flex-wrap justify-between gap-[20px]"
-    >
-      {filledPersons.map((person, index) =>
-        person.isPlaceholder ? (
-          <div
-            key={`placeholder-${index}`}
-            className="w-[156px] invisible"
-          />
-        ) : (
-          <div
-            key={person.id}
-            className="w-[156px] flex-shrink-0"
-          >
+    <>
+      <div className="grid grid-cols-6 gap-[20px]">
+        {" "}
+        {persons.map((person) => (
+          <div key={person.id} className="flex w-[156px] justify-center">
             <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
               <div className="absolute inset-0 flex h-full translate-y-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0">
                 <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
@@ -120,6 +78,7 @@ export const TeamSwiper = () => {
                   {person.specialization}
                 </p>
               </div>
+
               <img
                 src={person.photo}
                 className="h-full w-full rounded-[20px] object-cover"
@@ -127,8 +86,8 @@ export const TeamSwiper = () => {
               />
             </div>
           </div>
-        )
-      )}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
