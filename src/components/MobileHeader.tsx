@@ -17,7 +17,7 @@ export const menuItems:IMenuItem[] = [
     title: "о компании",
     links: [
       { linkId: 1, text: "документы", href: "" },
-      { linkId: 2, text: "миссия и ценности", href: "" },
+      { linkId: 2, text: "миссия и\u00A0ценности", href: "" },
       { linkId: 3, text: "новости", href: "" },
     ],
   },

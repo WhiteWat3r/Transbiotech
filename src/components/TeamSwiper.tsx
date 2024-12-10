@@ -28,6 +28,7 @@ import person27 from "../assets/doctors/27.png";
 import person28 from "../assets/doctors/28.png";
 import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
+import useIsMobile from "../hooks/usIsMobile";
 
 const persons = [
   { id: 1, photo: person1, name: "Доктор А", specialization: "Кардиолог" },
@@ -63,11 +64,16 @@ const persons = [
 ];
 
 export const TeamSwiper = () => {
+  const breakpoint = useIsMobile();
+  const isMobile = breakpoint === "mobile";
+
+  const mobilePersons = persons.slice(0, 6);
+
   return (
     <>
-      <div className="grid grid-cols-2  desktop:grid-cols-6 gap-[15px] desktop:gap-[20px]">
+      <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
         {" "}
-        {persons.map((person) => (
+        {(isMobile ? mobilePersons : persons).map((person) => (
           <div key={person.id} className="flex justify-center">
             <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
               <div className="absolute inset-0 flex h-full translate-y-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0">
