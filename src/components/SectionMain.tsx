@@ -7,12 +7,12 @@ import useIsMobile from "../hooks/usIsMobile";
 const buttons = [
   {
     id: 1,
-    text: "перфузия",
+    text: "перфузионные технологии",
     color: "#6A78C1",
   },
   {
     id: 2,
-    text: "кардиология",
+    text: "кардихирургия",
     color: "#90882B",
   },
   {
@@ -62,7 +62,7 @@ export const SectionMain = () => {
             </p>
           </div>
 
-          <ul className="mb-[20px] flex max-w-[240px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[100%] desktop:gap-[20px]">
+          <ul className="mb-[20px] flex max-w-[240px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[50%] desktop:gap-[20px]">
             {buttons.map((btn, index) => (
               <li key={btn.id}>
                 <button
