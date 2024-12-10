@@ -32,7 +32,7 @@ export const SectionMain = () => {
   const isDesktop = breakpoint !== "mobile";
 
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const [sectionHeight, setSectionHeight] = useState<number | null>(null);
+  const [sectionHeight, setSectionHeight] = useState<number | null>();
 
   const updateSectionHeight = () => {
     if (isDesktop && imgRef.current) {
@@ -52,7 +52,7 @@ export const SectionMain = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isDesktop]);
+  }, [isDesktop, imgRef.current]);
 
   console.log("sectionHeight", sectionHeight);
 
