@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { CSSProperties, useRef, useState } from "react";
 import bg from "../assets/bg/about-us-bg.png";
 import bgDesktop from "../assets/bg-desktop.png";
 import bubble from "../assets/bubble.png";
@@ -33,8 +33,9 @@ export const AboutUsSection = () => {
   const breakpoint = useIsMobile();
   const sectionRef = useRef(null);
 
-  const { hasAnimated } = useIntersection(sectionRef, { threshold: 0.7 });
-
+  const { isVisible } = useIntersection(sectionRef, {
+    threshold: 0.9,
+  });
   return (
     <div className="relative h-[750px] desktop:h-[800px] w-full pb-[20px]">
       <img
@@ -60,13 +61,16 @@ export const AboutUsSection = () => {
           {achievements.map((item, index) => (
           
             <li
-              className={`relative flex translate-x-[-50px]  justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${hasAnimated ? "animate-slideIn" : ""}`}
+              className={`relative flex translate-x-[-50px]  justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${isVisible ? "animate-slideIn" : "animate-slideOut"}`}
               key={item.id}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              // style={{ animationDelay: `${index * 0.1}s` }}
             >
               <span
-                className={`z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292] ${index !== 0 &&  hasAnimated ? "animate-circle-slideIn" : ""}`}
-                style={{ left: item.id === 1 ? "0" : `${item.id * 20}%`, animationDelay: `${index * 0.1}s`}}
+                className={`z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292] ${index !== 0 &&  isVisible ? "animate-circle-slideIn" : "animate-circle-slideOut"}`}
+                style={{
+                  // animationDelay: `${index * 0.1}s`
+                  "--init-left": item.id === 1 ? "0" : item.id === 2 ? "35%" : item.id === 3 ? "58%" :  "92%",
+                } as CSSProperties}
                 
               />
               <span className="geologica-text text-[46px] mt-[20px] font-semibold leading-[46px] text-[#808080] opacity-30 desktop:font-normal desktop:mt-[10px] desktop:text-[56px] desktop:leading-[56px]">

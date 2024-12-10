@@ -11,7 +11,7 @@ export default {
         "400px": "400px",
         tablet: "640px",
         desktop: "1040px",
-        "1440" : "1440px"
+        "1440": "1440px",
       },
 
       colors: {
@@ -35,34 +35,47 @@ export default {
       },
       keyframes: {
         slideIn: {
-          "0%": { opacity: "0", transform: "translateX(-50px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
+          "0%": { opacity: "0", transform: "translateY(100px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         slideOut: {
-          "0%": { opacity: "1", transform: "translateX(0)" },
-          "100%": { opacity: "0", transform: "translateX(-50px)" },
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-100px)" },
         },
         glow: {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121" },
           "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF" },
         },
         "glow-desc": {
-          "0%, 50%, 100%": { backgroundColor: "white", color: "#212121",  transform: "translatey(0)" },
-          "25%": { backgroundColor: "var(--btn-color)", color: "#FFFFFF",  transform: "translatey(-10px)"},
+          "0%, 50%, 100%": {
+            backgroundColor: "white",
+            color: "#212121",
+            transform: "translatey(0)",
+          },
+          "25%": {
+            backgroundColor: "var(--btn-color)",
+            color: "#FFFFFF",
+            transform: "translatey(-10px)",
+          },
         },
-        "circle-slideIn" : {
-          "0%": { opacity: "0", transform: "translateX(-150px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
+        "circle-slideIn": {
+          "0%": { opacity: 0, left: 0 },
+          "100%": { opacity: 1, left: "var(--init-left)" },
         },
-        "technologies-slide-in" : {
+        "circle-slideOut": {
+          "0%": { opacity: 1, left: "var(--init-left)" },
+          "20%": { left: "calc(var(--init-left) + 5%)" },
+          "80%": { opacity: 1 },
+          "100%": { opacity: 0, left: 0 },
+        },
+        "technologies-slide-in": {
           "0%": { transform: "translateY(120px)", opacity: 0 },
-          "100%": { transform: "translateY(0)",opacity: 1 },
+          "100%": { transform: "translateY(0)", opacity: 1 },
         },
         appearBorder: {
           "0%": {
             backgroundColor: "transparent",
             border: "2px solid transparent",
-
             backdropFilter: "blur(0px)",
           },
           "60%": {
@@ -123,7 +136,8 @@ export default {
         appearBorder: "appearBorder 0.5s ease-out forwards",
         disappearBorder: "disappearBorder 0.5s ease-out forwards",
         "circle-slideIn": "circle-slideIn 0.8s forwards",
-        "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards"
+        "circle-slideOut": "circle-slideOut 0.8s forwards",
+        "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards",
       },
 
       backgroundImage: {

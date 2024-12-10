@@ -79,7 +79,7 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
               <li key={link.linkId} className="">
                 <a
                   href={link.href}
-                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[20px] transition-colors duration-300 max-w-[100px] text-wrap break-words"
+                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[20px] whitespace-pre-wrap transition-colors duration-300 max-w-[100px] text-wrap break-words"
                 >
                   {link.text}
                 </a>
