@@ -65,10 +65,10 @@ const persons = [
 export const TeamSwiper = () => {
   return (
     <>
-      <div className="grid grid-cols-6 gap-[20px]">
+      <div className="grid grid-cols-2  desktop:grid-cols-6 gap-[15px] desktop:gap-[20px]">
         {" "}
         {persons.map((person) => (
-          <div key={person.id} className="flex w-[156px] justify-center">
+          <div key={person.id} className="flex justify-center">
             <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
               <div className="absolute inset-0 flex h-full translate-y-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0">
                 <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
