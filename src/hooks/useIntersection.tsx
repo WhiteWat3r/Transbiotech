@@ -9,9 +9,9 @@ const useIntersection = (
   options: UseIntersectionOptions = { threshold: 0.7 },
 ) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [hasAnimated, setHasAnimated] = useState<boolean>(false); // Флаг для анимации
+  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
   const observer = useRef<IntersectionObserver | null>(null);
-  const lastScrollY = useRef(0); // Для отслеживания направления прокрутки
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const element = ref.current;
@@ -19,21 +19,20 @@ const useIntersection = (
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
 
-      // Проверяем направление прокрутки
       const isScrollingDown = window.scrollY > lastScrollY.current;
 
       if (entry.isIntersecting) {
-        // Если элемент видим и прокрутка идет сверху вниз, проигрываем анимацию
         if (!hasAnimated && isScrollingDown) {
           setIsVisible(true);
-          setHasAnimated(true); // Устанавливаем, что анимация уже была
+          setHasAnimated(true);
         }
       } else {
-        // Если элемент выходит из области видимости, сбрасываем видимость
-        setIsVisible(false);
+        if (!isScrollingDown) {
+          setIsVisible(false);
+          setHasAnimated(false);
+        }
       }
 
-      // Обновляем последнее значение прокрутки
       lastScrollY.current = window.scrollY;
     };
 

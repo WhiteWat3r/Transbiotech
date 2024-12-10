@@ -62,7 +62,7 @@ export const SectionMain = () => {
             </p>
           </div>
 
-          <ul className="mb-[20px] flex max-w-[240px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[50%] desktop:gap-[20px]">
+          <ul className="mb-[20px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] 1440:max-w-[40%] desktop:gap-[20px]">
             {buttons.map((btn, index) => (
               <li key={btn.id}>
                 <button

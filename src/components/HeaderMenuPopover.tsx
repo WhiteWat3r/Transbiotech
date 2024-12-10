@@ -48,7 +48,8 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
       <button
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className="text-grey-2 geologica-text hover:text-black-default text-[18px] font-medium leading-[21.6px] tracking-tighter transition-colors duration-300"
+        className="text-grey-2 geologica-text hover:text-black-default text-[18px] font-medium leading-[21.6px] tracking-tighter 
+        transition-colors duration-300"
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
         onClick={() => chapter.id === 2 && navigate("/technologies")}
@@ -71,13 +72,14 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
           onMouseEnter={handleMouseEnter}
           role="dialog"
         >
-          <div className="bg-[#F8F8F8D9] rounded-[42px]">
-          <ul className={`flex flex-col gap-[20px] backdrop-blur-xl px-[44px] py-[25px] rounded-[42px]`}>
+           {/* backdrop-blur-xl */}
+          <div className="bg-[#F8F8F8D9] rounded-[42px] border-2 border-white">
+          <ul className={`flex flex-col gap-[20px] px-[44px] py-[25px] rounded-[42px]`}>
             {chapter.links.map((link) => (
               <li key={link.linkId} className="">
                 <a
                   href={link.href}
-                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[2px] transition-colors duration-300 max-w-[100px] text-wrap break-words"
+                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[20px] transition-colors duration-300 max-w-[100px] text-wrap break-words"
                 >
                   {link.text}
                 </a>
