@@ -44,6 +44,10 @@ export const SectionMain = () => {
 
   useEffect(() => {
     updateSectionHeight();
+  }, [isDesktop, imgRef.current]);
+
+  useEffect(() => {
+    updateSectionHeight();
 
     const handleResize = () => updateSectionHeight();
 
@@ -52,7 +56,7 @@ export const SectionMain = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isDesktop, imgRef.current]);
+  }, [isDesktop]);
 
   console.log("sectionHeight", sectionHeight);
 
