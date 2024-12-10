@@ -41,7 +41,9 @@ export const SectionMain = () => {
       setSectionHeight(null);
     }
   };
-
+  const handleImageLoad = () => {
+    updateSectionHeight();
+  };
   useEffect(() => {
     updateSectionHeight();
   }, [isDesktop, imgRef.current]);
@@ -83,6 +85,7 @@ export const SectionMain = () => {
             "-9%",
           // : "-12%",
         }}
+        onLoad={handleImageLoad}
       />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
