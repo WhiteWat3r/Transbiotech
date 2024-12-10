@@ -40,7 +40,7 @@ export default {
         },
         slideOut: {
           "0%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(-100px)" },
+          "100%": { opacity: "0", transform: "translateY(-50px)" },
         },
         glow: {
           "0%, 50%, 100%": { backgroundColor: "white", color: "#212121" },
@@ -65,8 +65,7 @@ export default {
         "circle-slideOut": {
           "0%": { opacity: 1, left: "var(--init-left)" },
           "20%": { left: "calc(var(--init-left) + 5%)" },
-          "80%": { opacity: 1 },
-          "100%": { opacity: 0, left: 0 },
+          "100%": { opacity: 1, left: 0 },
         },
         "technologies-slide-in": {
           "0%": { transform: "translateY(120px)", opacity: 0 },

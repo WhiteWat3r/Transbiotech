@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import bgMain from "../../public/tailwindBackgrounds/bg-main.png";
 import bgMainDesktop from "../../public/tailwindBackgrounds/main-desktop.png";
 
@@ -29,29 +29,60 @@ const buttons = [
 
 export const SectionMain = () => {
   const breakpoint = useIsMobile();
-  const isDesktop = breakpoint === "desktop";
+  const isDesktop = breakpoint !== "mobile";
+
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [sectionHeight, setSectionHeight] = useState<number | null>(null);
+
+  const updateSectionHeight = () => {
+    if (isDesktop && imgRef.current) {
+      setSectionHeight(imgRef.current.offsetHeight);
+    } else {
+      setSectionHeight(null);
+    }
+  };
+
+  useEffect(() => {
+    updateSectionHeight();
+
+    const handleResize = () => updateSectionHeight();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isDesktop]);
+
+  console.log("sectionHeight", sectionHeight);
 
   return (
     <div
-      className={`relative h-[calc(750px-75px)] w-full bg-cover desktop:h-[calc(1080px-75px)]`}
+      className={`relative w-full bg-cover`}
+      style={{
+        height: isDesktop
+          ? `calc(${sectionHeight}px - 75px)`
+          : "calc(750px - 75px)",
+      }}
     >
       <img
+        ref={imgRef}
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
         className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
         style={{
           maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(circle, black 70%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(circle, black 70%, transparent 100%)",
           top:
             //  breakpoint === "mobile" ?
             "-9%",
           // : "-12%",
-          
         }}
       />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
-          <div className="text-grey-1 ml-auto max-w-[218px] text-[14px] leading-[16px] desktop:mr-[260px] desktop:mt-[38px] desktop:mb-[20px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
+          <div className="ml-auto max-w-[218px] text-[14px] leading-[16px] text-grey-1 desktop:mb-[20px] desktop:mr-[260px] desktop:mt-[38px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
             <p className="">
               {
                 "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
@@ -62,11 +93,11 @@ export const SectionMain = () => {
             </p>
           </div>
 
-          <ul className="mb-[20px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] 1440:max-w-[40%] desktop:gap-[20px]">
+          <ul className="mb-[20px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] desktop:gap-[20px] 1440:max-w-[40%]">
             {buttons.map((btn, index) => (
               <li key={btn.id}>
                 <button
-                  className={`geologica-text " text-black-default desktop:animate-glow-desc flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium transition-all duration-300 desktop:h-[38px] desktop:text-[18px] desktop:leading-[22px]`}
+                  className={`geologica-text " flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium text-black-default transition-all duration-300 desktop:h-[38px] desktop:animate-glow-desc desktop:text-[18px] desktop:leading-[22px]`}
                   style={
                     {
                       animationDelay: `${index * 0.6}s`,
@@ -80,7 +111,7 @@ export const SectionMain = () => {
             ))}
           </ul>
         </div>
-        <h1 className="geologica-text z-1 text-grey-1 px-5 text-[46px] font-semibold leading-[44px] desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
+        <h1 className="geologica-text z-1 px-5 text-[46px] font-semibold leading-[44px] text-grey-1 desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
           Transbiotech. <span className="block">Продлевая жизнь</span>
         </h1>
       </div>
