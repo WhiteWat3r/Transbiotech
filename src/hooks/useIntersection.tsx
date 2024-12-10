@@ -18,10 +18,14 @@ const useIntersection = (
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       const [entry] = entries;
 
-      if (entry.isIntersecting && !hasAnimated) {
+      if (entry.isIntersecting) {
         setIsVisible(true);
-        setHasAnimated(true);
-      } else if (!entry.isIntersecting && hasAnimated) {
+
+        // Установим `hasAnimated` в true только один раз
+        if (!hasAnimated) {
+          setHasAnimated(true);
+        }
+      } else {
         setIsVisible(false);
       }
     };
@@ -42,3 +46,4 @@ const useIntersection = (
 };
 
 export default useIntersection;
+

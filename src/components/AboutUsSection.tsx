@@ -36,17 +36,17 @@ export const AboutUsSection = () => {
   const { hasAnimated } = useIntersection(sectionRef, { threshold: 0.7 });
 
   return (
-    <div className="relative h-[750px] desktop:h-[800px] w-full  pb-[20px]">
+    <div className="relative h-[750px] desktop:h-[800px] w-full pb-[20px]">
       <img
         src={breakpoint === "desktop" ? bgDesktop : bg}
         alt="О нас"
-        className="cover absolute right-0 top-0 z-[1] h-full"
+        className="cover absolute right-0 top-0 z-[1] h-full desktop:top-[-22%] desktop:h-[105%]"
         // onClick={() => setOpen(!open)}
       />
       <img
         src={breakpoint === "desktop" ? bubbleDesktop : bubble}
         alt="О нас"
-        className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[7%] desktop:left-[5%] desktop:top-auto"
+        className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[4%] desktop:left-[5%] desktop:top-auto"
       />
       <div className="flex flex-col mx-auto w-full max-w-[1440px] px-[20px] desktop:px-[80px]">
         <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
@@ -54,7 +54,7 @@ export const AboutUsSection = () => {
         </h2>
 
         {/* {open && ( */}
-        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[60px] desktop:pl-[20vw]"
+        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[65px] desktop:pl-[20vw]"
         ref={sectionRef}
         >
           {achievements.map((item, index) => (

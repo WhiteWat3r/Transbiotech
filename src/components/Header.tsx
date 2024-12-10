@@ -70,7 +70,7 @@ export const Header = () => {
       >
         <ul className="flex h-[22px] gap-[37px]">
           {menuItems.map((item) => (
-            <HeaderMenuPopover chapter={item} key={item.id} />
+            <HeaderMenuPopover chapter={item} key={item.id} isScrolled={isScrolled}/>
           ))}
         </ul>
       </nav>

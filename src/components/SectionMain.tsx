@@ -38,7 +38,7 @@ export const SectionMain = () => {
       <img
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Задний фон"
-        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain 1440:max-w-[1400px]"
+        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
         style={{
           maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(circle, black 70%, transparent 100%)",

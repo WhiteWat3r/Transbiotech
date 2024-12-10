@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import bg from "../../public/tailwindBackgrounds/second-desktop.png";
 import useIntersection from "../hooks/useIntersection";
 
 export const SectionPromo = () => {
   const sectionRef = useRef(null);
 
-  const { hasAnimated } = useIntersection(sectionRef, {
+  const { isVisible } = useIntersection(sectionRef, {
     threshold: 0.7,
   });
 
@@ -22,7 +22,7 @@ export const SectionPromo = () => {
         src={bg}
         alt=""
         className={`absolute left-0 top-0 h-full w-full object-cover transition-all duration-1000 ${
-          hasAnimated ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
         }`}
       />
       <div className="desktop:px-40px relative z-10 mx-auto flex w-full max-w-[1440px] justify-end px-[40px]">
@@ -30,7 +30,7 @@ export const SectionPromo = () => {
           className={`geologica-text flex flex-col text-center text-[27px] leading-[27px] tracking-tighter before:px-[30px] desktop:ml-auto desktop:mr-[77px] desktop:max-w-[350px] desktop:gap-[40px] desktop:text-start desktop:text-[46px] desktop:leading-[40px]`}
         >
           <span
-            className={`text-platinum transition-opacity duration-300 ${hasAnimated ? "opacity-100" : "opacity-0"}`}
+            className={`text-platinum transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0"}`}
           >
             {"четыре направления\u00A0–"}
           </span>
