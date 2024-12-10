@@ -54,7 +54,7 @@ export const AboutUsSection = () => {
         </h2>
 
         {/* {open && ( */}
-        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[65px] desktop:pl-[20vw]"
+        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[65px] desktop:pl-[245px]"
         ref={sectionRef}
         >
           {achievements.map((item, index) => (
