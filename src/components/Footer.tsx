@@ -22,32 +22,33 @@ export const Footer = () => {
   const breakpoint = useIsMobile();
 
   return (
-    <footer className="relative flex h-screen w-full flex-col justify-center px-[20px] desktop:pl-[80px] desktop:pr-0 overflow-hidden">
+    <footer className="relative flex h-screen w-full flex-col justify-center px-[20px] desktop:pl-[80px] desktop:pr-0 overflow-hidden desktop:justify-end desktop:h-[770px]">
       <img
         src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
         alt="asd"
-        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[70px] 1440:top-auto"
+        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[50px] 1440:top-auto"
       />
 
-      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:mt-[30px] desktop:h-auto desktop:rounded-l-[45px] desktop:rounded-tr-[0] desktop:pl-[29.5vw]">
-        <div className="geologica-text desktop:text-grey-1 relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:mt-[3vh] desktop:text-[72px] desktop:leading-[72px]">
+      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:p-[80px] desktop:mt-[30px] desktop:rounded-0 desktop:rounded-t-none 
+      desktop:rounded-tl-[45px] desktop:pl-[29.5vw] desktop:h-[600px]">
+        <div className="geologica-text desktop:text-grey-1 relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:text-[72px] desktop:leading-[72px]">
           {`Продлевая жизнь`}
           <p className="">{`вместе `}
             <span className="text-indigo">{`с\u00A0вами`}</span>
           </p>
         </div>
 
-        <ul className="relative z-30 mt-[40px] flex flex-col gap-[5px] desktop:mt-[11vh] desktop:gap-[20px]">
-          <li className="flex gap-[50px] desktop:gap-[65px]">
+        <ul className="relative z-30 mt-[40px] flex flex-col gap-[5px] desktop:mt-[80px] desktop:gap-[40px]">
+          <li className="flex gap-[50px] desktop:gap-[63px]">
             <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2 desktop:text-[24px] desktop:leading-[29px]">
               контакты
             </p>
             <div className="text-grey-1 flex flex-col gap-[10px] text-[14px] desktop:max-w-[444px] desktop:gap-[15px] 
-            desktop:text-[18px] desktop:leading-[22px] desktop:flex-row">
+            desktop:text-[18px] desktop:leading-[22px] desktop:flex-row desktop:mt-1">
               <span>
                 г. Санкт-Петербург, Звенигородская ул., д. 8-10, лит. Б, офис 42
               </span>
-              <div className="flex flex-col gap-[10px] desktop:gap-[15px]">
+              <div className="flex flex-col gap-[10px] desktop:gap-[25px]">
 
               <span className="underline desktop:no-underline">
                 +7 (915) 291-75-19
@@ -62,7 +63,7 @@ export const Footer = () => {
               </div>
             </div>
           </li>
-          <li className="flex gap-[50px] desktop:gap-[65px]">
+          <li className="flex gap-[50px] desktop:gap-[63px]">
             <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2 desktop:text-[24px] desktop:leading-[29px]">
               документы
             </p>
@@ -89,10 +90,11 @@ export const Footer = () => {
           <img
             src={footerLogo}
             alt={"Transbiotech"}
-            className="absolute bottom-[33px] left-[89px] z-30"
+            className="absolute bottom-[56px] left-[86px] z-30"
           />
         )}
       </div>
+
     </footer>
   );
 };
