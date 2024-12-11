@@ -192,7 +192,7 @@ const DoctorInfo = memo(
         className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity ease-in-out ${
           activeIndex === index
             ? "opacity-100 delay-[0] duration-[900ms]"
-            : "opacity-0 delay-[0] duration-[100ms]"
+            : "opacity-0 delay-[0] duration-[300ms]"
         }`}
       >
         {person && (
