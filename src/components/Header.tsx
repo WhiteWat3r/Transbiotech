@@ -64,10 +64,11 @@ export const Header = () => {
       </Link>
 
       <nav
-        className={`whitespace-nowrap rounded-[42px] px-[38px] py-[12px] transition-all duration-500 ${
+        className={`whitespace-nowrap rounded-[42px] relative px-[38px] py-[12px] transition-all duration-500 ${
           isScrolled ? "animate-appearBorder" : "animate-disappearBorder"
         }`}
       >
+        {/* <span className="absolute w-full h-full rounded-[42px] top-0 left-0 backdrop-blur-[5px] bg-[#F8F8F8D9]" /> */}
         <ul className="flex h-[22px] gap-[37px]">
           {menuItems.map((item) => (
             <HeaderMenuPopover chapter={item} key={item.id} isScrolled={isScrolled}/>

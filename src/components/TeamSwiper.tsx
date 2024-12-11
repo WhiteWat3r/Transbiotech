@@ -29,6 +29,7 @@ import person28 from "../assets/doctors/28.png";
 import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
+import { useEffect, useRef, useState } from "react";
 
 const persons = [
   { id: 1, photo: person1, name: "Доктор А", specialization: "Кардиолог" },
@@ -49,51 +50,93 @@ const persons = [
   { id: 16, photo: person16, name: "Доктор Р", specialization: "Пульмонолог" },
   { id: 17, photo: person17, name: "Доктор С", specialization: "Хирург" },
   { id: 18, photo: person18, name: "Доктор Т", specialization: "Терапевт" },
-  // { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
-  // { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
-  // { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
-  // { id: 22, photo: person22, name: "Доктор Ц", specialization: "фывфыв" },
-  // { id: 23, photo: person23, name: "Доктор Ч", specialization: "Офтальмолог" },
-  // { id: 24, photo: person24, name: "Доктор Ш", specialization: "Стоматолог" },
-  // { id: 25, photo: person25, name: "Доктор Щ", specialization: "Кардиолог" },
-  // { id: 26, photo: person26, name: "Доктор Ы", specialization: "ЛОР" },
-  // { id: 27, photo: person27, name: "Доктор Э", specialization: "Гинеколог" },
-  // { id: 28, photo: person28, name: "Доктор Ю", specialization: "Терапевт" },
-  // { id: 29, photo: person29, name: "Доктор Я", specialization: "Хирург" },
-  // { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
+  { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
+  { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
+  { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
+  { id: 22, photo: person22, name: "Доктор Ц", specialization: "фывфыв" },
+  { id: 23, photo: person23, name: "Доктор Ч", specialization: "Офтальмолог" },
+  { id: 24, photo: person24, name: "Доктор Ш", specialization: "Стоматолог" },
+  { id: 25, photo: person25, name: "Доктор Щ", specialization: "Кардиолог" },
+  { id: 26, photo: person26, name: "Доктор Ы", specialization: "ЛОР" },
+  { id: 27, photo: person27, name: "Доктор Э", specialization: "Гинеколог" },
+  { id: 28, photo: person28, name: "Доктор Ю", specialization: "Терапевт" },
+  { id: 29, photo: person29, name: "Доктор Я", specialization: "Хирург" },
+  { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
 ];
+
+const ANIMATION_INTERVAL = 2000;
 
 export const TeamSwiper = () => {
   const breakpoint = useIsMobile();
   const isMobile = breakpoint === "mobile";
 
-  const mobilePersons = persons.slice(0, 6);
+  const visibleCount = isMobile ? 6 : 18;
+  const [visibleDoctors, setVisibleDoctors] = useState(
+    persons.slice(0, visibleCount),
+  );
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  // const [isBlockVisible, setIsBlockVisible] = useState(false);
+
+  useEffect(() => {
+    const changeDoctor = () => {
+      if (activeIndex !== null) {
+        // setIsBlockVisible(false);
+
+        setTimeout(() => {
+          const remainingDoctors = persons.filter(
+            (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
+          );
+          const newDoctor =
+            remainingDoctors[
+              Math.floor(Math.random() * remainingDoctors.length)
+            ];
+
+          const updatedDoctors = [...visibleDoctors];
+          updatedDoctors[activeIndex] = newDoctor;
+          setVisibleDoctors(updatedDoctors);
+
+          const nextIndex = Math.floor(Math.random() * visibleDoctors.length);
+          setActiveIndex(nextIndex);
+
+          // setIsBlockVisible(true);
+        }, 500);
+      } else {
+        setActiveIndex(Math.floor(Math.random() * visibleDoctors.length));
+        // setIsBlockVisible(true);
+      }
+    };
+
+    const interval = setInterval(changeDoctor, ANIMATION_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [activeIndex, persons, visibleDoctors]);
 
   return (
-    <>
-      <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
-        {" "}
-        {(isMobile ? mobilePersons : persons).map((person) => (
-          <div key={person.id} className="flex justify-center">
-            <div className="group relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
-              <div className="absolute inset-0 flex h-full translate-y-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white opacity-0 transition-all delay-0 duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:delay-0">
-                <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
-                  {person.name}
-                </p>
-                <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
-                  {person.specialization}
-                </p>
-              </div>
-
-              <img
-                src={person.photo}
-                className="h-full w-full rounded-[20px] object-cover"
-                alt={`Врач ${person.id}`}
-              />
+    <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
+      {visibleDoctors.map((person, index) => (
+        <div key={index} className="flex justify-center">
+          <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
+            <div
+              className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity duration-700 ease-in-out ${
+                activeIndex === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
+                {person.name}
+              </p>
+              <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
+                {person.specialization}
+              </p>
             </div>
+
+            <img
+              src={person.photo}
+              className="h-full w-full rounded-[20px] object-cover"
+              alt={`Врач ${person.id}`}
+            />
           </div>
-        ))}
-      </div>
-    </>
+        </div>
+      ))}
+    </div>
   );
 };
