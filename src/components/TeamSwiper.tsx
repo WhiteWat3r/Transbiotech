@@ -30,16 +30,18 @@ import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
 import { memo, useEffect, useRef, useState } from "react";
+const imageCache = new Map();
 
 const preloadImages = (imageSources: string[]) => {
   imageSources.forEach((src) => {
-    const img = new Image();
-    img.onload = () => console.log(`${src} preloaded`);
-    if (!img.complete) {
+    if (!imageCache.has(src)) {
+      const img = new Image();
       img.src = src;
+      imageCache.set(src, img);
     }
   });
 };
+
 
 
 interface IPerson {
@@ -167,7 +169,7 @@ console.log('visibleDoctors', visibleDoctors);
             />
 
             <img
-              src={person.photo}
+              src={`${person.photo}`}
               className="h-full w-full rounded-[20px] object-cover"
               alt={`Врач ${person.id}`}
             />
