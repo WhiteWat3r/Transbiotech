@@ -42,8 +42,6 @@ const preloadImages = (imageSources: string[]) => {
   });
 };
 
-
-
 interface IPerson {
   id: number;
   photo: string;
@@ -100,7 +98,7 @@ export const TeamSwiper = () => {
 
   useEffect(() => {
     const images = persons.map((person) => person.photo);
-    console.log('прелоад', images);
+    console.log("прелоад", images);
     preloadImages(images);
   }, []);
 
@@ -112,12 +110,12 @@ export const TeamSwiper = () => {
         const remainingDoctors = persons.filter(
           (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
         );
-        console.log('remainingDoctors', remainingDoctors);
+        console.log("remainingDoctors", remainingDoctors);
 
         const newDoctor =
           remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
-        console.log('newDoctor', newDoctor);
-        
+        console.log("newDoctor", newDoctor);
+
         updatedDoctors[activeIndex] = newDoctor ? newDoctor : persons[30];
 
         const availableIndexes = visibleDoctors
@@ -138,9 +136,9 @@ export const TeamSwiper = () => {
         }, 0);
 
         // setTimeout(() => {
-          setVisibleDoctors(updatedDoctors);
+        setVisibleDoctors(updatedDoctors);
 
-          // setIsBlockVisible(true);
+        // setIsBlockVisible(true);
         // }, 0);
       } else {
         setActiveIndex(0);
@@ -154,10 +152,10 @@ export const TeamSwiper = () => {
 
     return () => clearInterval(interval);
   }, [activeIndex, persons, visibleDoctors]);
-console.log('visibleDoctors', visibleDoctors);
+  console.log("visibleDoctors", visibleDoctors);
 
   return (
-    <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
+    <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px] h-fit">
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
           <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
