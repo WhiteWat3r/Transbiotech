@@ -32,12 +32,17 @@ import useIsMobile from "../hooks/usIsMobile";
 import { memo, useEffect, useRef, useState } from "react";
 const imageCache = new Map();
 
-const preloadImages = (imageSources: string[]) => {
+const preloadImagesToDOM = (imageSources: string[]) => {
+  const preloadContainer = document.createElement('div');
+  preloadContainer.style.display = 'none'; // Скрываем контейнер
+  document.body.appendChild(preloadContainer);
+
   imageSources.forEach((src) => {
     if (!imageCache.has(src)) {
       const img = new Image();
       img.src = src;
-      imageCache.set(src, img);
+      preloadContainer.appendChild(img); // Добавляем изображение в DOM
+      imageCache.set(src, img); // Кэшируем изображение
     }
   });
 };
@@ -98,8 +103,7 @@ export const TeamSwiper = () => {
 
   useEffect(() => {
     const images = persons.map((person) => person.photo);
-    console.log("прелоад", images);
-    preloadImages(images);
+    preloadImagesToDOM(images); // Используем новую функцию предзагрузки
   }, []);
 
   useEffect(() => {
@@ -155,7 +159,7 @@ export const TeamSwiper = () => {
   console.log("visibleDoctors", visibleDoctors);
 
   return (
-    <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px] h-fit">
+    <div className="grid h-fit grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
           <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
@@ -170,6 +174,7 @@ export const TeamSwiper = () => {
               src={`${person.photo}`}
               className="h-full w-full rounded-[20px] object-cover"
               alt={`Врач ${person.id}`}
+              loading="eager" 
             />
           </div>
         </div>
