@@ -64,18 +64,18 @@ const persons: IPerson[] = [
   { id: 16, photo: person16, name: "Доктор Р", specialization: "Пульмонолог" },
   { id: 17, photo: person17, name: "Доктор С", specialization: "Хирург" },
   { id: 18, photo: person18, name: "Доктор Т", specialization: "Терапевт" },
-  // { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
-  // { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
-  // { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
-  // { id: 22, photo: person22, name: "Доктор Ц", specialization: "фывфыв" },
-  // { id: 23, photo: person23, name: "Доктор Ч", specialization: "Офтальмолог" },
-  // { id: 24, photo: person24, name: "Доктор Ш", specialization: "Стоматолог" },
-  // { id: 25, photo: person25, name: "Доктор Щ", specialization: "Кардиолог" },
-  // { id: 26, photo: person26, name: "Доктор Ы", specialization: "ЛОР" },
-  // { id: 27, photo: person27, name: "Доктор Э", specialization: "Гинеколог" },
-  // { id: 28, photo: person28, name: "Доктор Ю", specialization: "Терапевт" },
-  // { id: 29, photo: person29, name: "Доктор Я", specialization: "Хирург" },
-  // { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
+  { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
+  { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
+  { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
+  { id: 22, photo: person22, name: "Доктор Ц", specialization: "фывфыв" },
+  { id: 23, photo: person23, name: "Доктор Ч", specialization: "Офтальмолог" },
+  { id: 24, photo: person24, name: "Доктор Ш", specialization: "Стоматолог" },
+  { id: 25, photo: person25, name: "Доктор Щ", specialization: "Кардиолог" },
+  { id: 26, photo: person26, name: "Доктор Ы", specialization: "ЛОР" },
+  { id: 27, photo: person27, name: "Доктор Э", specialization: "Гинеколог" },
+  { id: 28, photo: person28, name: "Доктор Ю", specialization: "Терапевт" },
+  { id: 29, photo: person29, name: "Доктор Я", specialization: "Хирург" },
+  { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
 ];
 
 const ANIMATION_INTERVAL = 3000;
@@ -111,7 +111,7 @@ export const TeamSwiper = () => {
           remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
         console.log('newDoctor', newDoctor);
         
-        updatedDoctors[activeIndex] = newDoctor ? newDoctor : persons[0];
+        updatedDoctors[activeIndex] = newDoctor ? newDoctor : persons[30];
 
         const availableIndexes = visibleDoctors
           .map((_, index) => index)
@@ -130,14 +130,14 @@ export const TeamSwiper = () => {
           // setIsBlockVisible(true);
         }, 0);
 
-        setTimeout(() => {
+        // setTimeout(() => {
           setVisibleDoctors(updatedDoctors);
 
           // setIsBlockVisible(true);
-        }, 0);
+        // }, 0);
       } else {
         setActiveIndex(0);
-        setDoctorInfo(persons[0]);
+        setDoctorInfo(visibleDoctors[0]);
 
         // setIsBlockVisible(true);
       }
