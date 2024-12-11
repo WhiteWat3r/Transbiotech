@@ -34,9 +34,13 @@ import { memo, useEffect, useRef, useState } from "react";
 const preloadImages = (imageSources: string[]) => {
   imageSources.forEach((src) => {
     const img = new Image();
-    img.src = src;
+    img.onload = () => console.log(`${src} preloaded`);
+    if (!img.complete) {
+      img.src = src;
+    }
   });
 };
+
 
 interface IPerson {
   id: number;
@@ -94,6 +98,7 @@ export const TeamSwiper = () => {
 
   useEffect(() => {
     const images = persons.map((person) => person.photo);
+    console.log('прелоад', images);
     preloadImages(images);
   }, []);
 
