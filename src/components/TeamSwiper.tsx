@@ -54,16 +54,16 @@ const persons: IPerson[] = [
   { id: 6, photo: person6, name: "6", specialization: "6" },
   { id: 7, photo: person7, name: "7", specialization: "7" },
   { id: 8, photo: person8, name: "8", specialization: "8" },
-  // { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
-  // { id: 10, photo: person10, name: "Доктор К", specialization: "ЛОР" },
-  // { id: 11, photo: person11, name: "Доктор Л", specialization: "Кардиолог" },
-  // { id: 12, photo: person12, name: "Доктор М", specialization: "Гинеколог" },
-  // { id: 13, photo: person13, name: "Доктор Н", specialization: "Терапевт" },
-  // { id: 14, photo: person14, name: "Доктор О", specialization: "Кардиолог" },
-  // { id: 15, photo: person15, name: "Доктор П", specialization: "Уролог" },
-  // { id: 16, photo: person16, name: "Доктор Р", specialization: "Пульмонолог" },
-  // { id: 17, photo: person17, name: "Доктор С", specialization: "Хирург" },
-  // { id: 18, photo: person18, name: "Доктор Т", specialization: "Терапевт" },
+  { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
+  { id: 10, photo: person10, name: "Доктор К", specialization: "ЛОР" },
+  { id: 11, photo: person11, name: "Доктор Л", specialization: "Кардиолог" },
+  { id: 12, photo: person12, name: "Доктор М", specialization: "Гинеколог" },
+  { id: 13, photo: person13, name: "Доктор Н", specialization: "Терапевт" },
+  { id: 14, photo: person14, name: "Доктор О", specialization: "Кардиолог" },
+  { id: 15, photo: person15, name: "Доктор П", specialization: "Уролог" },
+  { id: 16, photo: person16, name: "Доктор Р", specialization: "Пульмонолог" },
+  { id: 17, photo: person17, name: "Доктор С", specialization: "Хирург" },
+  { id: 18, photo: person18, name: "Доктор Т", specialization: "Терапевт" },
   // { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
   // { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
   // { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
@@ -78,7 +78,7 @@ const persons: IPerson[] = [
   // { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
 ];
 
-const ANIMATION_INTERVAL =3000;
+const ANIMATION_INTERVAL = 3000;
 
 export const TeamSwiper = () => {
   const breakpoint = useIsMobile();
@@ -105,10 +105,13 @@ export const TeamSwiper = () => {
         const remainingDoctors = persons.filter(
           (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
         );
+        console.log('remainingDoctors', remainingDoctors);
+
         const newDoctor =
           remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
-
-        updatedDoctors[activeIndex] = newDoctor;
+        console.log('newDoctor', newDoctor);
+        
+        updatedDoctors[activeIndex] = newDoctor ? newDoctor : persons[0];
 
         const availableIndexes = visibleDoctors
           .map((_, index) => index)
@@ -144,9 +147,7 @@ export const TeamSwiper = () => {
 
     return () => clearInterval(interval);
   }, [activeIndex, persons, visibleDoctors]);
-
-
-
+console.log('visibleDoctors', visibleDoctors);
 
   return (
     <div className="grid grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
