@@ -33,16 +33,16 @@ import { memo, useEffect, useRef, useState } from "react";
 const imageCache = new Map();
 
 const preloadImagesToDOM = (imageSources: string[]) => {
-  const preloadContainer = document.createElement('div');
-  preloadContainer.style.display = 'none'; // Скрываем контейнер
+  const preloadContainer = document.createElement("div");
+  preloadContainer.style.display = "none";
   document.body.appendChild(preloadContainer);
 
   imageSources.forEach((src) => {
     if (!imageCache.has(src)) {
       const img = new Image();
       img.src = src;
-      preloadContainer.appendChild(img); // Добавляем изображение в DOM
-      imageCache.set(src, img); // Кэшируем изображение
+      preloadContainer.appendChild(img);
+      imageCache.set(src, img);
     }
   });
 };
@@ -103,7 +103,7 @@ export const TeamSwiper = () => {
 
   useEffect(() => {
     const images = persons.map((person) => person.photo);
-    preloadImagesToDOM(images); // Используем новую функцию предзагрузки
+    preloadImagesToDOM(images);
   }, []);
 
   useEffect(() => {
@@ -174,7 +174,7 @@ export const TeamSwiper = () => {
               src={`${person.photo}`}
               className="h-full w-full rounded-[20px] object-cover"
               alt={`Врач ${person.id}`}
-              loading="eager" 
+              loading="eager"
             />
           </div>
         </div>
