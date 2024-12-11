@@ -31,6 +31,13 @@ import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
 import { useEffect, useRef, useState } from "react";
 
+const preloadImages = (imageSources: string[]) => {
+  imageSources.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
 interface IPerson {
   id: number;
   photo: string;
@@ -45,8 +52,8 @@ const persons: IPerson[] = [
   { id: 4, photo: person4, name: "4", specialization: "4" },
   { id: 5, photo: person5, name: "5", specialization: "5" },
   { id: 6, photo: person6, name: "6", specialization: "6" },
-  { id: 7, photo: person7, name: "Доктор Ж", specialization: "Стоматолог" },
-  { id: 8, photo: person8, name: "Доктор З", specialization: "Эндокринолог" },
+  { id: 7, photo: person7, name: "7", specialization: "7" },
+  { id: 8, photo: person8, name: "8", specialization: "8" },
   { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
   { id: 10, photo: person10, name: "Доктор К", specialization: "ЛОР" },
   { id: 11, photo: person11, name: "Доктор Л", specialization: "Кардиолог" },
@@ -84,6 +91,12 @@ export const TeamSwiper = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [doctorInfo, setDoctorInfo] = useState<IPerson>();
   // const [isBlockVisible, setIsBlockVisible] = useState(false);
+
+
+  useEffect(() => {
+    const images = persons.map((person) => person.photo);
+    preloadImages(images);
+  }, []);
 
   useEffect(() => {
     const remainingDoctors = persons.filter(
