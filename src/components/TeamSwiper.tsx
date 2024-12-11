@@ -29,7 +29,7 @@ import person28 from "../assets/doctors/28.png";
 import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 const preloadImages = (imageSources: string[]) => {
   imageSources.forEach((src) => {
@@ -99,21 +99,25 @@ export const TeamSwiper = () => {
   }, []);
 
   useEffect(() => {
-    const remainingDoctors = persons.filter(
-      (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
-    );
-    const newDoctor =
-      remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
 
-    // setTimeout(() => {
-    //   setDoctorInfo(newDoctor);
-    // }, 700); // на милисекунду видно инфу по старому врачу
 
     const changeDoctor = () => {
       if (activeIndex !== null) {
         // setIsBlockVisible(false);
 
         setTimeout(() => {
+
+
+          const remainingDoctors = persons.filter(
+            (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
+          );
+          const newDoctor =
+            remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
+      
+          setTimeout(() => {
+            setDoctorInfo(newDoctor);
+          }, 500); // на милисекунду видно инфу по старому врачу
+
           const updatedDoctors = [...visibleDoctors];
           updatedDoctors[activeIndex] = newDoctor;
           setVisibleDoctors(updatedDoctors);
@@ -128,7 +132,7 @@ export const TeamSwiper = () => {
           setActiveIndex(nextIndex);
 
           // setIsBlockVisible(true);
-        }, 500);
+        }, 800);
       } else {
         setActiveIndex(Math.floor(Math.random() * visibleDoctors.length));
         // setIsBlockVisible(true);
@@ -145,27 +149,12 @@ export const TeamSwiper = () => {
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
           <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
-            {/* <div
-              className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity duration-700 ease-in-out ${
-                activeIndex === index ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              {doctorInfo && (
-                <>
-                  <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
-                    {doctorInfo.name}
-                  </p>
-                  <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
-                    {doctorInfo.specialization}
-                  </p>
-                </>
-              )}
-            </div> */}
 
             <DoctorInfo
               activeIndex={activeIndex}
               index={index}
-              doctorInfo={person}
+              // doctorInfo={doctorInfo}
+              person={doctorInfo}
             />
 
             <img
@@ -180,33 +169,38 @@ export const TeamSwiper = () => {
   );
 };
 
-const DoctorInfo = ({
+const DoctorInfo = memo(({
   activeIndex,
-  doctorInfo,
+  // doctorInfo,
   index,
+  person
 }: {
   activeIndex: number | null;
-  doctorInfo: IPerson | undefined;
+  // doctorInfo: IPerson | undefined;
   index: number;
+  person: IPerson | undefined;
+
 }) => {
+  // console.log('person + doctorInfo', person, doctorInfo);
+  
   return (
     <div
       className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity ease-in-out ${
         activeIndex === index
-          ? "opacity-100 duration-700"
-          : "opacity-0 duration-700"
+      ? "opacity-100 duration-[700ms] delay-[400ms]"
+      : "opacity-0 duration-[700ms] delay-[0ms]"
       }`}
     >
-      {doctorInfo && (
+      {person && (
         <>
           <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
-            {doctorInfo.name}
+            {person.name}
           </p>
           <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
-            {doctorInfo.specialization}
+            {person.specialization}
           </p>
         </>
       )}
     </div>
   );
-};
+})
