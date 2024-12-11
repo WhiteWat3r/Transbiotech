@@ -46,14 +46,14 @@ interface IPerson {
 }
 
 const persons: IPerson[] = [
-  { id: 1, photo: person1, name: "1", specialization: "1" },
-  { id: 2, photo: person2, name: "2", specialization: "2" },
-  { id: 3, photo: person3, name: "3", specialization: "3" },
-  { id: 4, photo: person4, name: "4", specialization: "4" },
-  { id: 5, photo: person5, name: "5", specialization: "5" },
-  { id: 6, photo: person6, name: "6", specialization: "6" },
-  { id: 7, photo: person7, name: "7", specialization: "7" },
-  { id: 8, photo: person8, name: "8", specialization: "8" },
+  { id: 1, photo: person1, name: "Доктор А", specialization: "Ген. директор" },
+  { id: 2, photo: person2, name: "Доктор Б", specialization: "Ген. директор2" },
+  { id: 3, photo: person3, name: "Доктор В", specialization: "Ген. директор3" },
+  { id: 4, photo: person4, name: "Доктор Г", specialization: "Ген. директор4" },
+  { id: 5, photo: person5, name: "Доктор Д", specialization: "Ген. директор5" },
+  { id: 6, photo: person6, name: "Доктор Е", specialization: "Ген. директор6" },
+  { id: 7, photo: person7, name: "Доктор Ж", specialization: "Ген. директор7" },
+  { id: 8, photo: person8, name: "Доктор З", specialization: "Ген. директор8" },
   { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
   { id: 10, photo: person10, name: "Доктор К", specialization: "ЛОР" },
   { id: 11, photo: person11, name: "Доктор Л", specialization: "Кардиолог" },
