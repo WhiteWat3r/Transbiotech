@@ -31,13 +31,20 @@ import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
 import { useEffect, useRef, useState } from "react";
 
-const persons = [
-  { id: 1, photo: person1, name: "Доктор А", specialization: "Кардиолог" },
-  { id: 2, photo: person2, name: "Доктор Б", specialization: "Терапевт" },
-  { id: 3, photo: person3, name: "Доктор В", specialization: "Ортопед" },
-  { id: 4, photo: person4, name: "Доктор Г", specialization: "Хирург" },
-  { id: 5, photo: person5, name: "Доктор Д", specialization: "Невролог" },
-  { id: 6, photo: person6, name: "Доктор Е", specialization: "Педиатр" },
+interface IPerson {
+  id: number;
+  photo: string;
+  name: string;
+  specialization: string;
+}
+
+const persons: IPerson[] = [
+  { id: 1, photo: person1, name: "1", specialization: "1" },
+  { id: 2, photo: person2, name: "2", specialization: "2" },
+  { id: 3, photo: person3, name: "3", specialization: "3" },
+  { id: 4, photo: person4, name: "4", specialization: "4" },
+  { id: 5, photo: person5, name: "5", specialization: "5" },
+  { id: 6, photo: person6, name: "6", specialization: "6" },
   { id: 7, photo: person7, name: "Доктор Ж", specialization: "Стоматолог" },
   { id: 8, photo: person8, name: "Доктор З", specialization: "Эндокринолог" },
   { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
@@ -64,7 +71,7 @@ const persons = [
   { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
 ];
 
-const ANIMATION_INTERVAL = 2000;
+const ANIMATION_INTERVAL = 1500;
 
 export const TeamSwiper = () => {
   const breakpoint = useIsMobile();
@@ -75,27 +82,35 @@ export const TeamSwiper = () => {
     persons.slice(0, visibleCount),
   );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [doctorInfo, setDoctorInfo] = useState<IPerson>();
   // const [isBlockVisible, setIsBlockVisible] = useState(false);
 
   useEffect(() => {
+    const remainingDoctors = persons.filter(
+      (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
+    );
+    const newDoctor =
+      remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
+    setTimeout(() => {
+      setDoctorInfo(newDoctor);
+    }, 700); // на милисекунду видно инфу по старому врачу
+
     const changeDoctor = () => {
       if (activeIndex !== null) {
         // setIsBlockVisible(false);
 
         setTimeout(() => {
-          const remainingDoctors = persons.filter(
-            (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
-          );
-          const newDoctor =
-            remainingDoctors[
-              Math.floor(Math.random() * remainingDoctors.length)
-            ];
-
           const updatedDoctors = [...visibleDoctors];
           updatedDoctors[activeIndex] = newDoctor;
           setVisibleDoctors(updatedDoctors);
 
-          const nextIndex = Math.floor(Math.random() * visibleDoctors.length);
+          const availableIndexes = visibleDoctors
+            .map((_, index) => index)
+            .filter((index) => index !== activeIndex);
+          const nextIndex =
+            availableIndexes[
+              Math.floor(Math.random() * availableIndexes.length)
+            ];
           setActiveIndex(nextIndex);
 
           // setIsBlockVisible(true);
@@ -116,18 +131,28 @@ export const TeamSwiper = () => {
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
           <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
-            <div
+            {/* <div
               className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity duration-700 ease-in-out ${
                 activeIndex === index ? "opacity-100" : "opacity-0"
               }`}
             >
-              <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
-                {person.name}
-              </p>
-              <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
-                {person.specialization}
-              </p>
-            </div>
+              {doctorInfo && (
+                <>
+                  <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
+                    {doctorInfo.name}
+                  </p>
+                  <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
+                    {doctorInfo.specialization}
+                  </p>
+                </>
+              )}
+            </div> */}
+
+            <DoctorInfo
+              activeIndex={activeIndex}
+              index={index}
+              doctorInfo={person}
+            />
 
             <img
               src={person.photo}
@@ -137,6 +162,37 @@ export const TeamSwiper = () => {
           </div>
         </div>
       ))}
+    </div>
+  );
+};
+
+const DoctorInfo = ({
+  activeIndex,
+  doctorInfo,
+  index,
+}: {
+  activeIndex: number | null;
+  doctorInfo: IPerson | undefined;
+  index: number;
+}) => {
+  return (
+    <div
+      className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity ease-in-out ${
+        activeIndex === index
+          ? "opacity-100 duration-700"
+          : "opacity-0 duration-700"
+      }`}
+    >
+      {doctorInfo && (
+        <>
+          <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
+            {doctorInfo.name}
+          </p>
+          <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
+            {doctorInfo.specialization}
+          </p>
+        </>
+      )}
     </div>
   );
 };
