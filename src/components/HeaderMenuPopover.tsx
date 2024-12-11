@@ -3,7 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { IMenuItem } from "./MobileHeader";
 import { useNavigate } from "react-router-dom";
 
-export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem; isScrolled: boolean }) => {
+export const HeaderMenuPopover = ({
+  chapter,
+  isScrolled,
+}: {
+  chapter: IMenuItem;
+  isScrolled: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
   const popoverRef = useRef(null);
@@ -48,8 +54,7 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
       <button
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className="text-grey-2 geologica-text hover:text-black-default text-[18px] font-medium leading-[21.6px] tracking-tighter 
-        transition-colors duration-300"
+        className="geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter text-grey-2 transition-colors duration-300 hover:text-black-default"
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
         onClick={() => chapter.id === 2 && navigate("/technologies")}
@@ -60,8 +65,7 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
       {chapter.id === 1 && (
         <div
           ref={popoverRef}
-          className={`absolute z-50    transition-opacity
-            duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}
+          className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}
           style={
             {
               // borderImageSource:
@@ -72,20 +76,25 @@ export const HeaderMenuPopover = ({ chapter, isScrolled }: { chapter: IMenuItem;
           onMouseEnter={handleMouseEnter}
           role="dialog"
         >
-           {/* backdrop-blur-xl */}
-          <div className="bg-[#F8F8F8D9] rounded-[42px] border-2 border-white">
-          <ul className={`flex flex-col gap-[20px] px-[44px] py-[25px] rounded-[42px]`}>
-            {chapter.links.map((link) => (
-              <li key={link.linkId} className="">
-                <a
-                  href={link.href}
-                  className="text-grey-2 geologica-text hover:text-black-default text-[18px] leading-[20px] whitespace-pre-wrap transition-colors duration-300 max-w-[100px] text-wrap break-words"
-                >
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {/* backdrop-blur-[10px] */}
+
+          <div className="rounded-[42px]  backdrop-blur-[10px] bg-[#F8F8F8D9]">
+            <span className="absolute left-0 top-0 h-full w-full rounded-[42px] border-2 border-white  backdrop-blur-[10px]" />
+
+            <ul
+              className={`relative z-10 flex flex-col gap-[20px] rounded-[42px] px-[44px] py-[25px]`}
+            >
+              {chapter.links.map((link) => (
+                <li key={link.linkId} className="">
+                  <a
+                    href={link.href}
+                    className="geologica-text max-w-[100px] whitespace-pre-wrap text-wrap break-words text-[18px] leading-[20px] text-grey-2 transition-colors duration-300 hover:text-black-default"
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

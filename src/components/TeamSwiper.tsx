@@ -91,9 +91,10 @@ export const TeamSwiper = () => {
     );
     const newDoctor =
       remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
-    setTimeout(() => {
-      setDoctorInfo(newDoctor);
-    }, 700); // на милисекунду видно инфу по старому врачу
+
+    // setTimeout(() => {
+    //   setDoctorInfo(newDoctor);
+    // }, 700); // на милисекунду видно инфу по старому врачу
 
     const changeDoctor = () => {
       if (activeIndex !== null) {
