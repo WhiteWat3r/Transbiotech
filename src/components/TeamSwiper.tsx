@@ -27,6 +27,7 @@ import person29 from "../assets/doctors/29.png";
 import person30 from "../assets/doctors/30.png";
 import useIsMobile from "../hooks/usIsMobile";
 import { memo, useEffect, useRef, useState } from "react";
+import useIntersection from "../hooks/useIntersection";
 const imageCache = new Map();
 
 const preloadImagesToDOM = (imageSources: string[]) => {
@@ -217,6 +218,11 @@ const ANIMATION_INTERVAL = 3000;
 export const TeamSwiper = () => {
   const breakpoint = useIsMobile();
   const isMobile = breakpoint === "mobile";
+  const sectionRef = useRef(null);
+
+  const { isVisible } = useIntersection(sectionRef, {
+    threshold: 0.7,
+  });
 
   const visibleCount = isMobile ? 6 : 18;
   const [visibleDoctors, setVisibleDoctors] = useState(
@@ -224,7 +230,6 @@ export const TeamSwiper = () => {
   );
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [doctorInfo, setDoctorInfo] = useState<IPerson>();
-  // const [isBlockVisible, setIsBlockVisible] = useState(false);
 
   useEffect(() => {
     const images = persons.map((person) => person.photo);
@@ -234,7 +239,6 @@ export const TeamSwiper = () => {
   useEffect(() => {
     const changeDoctor = () => {
       if (activeIndex !== null) {
-        // setIsBlockVisible(false);
         const updatedDoctors = [...visibleDoctors];
         const remainingDoctors = persons.filter(
           (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
@@ -260,8 +264,6 @@ export const TeamSwiper = () => {
 
         setTimeout(() => {
           setActiveIndex(nextIndex);
-
-          // setIsBlockVisible(true);
         }, 0);
 
         // setTimeout(() => {
@@ -272,26 +274,27 @@ export const TeamSwiper = () => {
       } else {
         setActiveIndex(0);
         setDoctorInfo(visibleDoctors[0]);
-
-        // setIsBlockVisible(true);
       }
     };
 
-    const interval = setInterval(changeDoctor, ANIMATION_INTERVAL);
-
-    return () => clearInterval(interval);
-  }, [activeIndex, persons, visibleDoctors]);
+    if (isVisible) {
+      const interval = setInterval(changeDoctor, ANIMATION_INTERVAL);
+      return () => clearInterval(interval);
+    }
+  }, [activeIndex, persons, visibleDoctors, isVisible]);
   console.log("visibleDoctors", visibleDoctors);
 
   return (
-    <div className="grid h-fit grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]">
+    <div
+      className="grid h-fit grid-cols-2 gap-[15px] desktop:grid-cols-6 desktop:gap-[20px]"
+      ref={sectionRef}
+    >
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
           <div className="relative h-full w-full cursor-pointer overflow-hidden rounded-[25px]">
             <DoctorInfo
               activeIndex={activeIndex}
               index={index}
-              // doctorInfo={doctorInfo}
               person={doctorInfo}
             />
 
@@ -311,17 +314,13 @@ export const TeamSwiper = () => {
 const DoctorInfo = memo(
   ({
     activeIndex,
-    // doctorInfo,
     index,
     person,
   }: {
     activeIndex: number | null;
-    // doctorInfo: IPerson | undefined;
     index: number;
     person: IPerson | undefined;
   }) => {
-    // console.log('person + doctorInfo', person, doctorInfo);
-
     return (
       <div
         className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity ease-in-out ${
@@ -332,7 +331,7 @@ const DoctorInfo = memo(
       >
         {person && (
           <>
-            <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
+            <p className="geologica-text 1200:text-[24px] 1200:leading-[24px] mt-auto text-[18px] font-medium leading-[18px] tracking-tighter">
               {person.name}
             </p>
             <p className="text-[15px] font-normal leading-[18px] tracking-tighter">
