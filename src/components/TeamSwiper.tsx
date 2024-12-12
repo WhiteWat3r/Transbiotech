@@ -10,11 +10,9 @@ import person9 from "../assets/doctors/9.png";
 import person10 from "../assets/doctors/10.png";
 import person11 from "../assets/doctors/11.png";
 import person12 from "../assets/doctors/12.png";
-import person13 from "../assets/doctors/13.png";
 import person14 from "../assets/doctors/14.png";
 import person15 from "../assets/doctors/15.png";
 import person16 from "../assets/doctors/16.png";
-import person17 from "../assets/doctors/17.png";
 import person18 from "../assets/doctors/18.png";
 import person19 from "../assets/doctors/19.png";
 import person20 from "../assets/doctors/20.png";
@@ -22,7 +20,6 @@ import person21 from "../assets/doctors/21.png";
 import person22 from "../assets/doctors/22.png";
 import person23 from "../assets/doctors/23.png";
 import person24 from "../assets/doctors/24.png";
-import person25 from "../assets/doctors/25.png";
 import person26 from "../assets/doctors/26.png";
 import person27 from "../assets/doctors/27.png";
 import person28 from "../assets/doctors/28.png";
@@ -55,36 +52,164 @@ interface IPerson {
 }
 
 const persons: IPerson[] = [
-  { id: 1, photo: person1, name: "Доктор А", specialization: "Ген. директор" },
-  { id: 2, photo: person2, name: "Доктор Б", specialization: "Ген. директор2" },
-  { id: 3, photo: person3, name: "Доктор В", specialization: "Ген. директор3" },
-  { id: 4, photo: person4, name: "Доктор Г", specialization: "Ген. директор4" },
-  { id: 5, photo: person5, name: "Доктор Д", specialization: "Ген. директор5" },
-  { id: 6, photo: person6, name: "Доктор Е", specialization: "Ген. директор6" },
-  { id: 7, photo: person7, name: "Доктор Ж", specialization: "Ген. директор7" },
-  { id: 8, photo: person8, name: "Доктор З", specialization: "Ген. директор8" },
-  { id: 9, photo: person9, name: "Доктор И", specialization: "Офтальмолог" },
-  { id: 10, photo: person10, name: "Доктор К", specialization: "ЛОР" },
-  { id: 11, photo: person11, name: "Доктор Л", specialization: "Кардиолог" },
-  { id: 12, photo: person12, name: "Доктор М", specialization: "Гинеколог" },
-  { id: 13, photo: person13, name: "Доктор Н", specialization: "Терапевт" },
-  { id: 14, photo: person14, name: "Доктор О", specialization: "Кардиолог" },
-  { id: 15, photo: person15, name: "Доктор П", specialization: "Уролог" },
-  { id: 16, photo: person16, name: "Доктор Р", specialization: "Пульмонолог" },
-  { id: 17, photo: person17, name: "Доктор С", specialization: "Хирург" },
-  { id: 18, photo: person18, name: "Доктор Т", specialization: "Терапевт" },
-  { id: 19, photo: person19, name: "Доктор У", specialization: "Эндокринолог" },
-  { id: 20, photo: person20, name: "Доктор Ф", specialization: "Невролог" },
-  { id: 21, photo: person21, name: "Доктор Х", specialization: "Педиатр" },
-  { id: 22, photo: person22, name: "Доктор Ц", specialization: "фывфыв" },
-  { id: 23, photo: person23, name: "Доктор Ч", specialization: "Офтальмолог" },
-  { id: 24, photo: person24, name: "Доктор Ш", specialization: "Стоматолог" },
-  { id: 25, photo: person25, name: "Доктор Щ", specialization: "Кардиолог" },
-  { id: 26, photo: person26, name: "Доктор Ы", specialization: "ЛОР" },
-  { id: 27, photo: person27, name: "Доктор Э", specialization: "Гинеколог" },
-  { id: 28, photo: person28, name: "Доктор Ю", specialization: "Терапевт" },
-  { id: 29, photo: person29, name: "Доктор Я", specialization: "Хирург" },
-  { id: 30, photo: person30, name: "Доктор Z", specialization: "Ортопед" },
+  { id: 9, photo: person9, name: "Елена Аверина", specialization: "СЕО" },
+  {
+    id: 29,
+    photo: person29,
+    name: "Виктор Ликин",
+    specialization: "Директор по продукту и развитию",
+  },
+  {
+    id: 19,
+    photo: person19,
+    name: `Денис Белогуров`,
+    specialization: `Руководитель направления "Кардиохирургия"`,
+  },
+  {
+    id: 6,
+    photo: person6,
+    name: "Эмине Комина",
+    specialization: `Менеджер продуктового направления "Аритмология"`,
+  },
+  {
+    id: 11,
+    photo: person11,
+    name: "Ольга Юрченко",
+    specialization: "Директор по производству",
+  },
+  {
+    id: 21,
+    photo: person21,
+    name: "Светлана Ванюшкина",
+    specialization: "Директор по продажам",
+  },
+
+  {
+    id: 1,
+    photo: person1,
+    name: "Оксана Гордеева",
+    specialization: "Руководитель финансового отдела",
+  },
+  {
+    id: 2,
+    photo: person2,
+    name: "Наталья Андриевская",
+    specialization: "Менеджер финансового отдела",
+  },
+  {
+    id: 3,
+    photo: person3,
+    name: "Ольга Гревцова",
+    specialization: `Ассистент отдела "Перфузионные технологии"`,
+  },
+  {
+    id: 4,
+    photo: person4,
+    name: "Леонид Лебедев",
+    specialization: "Руководитель региона Поволжье и Кавказ",
+  },
+  {
+    id: 5,
+    photo: person5,
+    name: "Ирина Давыдова",
+    specialization: "Заместитель по административной работе",
+  },
+
+  { id: 7, photo: person7, name: "Дмитрий Лазарев", specialization: "Инженер" },
+  {
+    id: 8,
+    photo: person8,
+    name: "Светлана Махина",
+    specialization: "Оператор клиентского отдела",
+  },
+  {
+    id: 10,
+    photo: person10,
+    name: "Анна Гнусарева",
+    specialization: "Менеджер по продажам СПб",
+  },
+
+  {
+    id: 12,
+    photo: person12,
+    name: "Галина Кожухова",
+    specialization: "Менеджер клиенского отдела",
+  },
+  {
+    id: 14,
+    photo: person14,
+    name: "Николай Шарапов",
+    specialization: "Менеджер по продажам РФ",
+  },
+  {
+    id: 15,
+    photo: person15,
+    name: "Адександра Смирнова",
+    specialization: "Руководитель клиентского отдела",
+  },
+  {
+    id: 16,
+    photo: person16,
+    name: "Александра Серова",
+    specialization: "Менеджер клиенского отдела",
+  },
+  {
+    id: 18,
+    photo: person18,
+    name: "Юлия Куликова",
+    specialization: "Менеджер клиенского отдела",
+  },
+
+  {
+    id: 20,
+    photo: person20,
+    name: "Екатерина Корешова",
+    specialization: "Менеджер клиенского отдела",
+  },
+
+  {
+    id: 22,
+    photo: person22,
+    name: "Илья Клятышев",
+    specialization: "Заместитель директора по развитию продаж",
+  },
+  {
+    id: 23,
+    photo: person23,
+    name: "Светлана Жаринова",
+    specialization: "Финансовый директор,",
+  },
+  {
+    id: 24,
+    photo: person24,
+    name: "Эльмира Саидова",
+    specialization: "Ведущий бухгалтер ТВТ Сервис",
+  },
+  {
+    id: 26,
+    photo: person26,
+    name: `Елена Поливяная`,
+    specialization: `Менеджер продуктового направления "Кардиохирургия "`,
+  },
+  {
+    id: 27,
+    photo: person27,
+    name: "Диана Сафтенко",
+    specialization: "Менеджер финансового отдела",
+  },
+  {
+    id: 28,
+    photo: person28,
+    name: "Евгений Шаталов",
+    specialization: "Сервис-инженер",
+  },
+
+  {
+    id: 30,
+    photo: person30,
+    name: "Ольга Никитина",
+    specialization: "Руководитель региона ДВ и Москва",
+  },
 ];
 
 const ANIMATION_INTERVAL = 3000;
@@ -202,7 +327,7 @@ const DoctorInfo = memo(
         className={`absolute inset-0 flex h-full flex-col gap-[6px] rounded-[20px] bg-indigo p-3 text-white transition-opacity ease-in-out ${
           activeIndex === index
             ? "opacity-100 delay-[0] duration-[900ms]"
-            : "opacity-0 delay-[0] duration-[300ms]"
+            : "opacity-0 delay-[0] duration-[200ms]"
         }`}
       >
         {person && (
@@ -210,7 +335,7 @@ const DoctorInfo = memo(
             <p className="geologica-text mt-auto text-[24px] font-medium leading-[24px] tracking-tighter">
               {person.name}
             </p>
-            <p className="text-[15px] font-normal lowercase leading-[18px] tracking-tighter">
+            <p className="text-[15px] font-normal leading-[18px] tracking-tighter">
               {person.specialization}
             </p>
           </>
