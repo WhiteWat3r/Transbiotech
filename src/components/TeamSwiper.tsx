@@ -291,7 +291,7 @@ export const TeamSwiper = () => {
     >
       {visibleDoctors.map((person, index) => (
         <div key={index} className="flex justify-center">
-          <div className="relative h-full w-full overflow-hidden rounded-[25px]">
+          <div className="relative h-full w-full overflow-hidden rounded-[20px]">
             <DoctorInfo
               activeIndex={activeIndex}
               index={index}
@@ -300,7 +300,7 @@ export const TeamSwiper = () => {
 
             <img
               src={`${person.photo}`}
-              className="h-full w-full rounded-[25px] object-cover"
+              className="h-full w-full rounded-[20px] object-cover"
               alt={`Врач ${person.id}`}
               loading="eager"
             />
