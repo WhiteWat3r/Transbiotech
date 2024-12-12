@@ -65,7 +65,7 @@ export const HeaderMenuPopover = ({
       {chapter.id === 1 && (
         <div
           ref={popoverRef}
-          className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-80" : "pointer-events-none opacity-0"} pt-[10px]`}
+          className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}
           style={
             {
               // borderImageSource:
