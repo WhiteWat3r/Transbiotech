@@ -256,7 +256,7 @@ export const TeamSwiper = () => {
         const oldDoc = updatedDoctors[nextIndex];
         setTimeout(() => {
           setDoctorInfo(oldDoc);
-        }, 100); // на милисекунду видно инфу по старому врачу
+        }, 200); // на милисекунду видно инфу по старому врачу
 
         setTimeout(() => {
           setActiveIndex(nextIndex);
