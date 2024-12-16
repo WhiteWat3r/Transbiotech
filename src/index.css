@@ -27,7 +27,24 @@
   .geologica-text {
     font-family: Geologica;
   }
-
+  .head-1 {
+    font-size: 110px;
+    line-height: 100px;
+    font-family: Geologica, sans-serif;
+    font-weight: 600;
+  }
+  .head-1-1 {
+    font-size: 110px;
+    line-height: 100px;
+    font-family: Geologica, sans-serif;
+    font-weight: 300;
+  }
+  .text-4 {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+  }
   .head-5 {
     font-size: 24px;
     line-height: 24px;

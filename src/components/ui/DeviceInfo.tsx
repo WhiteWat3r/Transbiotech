@@ -10,7 +10,7 @@ export const DeviceInfo = ({
   description?: { mainText: string; additionalText: ReactNode };
 }) => {
   return (
-    <ul className="flex flex-col gap-[25px]">
+    <ul className="flex flex-col gap-[25px] z-20">
       {description && <DeviceDescription description={description} />}
 
       {advantages && <DeviceAdvantages advantages={advantages} />}

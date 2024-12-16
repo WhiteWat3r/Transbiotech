@@ -1,14 +1,16 @@
 import { createPopper } from "@popperjs/core";
 import React, { useEffect, useRef, useState } from "react";
-import { IMenuItem } from "./MobileHeader";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { IMenuItem } from "../utils/types";
 
 export const HeaderMenuPopover = ({
   chapter,
   isScrolled,
+  isHomePage
 }: {
   chapter: IMenuItem;
   isScrolled: boolean;
+  isHomePage: boolean
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -54,7 +56,7 @@ export const HeaderMenuPopover = ({
       <button
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className="geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter text-grey-2 transition-colors duration-300 hover:text-black-default"
+        className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter ${isHomePage || isScrolled ? "text-grey-2" : "text-gainsboro"} transition-colors duration-300 hover:text-black-default`}
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
         onClick={() => chapter.id === 2 && navigate("/technologies")}
@@ -86,12 +88,12 @@ export const HeaderMenuPopover = ({
             >
               {chapter.links.map((link) => (
                 <li key={link.linkId} className="">
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="geologica-text max-w-[100px] whitespace-pre-wrap text-wrap break-words text-[18px] leading-[20px] text-grey-2 transition-colors duration-300 hover:text-black-default"
                   >
                     {link.text}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

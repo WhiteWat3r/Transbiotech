@@ -18,25 +18,20 @@ export const PerfusionMain = () => {
 
   return (
     <div
-      className={`relative mt-[-75px] w-full bg-indigo bg-cover text-white`}
-      style={{
-        height: isDesktop ? `${sectionHeight}px` : "750px",
-      }}
+      className={`relative mt-[-75px] w-full bg-indigo bg-cover text-white h-[750px] desktop:h-[650px]`}
+      // style={{
+      //   height: isDesktop ? `${sectionHeight}px` : "750px",
+      // }}
     >
       <img
         ref={imgRef}
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
-        alt="Задний фон"
-        className="absolute left-[50%] top-0 z-[2] translate-x-[-50%] object-contain"
-        // style={{
-        //   maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
-        //   WebkitMaskImage:
-        //     "radial-gradient(circle, black 70%, transparent 100%)",
-        // }}
+        alt="Transbiotech"
+        className="absolute top-0 right-0 z-[2]  object-contain h-[114%]"
         onLoad={handleImageLoad}
       />
       <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col gap-[15px] px-5 desktop:px-[80px]">
-        <h1 className="z-1 mob-head-2 mt-auto">
+        <h1 className="z-1 mob-head-2 mt-auto desktop:head-1-1 z-30">
           Перфузионные <span className="block">технологии</span>
         </h1>
         {/* <ul className="mb-[10px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] desktop:gap-[20px] 1440:max-w-[40%]">
@@ -57,7 +52,7 @@ export const PerfusionMain = () => {
           ))}
         </ul> */}
         directionInfoButtons (жду точную инфу по логике)
-        <p className="mob-text-3-1 mb-[73px] text-platinum">
+        <p className="mob-text-3-1 mb-[73px] text-platinum max-w-[510px] desktop:text-4 desktop:mb-[100px]">
           Флагманское направление, ядром которого является наша разработка —
           первый российский аппарат ЭКМО Ex-Stream
         </p>

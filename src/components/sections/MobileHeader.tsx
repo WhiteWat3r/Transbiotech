@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import close from "../assets/close.svg";
-import { Accordion } from "./Accordion";
+import { Accordion } from "../Accordion";
 import { Link, useLocation } from "react-router-dom";
-import { useIsScrolled } from "../hooks/useIsScrolled";
-import { MobileLogo } from "./icons/MobileLogo";
-import { MenuIcon } from "./icons/MenuIcon";
-import { CloseIcon } from "./icons/CloseIcon";
-import { MobileMenu } from "./MobileMenu";
+import { useIsScrolled } from "../../hooks/useIsScrolled";
+import { MobileLogo } from "../icons/MobileLogo";
+import { MenuIcon } from "../icons/MenuIcon";
+import { CloseIcon } from "../icons/CloseIcon";
+import { MobileMenu } from "../MobileMenu";
 
 export const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +19,6 @@ export const MobileHeader = () => {
   };
 
   const isHomePage = pathname.pathname === "/";
-  console.log("isHomePage", isHomePage);
 
   return (
     <>
