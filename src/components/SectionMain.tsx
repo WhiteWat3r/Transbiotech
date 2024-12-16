@@ -3,6 +3,7 @@ import bgMain from "../../public/tailwindBackgrounds/bg-main.png";
 import bgMainDesktop from "../../public/tailwindBackgrounds/main-desktop.png";
 
 import useIsMobile from "../hooks/usIsMobile";
+import { useSectionSizeFromImageHeight } from "../hooks/useSectionSizeFromImageHeight";
 
 const buttons = [
   {
@@ -32,33 +33,11 @@ export const SectionMain = () => {
   const isDesktop = breakpoint !== "mobile";
 
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const [sectionHeight, setSectionHeight] = useState<number | null>();
 
-  const updateSectionHeight = () => {
-    if (isDesktop && imgRef.current) {
-      setSectionHeight(imgRef.current.offsetHeight);
-    } else {
-      setSectionHeight(null);
-    }
-  };
-  const handleImageLoad = () => {
-    updateSectionHeight();
-  };
-  useEffect(() => {
-    updateSectionHeight();
-  }, [isDesktop, imgRef.current]);
-
-  useEffect(() => {
-    updateSectionHeight();
-
-    const handleResize = () => updateSectionHeight();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isDesktop]);
+  const { sectionHeight, handleImageLoad } = useSectionSizeFromImageHeight(
+    imgRef,
+    isDesktop,
+  );
 
   console.log("sectionHeight", sectionHeight);
 

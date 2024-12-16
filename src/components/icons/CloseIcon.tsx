@@ -1,10 +1,11 @@
-export const CloseIcon = () => (
+export const CloseIcon = ({onClick}: {onClick: () => void}) => (
   <svg
     width="39"
     height="33"
     viewBox="0 0 39 33"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    onClick={onClick}
   >
     <g opacity="0.3">
       <path

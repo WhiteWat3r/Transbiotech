@@ -3,125 +3,65 @@ import bgMain from "../../assets/bg/perfusion.png";
 import bgMainDesktop from "../../assets/bg/perfusion-desc.png";
 
 import useIsMobile from "../../hooks/usIsMobile";
-
-const buttons = [
-  {
-    id: 1,
-    text: "перфузионные технологии",
-    color: "#6A78C1",
-  },
-  {
-    id: 2,
-    text: "кардихирургия",
-    color: "#90882B",
-  },
-  {
-    id: 3,
-    text: "аритмология",
-    color: "#E04918",
-  },
-  {
-    id: 4,
-    text: "скорая помощь",
-    color: "#EA7A92",
-  },
-];
+import { useSectionSizeFromImageHeight } from "../../hooks/useSectionSizeFromImageHeight";
 
 export const PerfusionMain = () => {
-    const breakpoint = useIsMobile();
-    const isDesktop = breakpoint !== "mobile";
-  
-    const imgRef = useRef<HTMLImageElement | null>(null);
-    const [sectionHeight, setSectionHeight] = useState<number | null>();
-  
-    const updateSectionHeight = () => {
-      if (isDesktop && imgRef.current) {
-        setSectionHeight(imgRef.current.offsetHeight);
-      } else {
-        setSectionHeight(null);
-      }
-    };
-    const handleImageLoad = () => {
-      updateSectionHeight();
-    };
-    useEffect(() => {
-      updateSectionHeight();
-    }, [isDesktop, imgRef.current]);
-  
-    useEffect(() => {
-      updateSectionHeight();
-  
-      const handleResize = () => updateSectionHeight();
-  
-      window.addEventListener("resize", handleResize);
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, [isDesktop]);
-  
-    console.log("sectionHeight", sectionHeight);
-  
-    return (
-      <div
-        className={`relative w-full bg-cover bg-indigo mt-[-75px]`}
-        style={{
-          height: isDesktop
-            ? `${sectionHeight}px`
-            : "750px",
-        }}
-      >
-        <img
-          ref={imgRef}
-          src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
-          alt="Задний фон"
-          className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
-          style={{
-            maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(circle, black 70%, transparent 100%)",
-            top:
-              //  breakpoint === "mobile" ?
-              "-9%",
-            // : "-12%",
-          }}
-          onLoad={handleImageLoad}
-        />
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
-            <div className="ml-auto max-w-[218px] text-[14px] leading-[16px] text-grey-1 desktop:mb-[20px] desktop:mr-[260px] desktop:mt-[38px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
-              <p className="">
-                {
-                  "Первый российский дистрибьютор медицинского оборудования, разработавший аппарат\u00A0ЭКМО."
+  const breakpoint = useIsMobile();
+  const isDesktop = breakpoint !== "mobile";
+
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  const { sectionHeight, handleImageLoad } = useSectionSizeFromImageHeight(
+    imgRef,
+    isDesktop,
+  );
+
+  return (
+    <div
+      className={`relative mt-[-75px] w-full bg-indigo bg-cover text-white`}
+      style={{
+        height: isDesktop ? `${sectionHeight}px` : "750px",
+      }}
+    >
+      <img
+        ref={imgRef}
+        src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
+        alt="Задний фон"
+        className="absolute left-[50%] top-0 z-[2] translate-x-[-50%] object-contain"
+        // style={{
+        //   maskImage: "radial-gradient(circle, black 70%, transparent 100%)",
+        //   WebkitMaskImage:
+        //     "radial-gradient(circle, black 70%, transparent 100%)",
+        // }}
+        onLoad={handleImageLoad}
+      />
+      <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col gap-[15px] px-5 desktop:px-[80px]">
+        <h1 className="z-1 mob-head-2 mt-auto">
+          Перфузионные <span className="block">технологии</span>
+        </h1>
+        {/* <ul className="mb-[10px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] desktop:gap-[20px] 1440:max-w-[40%]">
+          {buttons.map((btn, index) => (
+            <li key={btn.id}>
+              <button
+                className={`geologica-text " flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium transition-all duration-300 desktop:h-[38px] desktop:animate-glow-desc desktop:text-[18px] desktop:leading-[22px]`}
+                style={
+                  {
+                    animationDelay: `${index * 0.6}s`,
+                    "--btn-color": btn.color,
+                  } as CSSProperties
                 }
-              </p>
-              <p className="font-semibold">
-                {"Мы —\u00A0компания, готовая предложить большее."}
-              </p>
-            </div>
-  
-            <ul className="mb-[20px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] desktop:gap-[20px] 1440:max-w-[40%]">
-              {buttons.map((btn, index) => (
-                <li key={btn.id}>
-                  <button
-                    className={`geologica-text " flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium text-black-default transition-all duration-300 desktop:h-[38px] desktop:animate-glow-desc desktop:text-[18px] desktop:leading-[22px]`}
-                    style={
-                      {
-                        animationDelay: `${index * 0.6}s`,
-                        "--btn-color": btn.color,
-                      } as CSSProperties
-                    }
-                  >
-                    {btn.text}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <h1 className="geologica-text z-1 px-5 text-[46px] font-semibold leading-[44px] text-grey-1 desktop:px-[80px] desktop:text-[110px] desktop:leading-[100px]">
-            Transbiotech. <span className="block">Продлевая жизнь</span>
-          </h1>
-        </div>
+              >
+                {btn.text}
+              </button>
+            </li>
+          ))}
+        </ul> */}
+        directionInfoButtons (жду точную инфу по логике)
+        <p className="mob-text-3-1 mb-[73px] text-platinum">
+          Флагманское направление, ядром которого является наша разработка —
+          первый российский аппарат ЭКМО Ex-Stream
+        </p>
       </div>
-    );
-  };
+    </div>
+  );
+};

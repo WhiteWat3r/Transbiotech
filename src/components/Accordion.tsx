@@ -1,30 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import arrowBottom from "../assets/arrows/arrow-botom.svg";
 import { Link } from "react-router-dom";
+import { IMenuItem } from "../utils/types";
 
 export const Accordion = ({
-    id,
-    title,
-    items,
+  menuItem,
     delay,
     isOpen,
     onToggle,
     isDisabled,
+    handleCloseMenu
   }: {
-    id: number;
-    title: string;
-    items: { linkId: number; text: string; href: string }[];
+    menuItem: IMenuItem;
     delay: number;
     isOpen: boolean;
     onToggle: (id: number) => void;
     isDisabled: boolean;
+    handleCloseMenu: () => void;
   }) => {
     const contentRef = useRef<HTMLDivElement | null>(null);
     const [height, setHeight] = useState(0);
   
     const toggleAccordion = () => {
       if (!isDisabled) {
-        onToggle(id);
+        onToggle(menuItem.id);
       }
     };
   
@@ -53,7 +52,7 @@ export const Accordion = ({
           }}
           disabled={isDisabled}
         >
-          {title}
+          {menuItem.title}
           <img
             src={arrowBottom}
             alt="Подробнее"
@@ -73,12 +72,12 @@ export const Accordion = ({
           }}
         >
           <ul className="pl-[30px] mt-5 space-y-[10px] flex flex-col">
-            {items.map((item) => (
+            {menuItem.links.map((item) => (
               <li
                 key={item.linkId}
                 className="text-grey-2 text-[27px] leading-[27px] geologica-text font-normal"
               >
-                <Link to={item.href}>
+                <Link to={item.href ? item.href : '/'} onClick={handleCloseMenu}>
                 {item.text}
                 </Link>
               </li>

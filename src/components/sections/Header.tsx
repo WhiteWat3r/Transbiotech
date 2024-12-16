@@ -1,14 +1,14 @@
 import fullLogo from "../../assets/logos/full-logo.svg";
 import logo from "../../assets/logos/logo.svg";
 
-import { menuItems } from "../MobileHeader";
 import { HeaderMenuPopover } from "../HeaderMenuPopover";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useIsScrolled } from "../../hooks/useIsScrolled";
+import { menuItems } from "../../utils/constants";
 
 export const Header = () => {
-  const isScrolled = useIsScrolled()
+  const isScrolled = useIsScrolled();
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,13 +25,12 @@ export const Header = () => {
     window.addEventListener("resize", calculateHeaderWidth);
     return () => window.removeEventListener("resize", calculateHeaderWidth);
   }, [isScrolled]);
-// устанавливать src картинки через useEffect
-
+  // устанавливать src картинки через useEffect
 
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 flex items-center justify-between px-[42px] pt-[25px] transition-all duration-1000 ease-out w-full max-w-[1440px] mx-auto`}
+      className={`sticky top-0 z-40 mx-auto flex w-full max-w-[1440px] items-center justify-between px-[42px] pt-[25px] transition-all duration-1000 ease-out`}
       style={{
         width: isScrolled ? headerWidth : "100%",
       }}
@@ -52,14 +51,18 @@ export const Header = () => {
       </Link>
 
       <nav
-        className={`whitespace-nowrap rounded-[42px] relative px-[38px] py-[12px] transition-all duration-500 ${
+        className={`relative whitespace-nowrap rounded-[42px] px-[38px] py-[12px] transition-all duration-500 ${
           isScrolled ? "animate-appearBorder" : "animate-disappearBorder"
         }`}
       >
         {/* <span className="absolute w-full h-full rounded-[42px] top-0 left-0 backdrop-blur-[5px] bg-[#F8F8F8D9]" /> */}
         <ul className="flex h-[22px] gap-[37px]">
           {menuItems.map((item) => (
-            <HeaderMenuPopover chapter={item} key={item.id} isScrolled={isScrolled}/>
+            <HeaderMenuPopover
+              chapter={item}
+              key={item.id}
+              isScrolled={isScrolled}
+            />
           ))}
         </ul>
       </nav>

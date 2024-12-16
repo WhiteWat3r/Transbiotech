@@ -1,7 +1,7 @@
-export const MobileLogo = ({ color = "#6A78C1" }) => (
+export const MobileLogo = ({ color = "#6A78C1", width = "39", height ="35" }) => (
   <svg
-    width="39"
-    height="35"
+    width={width}
+    height={height}
     viewBox="0 0 39 35"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
