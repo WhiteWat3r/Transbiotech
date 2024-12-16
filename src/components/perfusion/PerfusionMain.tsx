@@ -64,11 +64,11 @@ export const PerfusionMain = () => {
   
     return (
       <div
-        className={`relative w-full bg-cover`}
+        className={`relative w-full bg-cover bg-indigo mt-[-75px]`}
         style={{
           height: isDesktop
-            ? `calc(${sectionHeight}px - 75px)`
-            : "calc(750px - 75px)",
+            ? `${sectionHeight}px`
+            : "750px",
         }}
       >
         <img

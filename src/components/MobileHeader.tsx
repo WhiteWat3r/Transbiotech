@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import menuButton from "../assets/menu.svg";
-import logo from "../assets/logos/mobile-logo.svg";
 import close from "../assets/close.svg";
 import { Accordion } from "./Accordion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useIsScrolled } from "../hooks/useIsScrolled";
+import { MobileLogo } from "./ui/MobileLogo";
+import { MenuIcon } from "./ui/MenuIcon";
+import { CloseIcon } from "./ui/CloseIcon";
 
 export interface IMenuItem {
   id: number;
@@ -54,6 +56,8 @@ export const menuItems: IMenuItem[] = [
 export const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openAccordionId, setOpenAccordionId] = useState<number | null>(null);
+  const isScrolled = useIsScrolled();
+  const pathname = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -64,28 +68,37 @@ export const MobileHeader = () => {
     setOpenAccordionId(openAccordionId === id ? null : id);
   };
 
+  const isHomePage = pathname.pathname === "/";
+  console.log("isHomePage", isHomePage);
+
   return (
     <>
-      <header className="bg-blur-[30px] sticky left-0 top-0 z-40 flex h-[75px] items-center justify-between bg-[#E9E9E94D] px-[20px] backdrop-blur-[30px]">
+      <header
+        className={`bg-blur-[30px] sticky left-0 top-0 z-40 flex h-[75px] items-center justify-between px-[20px] ${isScrolled ? "bg-[#E9E9E94D] backdrop-blur-[30px]" : ""}`}
+      >
         <Link to="/">
-          <img src={logo} alt="Transbiotech" />
+          <MobileLogo color={isHomePage ? "#6A78C1" : "white"} />
         </Link>
-        <img
-          src={menuButton}
-          alt="Меню"
+        <MenuIcon
+          color={isHomePage ? "#929292" : "white"}
           onClick={toggleMenu}
-          className="cursor-pointer"
         />
       </header>
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
           <div className="flex h-full w-full flex-col overflow-y-auto bg-gainsboro p-[20px]">
-            <button
+            <div className="mb-[62px] flex items-center justify-between">
+              <Link to="/">
+                <MobileLogo color={isHomePage ? "#6A78C1" : "white"} />
+              </Link>
+              <CloseIcon />
+            </div>
+            {/* <button
               onClick={toggleMenu}
               className="mb-[45px] ml-auto mt-[28px] text-right text-gray-700"
             >
               <img src={close} alt="Закрыть" />
-            </button>
+            </button> */}
 
             <h2 className="geologica-text mb-[40px] text-[46px] font-semibold leading-[44px] text-grey-1">
               Меню

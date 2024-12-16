@@ -5,9 +5,10 @@ import { menuItems } from "../MobileHeader";
 import { HeaderMenuPopover } from "../HeaderMenuPopover";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useIsScrolled } from "../../hooks/useIsScrolled";
 
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolled = useIsScrolled()
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,20 +26,7 @@ export const Header = () => {
     return () => window.removeEventListener("resize", calculateHeaderWidth);
   }, [isScrolled]);
 // устанавливать src картинки через useEffect
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-  
-      setIsScrolled((prev) => {
-        if (scrollY > 50 && !prev) return true;
-        if (scrollY <= 50 && prev) return false;
-        return prev;
-      });
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
 
   return (
     <header
