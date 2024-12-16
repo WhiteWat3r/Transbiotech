@@ -1,5 +1,5 @@
-import { SectionTechnologies } from "../components/SectionTechnologies";
-import { SectionService } from "../components/SectionService";
+import { SectionService } from "../components/sections/SectionService";
+import { SectionTechnologies } from "../components/sections/SectionTechnologies";
 
 export const Technologies = () => {
   return (

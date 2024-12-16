@@ -62,7 +62,7 @@ export const HeaderMenuPopover = ({
         {chapter.title}
       </button>
 
-      {chapter.id === 1 && (
+      {chapter.id < 4 && (
         <div
           ref={popoverRef}
           className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}

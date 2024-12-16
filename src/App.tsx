@@ -1,12 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import { Header } from "./components/sections/Header";
 import { MobileHeader } from "./components/MobileHeader";
 import useIsMobile from "./hooks/usIsMobile";
 import { Home } from "./pages/Home";
 import { Technologies } from "./pages/Technologies";
 import ScrollToTop from "./hooks/ScrollToTop";
+import { Perfusion } from "./pages/Perfusion";
+import { CardiacSurgery } from "./pages/CardiacSurgery";
+import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";
+import { Arrhythmology } from "./pages/Arrhythmology";
+import { Footer } from "./components/sections/Footer";
 
 function App() {
   const breakpoint = useIsMobile();
@@ -20,6 +24,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/technologies" element={<Technologies />} />
+          <Route path="/perfusion" element={<Perfusion />} />
+          <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
+          <Route path="/arrhythmology" element={<Arrhythmology />} />
+          <Route path="/ems" element={<EmergencyMedicalServices />} />
         </Routes>
       </main>
       <Footer />

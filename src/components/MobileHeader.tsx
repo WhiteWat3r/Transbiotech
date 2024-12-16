@@ -11,7 +11,7 @@ export interface IMenuItem {
   links: { linkId: number; text: string; href: string }[];
 }
 
-export const menuItems:IMenuItem[] = [
+export const menuItems: IMenuItem[] = [
   {
     id: 1,
     title: "о компании",
@@ -24,12 +24,20 @@ export const menuItems:IMenuItem[] = [
   {
     id: 2,
     title: "технологии",
-    links: [{ linkId: 1, text: "документы", href: "" }],
+    links: [
+      { linkId: 1, text: "перфузионные технологии", href: "/perfusion" },
+      { linkId: 1, text: "кардиохирургия", href: "/cardiac-surgery" },
+      { linkId: 1, text: "аритмология", href: "/arrhythmology" },
+      { linkId: 1, text: "скорая помощь", href: "/ems" },
+    ],
   },
   {
     id: 3,
     title: "продукты",
-    links: [{ linkId: 1, text: "документы", href: "" }],
+    links: [
+      { linkId: 1, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
+      { linkId: 2, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
+    ],
   },
   {
     id: 4,
@@ -58,8 +66,10 @@ export const MobileHeader = () => {
 
   return (
     <>
-      <header className="px-[20px] h-[75px] flex justify-between items-center sticky top-0 left-0 z-40 bg-[#E9E9E94D] bg-blur-[30px] backdrop-blur-[30px]">
-        <Link to="/"><img src={logo} alt="Transbiotech" /></Link>
+      <header className="bg-blur-[30px] sticky left-0 top-0 z-40 flex h-[75px] items-center justify-between bg-[#E9E9E94D] px-[20px] backdrop-blur-[30px]">
+        <Link to="/">
+          <img src={logo} alt="Transbiotech" />
+        </Link>
         <img
           src={menuButton}
           alt="Меню"
@@ -68,16 +78,16 @@ export const MobileHeader = () => {
         />
       </header>
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex justify-center items-center">
-          <div className="flex flex-col bg-gainsboro w-full h-full overflow-y-auto p-[20px]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="flex h-full w-full flex-col overflow-y-auto bg-gainsboro p-[20px]">
             <button
               onClick={toggleMenu}
-              className="text-right text-gray-700 ml-auto mt-[28px] mb-[45px]"
+              className="mb-[45px] ml-auto mt-[28px] text-right text-gray-700"
             >
               <img src={close} alt="Закрыть" />
             </button>
 
-            <h2 className="geologica-text text-[46px] leading-[44px] text-grey-1 font-semibold mb-[40px]">
+            <h2 className="geologica-text mb-[40px] text-[46px] font-semibold leading-[44px] text-grey-1">
               Меню
             </h2>
 

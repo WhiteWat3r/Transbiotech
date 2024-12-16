@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import arrowBottom from "../assets/arrows/arrow-botom.svg";
+import { Link } from "react-router-dom";
 
 export const Accordion = ({
     id,
@@ -77,7 +78,9 @@ export const Accordion = ({
                 key={item.linkId}
                 className="text-grey-2 text-[27px] leading-[27px] geologica-text font-normal"
               >
+                <Link to={item.href}>
                 {item.text}
+                </Link>
               </li>
             ))}
           </ul>
