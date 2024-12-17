@@ -1,12 +1,6 @@
+import { memo, useEffect, useRef, useState } from "react";
+
 import person1 from "../assets/team/1.png";
-import person2 from "../assets/team/2.png";
-import person3 from "../assets/team/3.png";
-import person4 from "../assets/team/4.png";
-import person5 from "../assets/team/5.png";
-import person6 from "../assets/team/6.png";
-import person7 from "../assets/team/7.png";
-import person8 from "../assets/team/8.png";
-import person9 from "../assets/team/9.png";
 import person10 from "../assets/team/10.png";
 import person11 from "../assets/team/11.png";
 import person12 from "../assets/team/12.png";
@@ -15,6 +9,7 @@ import person15 from "../assets/team/15.png";
 import person16 from "../assets/team/16.png";
 import person18 from "../assets/team/18.png";
 import person19 from "../assets/team/19.png";
+import person2 from "../assets/team/2.png";
 import person20 from "../assets/team/20.png";
 import person21 from "../assets/team/21.png";
 import person22 from "../assets/team/22.png";
@@ -24,10 +19,16 @@ import person26 from "../assets/team/26.png";
 import person27 from "../assets/team/27.png";
 import person28 from "../assets/team/28.png";
 import person29 from "../assets/team/29.png";
+import person3 from "../assets/team/3.png";
 import person30 from "../assets/team/30.png";
-import useIsMobile from "../hooks/usIsMobile";
-import { memo, useEffect, useRef, useState } from "react";
+import person4 from "../assets/team/4.png";
+import person5 from "../assets/team/5.png";
+import person6 from "../assets/team/6.png";
+import person7 from "../assets/team/7.png";
+import person8 from "../assets/team/8.png";
+import person9 from "../assets/team/9.png";
 import useIntersection from "../hooks/useIntersection";
+import useIsMobile from "../hooks/usIsMobile";
 const imageCache = new Map();
 
 const preloadImagesToDOM = (imageSources: string[]) => {

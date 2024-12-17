@@ -1,10 +1,11 @@
 import React, { CSSProperties, useRef, useState } from "react";
+
 import bg from "../assets/bg/about-us-bg.png";
 import bgDesktop from "../assets/bg-desktop.png";
 import bubble from "../assets/bubble.png";
 import bubbleDesktop from "../assets/desk-bubble.svg";
-import useIsMobile from "../hooks/usIsMobile";
 import useIntersection from "../hooks/useIntersection";
+import useIsMobile from "../hooks/usIsMobile";
 
 const achievements = [
   {

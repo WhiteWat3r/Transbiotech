@@ -1,4 +1,4 @@
-import bgThird from "../../assets/bg/bg-third.png";
+import bgThird from "@/assets/bg/bg-third.png";
 
 export const SectionService = () => {
   return (

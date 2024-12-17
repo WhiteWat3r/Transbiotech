@@ -1,22 +1,19 @@
 import React, { CSSProperties, useRef } from "react";
 
-import techLogoFirst from "../../assets/technologies/tech-logo-first.svg";
-import techLogoSecond from "../../assets/technologies/tech-logo-second.svg";
-import techLogoThird from "../../assets/technologies/tech-logo-third.svg";
-import techLogoFourth from "../../assets/technologies/tech-logo-fourth.svg";
-
-import techLogoFirstMobile from "../../assets/technologies/tech-logo-first-mobile.svg";
-import techLogoSecondMobile from "../../assets/technologies/tech-logo-second-mobile.svg";
-import techLogoThirdMobile from "../../assets/technologies/tech-logo-third-mobile.svg";
-import techLogoFourthMobile from "../../assets/technologies/tech-logo-fourth-mobile.svg";
-
-import techBgFirst from "../../assets/technologies/bg-first.svg";
-import techBgSecond from "../../assets/technologies/bg-second.svg";
-import techBgThird from "../../assets/technologies/bg-third.svg";
-import techBgFourth from "../../assets/technologies/bg-fourth.svg";
-
-import useIsMobile from "../../hooks/usIsMobile";
-import useIntersection from "../../hooks/useIntersection";
+import techBgFirst from "@/assets/technologies/bg-first.svg";
+import techBgFourth from "@/assets/technologies/bg-fourth.svg";
+import techBgSecond from "@/assets/technologies/bg-second.svg";
+import techBgThird from "@/assets/technologies/bg-third.svg";
+import techLogoFirstMobile from "@/assets/technologies/tech-logo-first-mobile.svg";
+import techLogoFirst from "@/assets/technologies/tech-logo-first.svg";
+import techLogoFourthMobile from "@/assets/technologies/tech-logo-fourth-mobile.svg";
+import techLogoFourth from "@/assets/technologies/tech-logo-fourth.svg";
+import techLogoSecondMobile from "@/assets/technologies/tech-logo-second-mobile.svg";
+import techLogoSecond from "@/assets/technologies/tech-logo-second.svg";
+import techLogoThirdMobile from "@/assets/technologies/tech-logo-third-mobile.svg";
+import techLogoThird from "@/assets/technologies/tech-logo-third.svg";
+import useIntersection from "@/hooks/useIntersection";
+import useIsMobile from "@/hooks/usIsMobile";
 
 const technologies = [
   {

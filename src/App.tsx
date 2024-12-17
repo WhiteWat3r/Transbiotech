@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { Footer } from "./components/sections/Footer";
 import { Header } from "./components/sections/Header";
-import useIsMobile from "./hooks/usIsMobile";
-import { Home } from "./pages/Home";
-import { Technologies } from "./pages/Technologies";
+import { MobileHeader } from "./components/sections/MobileHeader";
 import ScrollToTop from "./hooks/ScrollToTop";
-import { Perfusion } from "./pages/Perfusion";
+import useIsMobile from "./hooks/usIsMobile";
+import { Arrhythmology } from "./pages/Arrhythmology";
 import { CardiacSurgery } from "./pages/CardiacSurgery";
 import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";
-import { Arrhythmology } from "./pages/Arrhythmology";
-import { Footer } from "./components/sections/Footer";
-import { MobileHeader } from "./components/sections/MobileHeader";
+import { Home } from "./pages/Home";
+import { Perfusion } from "./pages/Perfusion";
+import { Technologies } from "./pages/Technologies";
 
 function App() {
   const breakpoint = useIsMobile();

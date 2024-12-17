@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import arrowBottom from "../assets/arrows/arrow-botom.svg";
 import { Link } from "react-router-dom";
+
+import arrowBottom from "../assets/arrows/arrow-botom.svg";
 import { IMenuItem } from "../utils/types";
 
 export const Accordion = ({

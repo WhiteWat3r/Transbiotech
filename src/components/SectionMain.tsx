@@ -1,9 +1,9 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
+
 import bgMain from "../../public/tailwindBackgrounds/bg-main.png";
 import bgMainDesktop from "../../public/tailwindBackgrounds/main-desktop.png";
-
-import useIsMobile from "../hooks/usIsMobile";
 import { useSectionSizeFromImageHeight } from "../hooks/useSectionSizeFromImageHeight";
+import useIsMobile from "../hooks/usIsMobile";
 
 const buttons = [
   {

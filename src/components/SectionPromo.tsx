@@ -1,4 +1,5 @@
 import { useRef } from "react";
+
 import bg from "../../public/tailwindBackgrounds/second-desktop.png";
 import useIntersection from "../hooks/useIntersection";
 

@@ -1,7 +1,7 @@
-import footerBg from "../../assets/bg/footer.png";
-import footerLogo from "../../assets/logos/footer-logo.svg";
-import footerDesktopBg from "../../assets/bg/footer-desktop.png";
-import useIsMobile from "../../hooks/usIsMobile";
+import footerDesktopBg from "@/assets/bg/footer-desktop.png";
+import footerBg from "@/assets/bg/footer.png";
+import footerLogo from "@/assets/logos/footer-logo.svg";
+import useIsMobile from "@/hooks/usIsMobile";
 
 const requisites = [
   {
@@ -29,7 +29,7 @@ export const Footer = () => {
         className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[50px] 1440:top-auto"
       />
 
-      <div className="relative mt-[115px] h-[635px] w-full rounded-t-[25px] bg-white p-[40px] pb-[25px] desktop:p-[80px] desktop:mt-[30px] desktop:rounded-0 desktop:rounded-t-none 
+      <div className="relative flex flex-col mt-[115px] h-[635px] w-full rounded-[25px] bg-white p-[40px] pb-[25px] desktop:p-[80px] desktop:mt-[30px] desktop:rounded-0 desktop:rounded-t-none 
       desktop:rounded-tl-[45px] desktop:pl-[29.5vw] desktop:h-[600px]">
         <div className="geologica-text desktop:text-grey-1 relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:text-[72px] desktop:leading-[72px]">
           {`Продлевая жизнь`}
@@ -75,11 +75,11 @@ export const Footer = () => {
           </li> */}
         </ul>
 
-        <ul className="relative z-30 mt-[125px] flex flex-col gap-[5px] desktop:mt-[20px] desktop:gap-0">
+        <ul className="relative z-30 mt-auto flex flex-col gap-[5px] desktop:mt-[20px] desktop:gap-0">
           {requisites.map((req) => (
             <li
               key={req.id}
-              className="text-[10px] font-semibold leading-[12px] text-[#D9D9D9] desktop:text-[15px] desktop:leading-[18px]"
+              className="text-[10px] font-semibold leading-[12px] text-[#D9D9D9] desktop:text-[15px] desktop:leading-[18px] uppercase"
             >
               {req.text}
             </li>

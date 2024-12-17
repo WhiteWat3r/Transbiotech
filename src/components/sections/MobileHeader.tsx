@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import close from "../assets/close.svg";
-import { Accordion } from "../Accordion";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useIsScrolled } from "../../hooks/useIsScrolled";
-import { MobileLogo } from "../icons/MobileLogo";
+
+import { useIsScrolled } from "@/hooks/useIsScrolled";
 import { MenuIcon } from "../icons/MenuIcon";
-import { CloseIcon } from "../icons/CloseIcon";
+import { MobileLogo } from "../icons/MobileLogo";
 import { MobileMenu } from "../MobileMenu";
 
 export const MobileHeader = () => {

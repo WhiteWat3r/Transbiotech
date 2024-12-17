@@ -1,10 +1,11 @@
-import fullLogo from "../../assets/logos/full-logo.svg";
 
-import { HeaderMenuPopover } from "../HeaderMenuPopover";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useIsScrolled } from "../../hooks/useIsScrolled";
-import { menuItems } from "../../utils/constants";
+
+import fullLogo from "@/assets/logos/full-logo.svg";
+import { useIsScrolled } from "@/hooks/useIsScrolled";
+import { menuItems } from "@/utils/constants";
+import { HeaderMenuPopover } from "../HeaderMenuPopover";
 import { FullLogo } from "../icons/FullLogo";
 import { MobileLogo } from "../icons/MobileLogo";
 

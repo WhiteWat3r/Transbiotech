@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Accordion } from "./Accordion";
 import { Link } from "react-router-dom";
-import { MobileLogo } from "./icons/MobileLogo";
+
+import { Accordion } from "./Accordion";
 import { CloseIcon } from "./icons/CloseIcon";
+import { MobileLogo } from "./icons/MobileLogo";
 import { menuItems } from "../utils/constants";
 
 export const MobileMenu = ({
