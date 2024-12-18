@@ -7,18 +7,22 @@ export const DeviceInfo = ({
   advantages,
   description,
   marginLeft,
+  maxWidth,
+  rowAdvantages
 }: {
   advantages?: string[];
   description?: { mainText: string; additionalText?: ReactNode };
   marginLeft?: boolean;
+  maxWidth?: string
+  rowAdvantages?: boolean
 }) => {
   return (
-    <ul className="flex flex-col gap-[25px] z-20">
-      {description && <DeviceDescription description={description} />}
+    <div className="z-20 flex flex-col gap-[25px] desktop:gap-[45px]">
+      {description && <DeviceDescription maxWidth={maxWidth} description={description} />}
 
       {advantages && (
-        <DeviceAdvantages marginLeft={marginLeft} advantages={advantages} />
+        <DeviceAdvantages marginLeft={marginLeft} advantages={advantages} rowAdvantages={rowAdvantages}/>
       )}
-    </ul>
+    </div>
   );
 };

@@ -14,7 +14,7 @@ export const Header = () => {
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
   const pathname = useLocation();
-  const isHomePage = pathname.pathname === "/";
+  const isHomePage = pathname.pathname === "/" || pathname.pathname === "/technologies";
   const [currentLogo, setCurrentLogo] = useState<JSX.Element | null>(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export const Header = () => {
       <Link
         className={`relative ml-[20px] flex items-center rounded-[42px] pl-[18px] pr-[14px] transition-all duration-500 ${
           isScrolled
-            ? "h-[50px] border-2 border-white bg-[#F8F8F8D9] transition-all duration-500"
+            ? "h-[50px] border-2 border-white bg-[#F8F8F8D9] transition-all duration-500 backdrop-blur-[10px]"
             : "animate-disappearBorder border-none border-transparent"
         }`}
         to="/"

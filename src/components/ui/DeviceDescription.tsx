@@ -1,30 +1,48 @@
+import useBreakpoint from "@/hooks/usIsMobile";
 import { ReactNode, useState } from "react";
 
 export const DeviceDescription = ({
   description,
+  maxWidth,
 }: {
   description: { mainText: string; additionalText?: ReactNode };
+  maxWidth?: string;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const breakpoint = useBreakpoint();
+  const isDesktop = breakpoint === "desktop";
 
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
   };
   return (
-    <li className="flex flex-col gap-[15px]">
-      <span className="mob-head-4 text-grey-2 opacity-50">описание</span>
-      <p className="mob-text-3 ml-auto w-[276px] text-black-default">
+    <div className="flex flex-col gap-[15px] desktop:flex-row">
+      <span className="mob-head-4 desktop:text-2 text-grey-2 opacity-50">
+        описание
+      </span>
+      <p
+        className={`mob-text-3 desktop:text-4 ml-auto w-[276px] text-black-default ${maxWidth ? maxWidth : "desktop:w-[510px]"} `}
+      >
         {description.mainText}
-        {description.additionalText && !isExpanded && (
+
+        {!isDesktop ? (
           <>
-            {".. "}
-            <span className="text-grey-2 underline" onClick={handleToggle}>
-              (развернуть)
-            </span>
+            {description.additionalText && !isExpanded && (
+              <>
+                {".. "}
+                <span className="text-grey-2 underline" onClick={handleToggle}>
+                  (развернуть)
+                </span>
+              </>
+            )}
+            {description.additionalText &&
+              isExpanded &&
+              description.additionalText}
           </>
+        ) : (
+          description.additionalText && description.additionalText
         )}
-        {description.additionalText && isExpanded && description.additionalText}
       </p>
-    </li>
+    </div>
   );
 };

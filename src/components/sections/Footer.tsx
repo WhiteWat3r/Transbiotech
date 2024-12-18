@@ -26,7 +26,7 @@ export const Footer = () => {
       <img
         src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
         alt="asd"
-        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[50px] 1440:top-auto"
+        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[50px] 1440:top-[-200px]"
       />
 
       <div className="relative flex flex-col mt-[115px] h-[635px] w-full rounded-[25px] bg-white p-[40px] pb-[25px] desktop:p-[80px] desktop:mt-[30px] desktop:rounded-0 desktop:rounded-t-none 

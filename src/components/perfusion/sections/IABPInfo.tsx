@@ -27,7 +27,7 @@ const description = {
     <>
       {` Наполнение баллона перед диастолой увеличивает коронарный кровоток, что
       улучшает перфузию миокарда.`}
-      <span className="mt-[10px] block">
+      <span className="mt-[10px] block desktop:mt-[25px]">
         Методика позволяет разгрузить сердце и разорвать порочный круг
         изменений, которые могут привести к инфаркту миокарда и к развитию
         острой сердечной недостаточности.
@@ -41,12 +41,18 @@ export const IABPInfo = () => {
   const isDesktop = breakpoint !== "mobile";
 
   return (
-    <div className="mx-auto my-[80px] flex w-full max-w-[1440px] flex-col">
-      <div className="relative">
-        <span className="absolute left-[0] top-[50%] h-[250px] w-full translate-y-[-50%] bg-white" />
-        <img src={iabp} alt="О нас" className="relative z-20 px-[95px]" />
+    <div className="mx-auto my-[80px] flex w-full max-w-[1440px] flex-col desktop:mt-[210px] desktop:flex-row desktop:gap-[45px] desktop:pb-[20px]">
+
+      <div className="relative desktop:h-[600px] desktop:min-w-[301px]">
+        <span className="absolute desktop:w-[296px] left-[0] top-[50%] h-[250px]  w-full translate-y-[-50%] bg-white desktop:h-full desktop:rounded-r-[45px]" />
+        <img
+          src={iabp}
+          alt="О нас"
+          className="relative z-20 px-[95px] desktop:ml-[50px] desktop:w-[265px] desktop:h-[459px] desktop:px-0 desktop:mt-[64px]"
+        />
       </div>
-      <div className="flex w-full flex-col px-[20px]">
+
+      <div className="flex w-full flex-col px-[20px] desktop:px-0 desktop:pr-[80px]">
         <SectionNumber number={1} />
 
         <SectionTitle
@@ -54,7 +60,7 @@ export const IABPInfo = () => {
           secondChapter={"контрпульсация"}
         />
 
-        <ul className="mb-[26px] mt-[15px] flex justify-between">
+        <ul className="mb-[26px] mt-[15px] flex justify-between desktop:mt-[27px] desktop:justify-start desktop:gap-[19px] desktop:mb-[38px]">
           {companies.map((company) => (
             <li key={company.id}>
               <img

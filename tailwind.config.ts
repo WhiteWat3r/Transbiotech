@@ -117,6 +117,12 @@ export default {
             border: "2px solid transparent",
           },
         },
+        // "perfusion-main" : {
+        //   "0%": { transform: "translateY(0)" },
+        //   "30%": { transform: "translateY(20px) translatex(30px)" },
+        //   "60%": { transform: "translateY(0) translatex(40px)" },
+        //   "100%": { transform: "translateY(0)" },
+        // },
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 },
@@ -138,6 +144,7 @@ export default {
         "circle-slideIn": "circle-slideIn 0.8s forwards",
         "circle-slideOut": "circle-slideOut 0.8s forwards",
         "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards",
+        "perfusion-main" : "perfusion-main 10s ease-out infinite"
       },
 
       backgroundImage: {
@@ -145,6 +152,8 @@ export default {
         "main-sec-bg": "url('/tailwindBackgrounds/bg-main.png')",
         "main-desk": "url('/tailwindBackgrounds/main-desktop.png')",
         "second-desktop-bg": "url('/tailwindBackgrounds/second-desktop.png')",
+        "ecmo-gradient":
+          "linear-gradient(270deg, #FFFFFF 29.37%, rgba(255, 255, 255, 0) 140%)",
       },
       backgroundPosition: {
         "top-2": "center top -90px",
