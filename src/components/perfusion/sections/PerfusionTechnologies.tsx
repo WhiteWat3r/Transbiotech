@@ -15,11 +15,12 @@ export const PerfusionTechnologies = () => {
       <ul className="relative z-10 grid grid-cols-2 gap-[19px] desktop:grid-cols-3">
         {perfusionCards.map((card) => (
           // <li key={card.id} className="backdrop-blur-[40px] bg-[#FFFFFF]">
-
           <li
             key={card.id}
-            className={`flex h-[149px] flex-col justify-between rounded-[25px] bg-[#FFFFFF] bg-opacity-30 p-[20px] desktop:h-[177px] desktop:p-[30px] ${
-              card.id === 7 ? "col-start-2" : ""
+            className={` flex h-[149px] flex-col justify-between rounded-[25px] bg-[#FFFFFF] bg-opacity-30 p-[20px] desktop:h-[177px] desktop:p-[30px] 
+              desktop:hover:translate-y-[-10px] duration-500 desktop:hover:bg-opacity-100
+              ${
+              card.id === 7  ? "desktop:col-start-2" : ""
             }`}
           >
             {" "}

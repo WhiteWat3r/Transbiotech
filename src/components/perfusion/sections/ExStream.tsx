@@ -2,12 +2,15 @@ import bgMain from "@/assets/bg/ecmo-mobile-bg.png";
 import bgMainDesc from "@/assets/bg/ex-stream-bg.png";
 
 import exStream from "@/assets/perfusion/ex-stream.png";
+import exStreamSecond from "@/assets/perfusion/ex-stream-second.png";
+import exStreamThird from "@/assets/perfusion//ex-stream-third.png";
 
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
 import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
 import useBreakpoint from "@/hooks/usIsMobile";
+import { useScrollFrameByFrame } from "@/hooks/useScrollFrameByFrame";
 
 const advantages = [
   {
@@ -31,8 +34,11 @@ export const ExStream = () => {
   const breakpoint = useBreakpoint();
   const isDesktop = breakpoint === "desktop";
 
+  const frames = [exStream, exStreamSecond, exStreamThird];
+  const { currentFrame, elementRef } = useScrollFrameByFrame(frames, isDesktop);
+
   return (
-    <div className="relative w-full">
+    <div ref={elementRef } className="relative w-full">
       <img
         // ref={imgRef}
         src={isDesktop ? bgMainDesc : bgMain}
@@ -59,7 +65,7 @@ export const ExStream = () => {
             }}
           />
         </div>
-        <div className="mb-[37px] mt-[50px] flex flex-col desktop:mb-[46px] desktop:mt-[85px] desktop:flex-row desktop:justify-between">
+        <div  className="gap-[37px] mt-[50px] flex flex-col desktop:mb-[46px] desktop:mt-[85px] desktop:flex-row desktop:justify-between">
           <p className="head-5 desktop:head-4 text-grey-2 desktop:max-w-[480px]">
             {`Наша компания разработала и\u00A0вывела на\u00A0рынок`}{" "}
             <span className="text-black-default desktop:block">
@@ -67,11 +73,13 @@ export const ExStream = () => {
             </span>{" "}
             <span className="text-indigo desktop:block">Ex-Stream. </span>
           </p>
+<div className="h-[250px] desktop:h-auto">
           <img
-            src={exStream}
+            src={currentFrame}
             alt="Ex-Stream"
-            className="z-10 mb-[56px] desktop:h-[322px] desktop:w-[500px]"
+            className="z-10 mb-[56px] transition-opacity duration-300 desktop:h-[322px] desktop:w-[500px]"
           />
+</div>
         </div>
         <ul className="relative z-20 flex flex-col gap-[10px] desktop:flex-row desktop:gap-[21px]">
           {advantages.map((advantage) => (

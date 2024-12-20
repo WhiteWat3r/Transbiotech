@@ -117,6 +117,20 @@ export default {
             border: "2px solid transparent",
           },
         },
+        "advantages-show": {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(30px)",
+          },
+          "70%": {
+            opacity: 1,
+            transform: "translateY(-8px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
         // "perfusion-main" : {
         //   "0%": { transform: "translateY(0)" },
         //   "30%": { transform: "translateY(20px) translatex(30px)" },
@@ -131,6 +145,32 @@ export default {
           from: { opacity: 1 },
           to: { opacity: 0 },
         },
+        "flashing-border": {
+          "0%": {
+            opacity: 0,
+          },
+          "20%": {
+            opacity: 1,
+          },
+          "40%": {
+            opacity: 0,
+          },
+          "50%": {
+            opacity: 1,
+          },
+          "60%": {
+            opacity: 0,
+          },
+          "80%": {
+            opacity: 1,
+          },
+          "90%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
       },
       animation: {
         slideIn: "slideIn 0.8s forwards",
@@ -144,7 +184,9 @@ export default {
         "circle-slideIn": "circle-slideIn 0.8s forwards",
         "circle-slideOut": "circle-slideOut 0.8s forwards",
         "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards",
-        "perfusion-main" : "perfusion-main 10s ease-out infinite"
+        "perfusion-main": "perfusion-main 10s ease-out infinite",
+        "advantages-show": "advantages-show 0.5s ease-out forwards",
+        "flashing-border": "flashing-border 0.5s ease-out forwards",
       },
 
       backgroundImage: {

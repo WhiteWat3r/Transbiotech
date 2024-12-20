@@ -1,3 +1,6 @@
+import useIntersection from "@/hooks/useIntersection";
+import { useRef } from "react";
+
 export const DeviceAdvantages = ({
   advantages,
   marginLeft = true,
@@ -7,8 +10,14 @@ export const DeviceAdvantages = ({
   marginLeft?: boolean;
   rowAdvantages?: boolean;
 }) => {
+  const sectionRef = useRef(null);
+
+  const { isVisible } = useIntersection(sectionRef, {
+    threshold: 1,
+  });
+
   return (
-    <div className="flex flex-col gap-[15px] desktop:flex-row">
+    <div ref={sectionRef} className="flex flex-col gap-[15px] desktop:flex-row">
       <span className="mob-head-4 desktop:text-2 max-w-[170px] text-grey-2 opacity-50">
         преимущества методики
       </span>
@@ -21,12 +30,12 @@ export const DeviceAdvantages = ({
             className={`mob-head-5 desktop:text-3 relative text-indigo`}
           >
             <p
-              className={`${rowAdvantages ? "max-w-[245px]" : ""} ${rowAdvantages && index === 1 ? "tracking-[-0.8px]" : " "}`}
+              className={`${isVisible ? "animate-advantages-show" : "opacity-0" } transition-all ${rowAdvantages ? "max-w-[245px]" : ""} ${rowAdvantages && index === 1 ? "tracking-[-0.8px]" : " "}`}
             >
               {advantage}
             </p>
             <span
-              className={`block h-[1px] ${marginLeft ? "w-full" : "w-[150%]"} mt-[1px] bg-indigo desktop:mt-[5px]`}
+              className={`block h-[1px] transition-all duration-800 ${isVisible ? "opacity-100" : "opacity-0"} ${marginLeft ? "w-full" : "w-[150%]"} mt-[1px] bg-indigo desktop:mt-[5px]`}
             />
           </li>
         ))}
