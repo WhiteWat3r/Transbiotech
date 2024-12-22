@@ -15,11 +15,11 @@ export const menuItems: IMenuItem[] = [
     title: "технологии",
     links: [
       { linkId: 1, text: "перфузионные технологии", href: "/perfusion" },
-      {
-        linkId: 2,
-        text: "Просмотр страницы технологии (тест)",
-        href: "/technologies",
-      },
+      // {
+      //   linkId: 2,
+      //   text: "Просмотр страницы технологии (тест)",
+      //   href: "/technologies",
+      // },
       // { linkId: 1, text: "кардиохирургия", href: "/cardiac-surgery" },
       // { linkId: 1, text: "аритмология", href: "/arrhythmology" },
       // { linkId: 1, text: "скорая помощь", href: "/ems" },
