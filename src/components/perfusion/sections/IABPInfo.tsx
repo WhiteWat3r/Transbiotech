@@ -6,7 +6,7 @@ import getinge from "@/assets/perfusion/getinge.svg";
 import insightraMobile from "@/assets/perfusion/insightra-mobile.svg";
 import insightra from "@/assets/perfusion/insightra.svg";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
 

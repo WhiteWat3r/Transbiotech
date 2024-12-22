@@ -1,7 +1,7 @@
-export const FullLogo = ({color = "#6A78C1"} : {color: string}) => (
+export const FullLogo = ({color = "#6A78C1", width = "157", height = "24"} : {color: string, width?: string,  height?: string}) => (
   <svg
-    width="157"
-    height="24"
+    width={width}
+    height={height}
     viewBox="0 0 157 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

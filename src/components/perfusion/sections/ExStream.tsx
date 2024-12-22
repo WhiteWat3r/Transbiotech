@@ -8,9 +8,9 @@ import exStreamThird from "@/assets/perfusion//ex-stream-third.png";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
-import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
-import useBreakpoint from "@/hooks/usIsMobile";
-import { useScrollFrameByFrame } from "@/hooks/useScrollFrameByFrame";
+import { LogosList } from "../components/LogosList";
+import useBreakpoint from "@/hooks/useIsMobile";
+import { useScrollFrameBySteps } from "@/hooks/useScrollFrameByFrame";
 
 const advantages = [
   {
@@ -35,10 +35,10 @@ export const ExStream = () => {
   const isDesktop = breakpoint === "desktop";
 
   const frames = [exStream, exStreamSecond, exStreamThird];
-  const { currentFrame, elementRef } = useScrollFrameByFrame(frames, isDesktop);
+  const { currentFrame, elementRef } = useScrollFrameBySteps(frames);
 
   return (
-    <div ref={elementRef } className="relative w-full">
+    <div  className="relative w-full">
       <img
         // ref={imgRef}
         src={isDesktop ? bgMainDesc : bgMain}
@@ -55,7 +55,7 @@ export const ExStream = () => {
           secondChapter={`сердечно\u2011легочной недостаточности`}
         />
 
-        <TransbiotechBiosoftList />
+        <LogosList logos={['transbiotech', 'biosoft']} />
 
         <div className="desktop:max-w-[775px]">
           <DeviceInfo
@@ -77,11 +77,11 @@ export const ExStream = () => {
           <img
             src={currentFrame}
             alt="Ex-Stream"
-            className="z-10 mb-[56px] transition-opacity duration-300 desktop:h-[322px] desktop:w-[500px]"
+            className=" relative z-10 mb-[56px] transition-opacity duration-300 desktop:h-[322px] desktop:w-[500px]"
           />
 </div>
         </div>
-        <ul className="relative z-20 flex flex-col gap-[10px] desktop:flex-row desktop:gap-[21px]">
+        <ul className="relative z-20 flex flex-col gap-[10px] desktop:flex-row desktop:gap-[21px]"  ref={elementRef }>
           {advantages.map((advantage) => (
             <li
               key={advantage.id}

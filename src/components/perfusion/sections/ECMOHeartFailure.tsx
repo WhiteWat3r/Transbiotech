@@ -2,7 +2,7 @@ import perfusion4 from "@/assets/perfusion/perfusion-4.png";
 
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
-import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
+import { LogosList } from "../components/LogosList";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export const ECMOHeartFailure = () => {
@@ -23,7 +23,7 @@ export const ECMOHeartFailure = () => {
             secondChapter={`сердечной смерти`}
           />
 
-          <TransbiotechBiosoftList />
+          <LogosList logos={['transbiotech', 'biosoft']} />
           <DeviceInfo
             description={{
               mainText:

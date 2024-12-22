@@ -4,8 +4,8 @@ import organPreparationDesk from "@/assets/perfusion/organ-preparation-desk.png"
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
-import useBreakpoint from "@/hooks/usIsMobile";
+import { LogosList } from "../components/LogosList";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
 import { DeviceDescription } from "@/components/ui/DeviceDescription";
 
@@ -26,7 +26,7 @@ export const OrganPreparation = () => {
           firstChapter={"подготовка органов"}
           secondChapter={`к\u00A0трансплантации`}
         />
-        <TransbiotechBiosoftList logos={["transbiotech", "energoArm"]} />
+        <LogosList logos={["transbiotech", "energoArm"]} />
 
         <div className="z-20 flex flex-col gap-[25px] desktop:gap-[45px]">
           <div className="desktop:w-[860px]">

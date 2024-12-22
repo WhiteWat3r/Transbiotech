@@ -1,4 +1,4 @@
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { ReactNode, useState } from "react";
 
 export const DeviceDescription = ({

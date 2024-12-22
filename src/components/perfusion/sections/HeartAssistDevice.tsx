@@ -1,12 +1,12 @@
 import bgMain from "@/assets/bg/perfusion-mobile.png";
 import bgMainDesc from "@/assets/bg/perfusion-desktop.png";
 
-import biosoft from "@/assets/perfusion/biosoft.svg";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
+import { LogosList } from "../components/LogosList";
 
 export const HeartAssistDevice = () => {
   const breakpoint = useBreakpoint();
@@ -16,7 +16,7 @@ export const HeartAssistDevice = () => {
   универсальный комплекс для\u00A0механической поддержки насосной функции
   левого и правого желудочков.`;
 
-  const { highlightedText, elementRef } = useHighlightedText({textContent});
+  const { highlightedText, elementRef } = useHighlightedText({ textContent });
 
   return (
     <div className="relative w-full bg-white">
@@ -24,7 +24,7 @@ export const HeartAssistDevice = () => {
         // ref={imgRef}
         src={isDesktop ? bgMainDesc : bgMain}
         alt="Transbiotech"
-        className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain desktop:top-[314px]"
+        className="absolute left-[50%] translate-x-[-50%] object-contain desktop:top-[314px]"
         // onLoad={handleImageLoad}
       />
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[84px]">
@@ -34,12 +34,8 @@ export const HeartAssistDevice = () => {
           firstChapter={"искусственный\n"}
           secondChapter={`желудочек\u00A0сердца`}
         />
-        <img
-          src={biosoft}
-          alt="Биософт-M"
-          className="mb-[26px] mt-[15px] w-[111px] desktop:mb-[40px] desktop:mt-[25px] desktop:w-[170px]"
-        />
 
+        <LogosList logos={["biosoft"]} />
         <div className="desktop:max-w-[883px]">
           <DeviceInfo
             maxWidth={"desktop:w-[620px]"}

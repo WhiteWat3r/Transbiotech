@@ -5,7 +5,7 @@ import bgDesktop from "../assets/bg-desktop.png";
 import bubble from "../assets/bubble.png";
 import bubbleDesktop from "../assets/desk-bubble.svg";
 import useIntersection from "../hooks/useIntersection";
-import useIsMobile from "../hooks/usIsMobile";
+import useIsMobile from "../hooks/useIsMobile";
 
 const achievements = [
   {

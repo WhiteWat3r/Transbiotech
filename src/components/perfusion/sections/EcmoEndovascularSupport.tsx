@@ -1,7 +1,7 @@
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
+import { LogosList } from "../components/LogosList";
 import { DeviceDescription } from "@/components/ui/DeviceDescription";
 import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
 
@@ -15,7 +15,7 @@ export const EcmoEndovascularSupport = () => {
           firstChapter={`ЭКМО-поддержка`}
           secondChapter={`эндоваскулярных вмешательств`}
         />
-        <TransbiotechBiosoftList />
+        <LogosList />
 
         <div className="z-20 flex flex-col gap-[25px] desktop:gap-[45px]">
           <div className="desktop:w-[775px]">

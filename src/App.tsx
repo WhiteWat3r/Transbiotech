@@ -4,7 +4,7 @@ import { Footer } from "./components/sections/Footer";
 import { Header } from "./components/sections/Header";
 import { MobileHeader } from "./components/sections/MobileHeader";
 import ScrollToTop from "./hooks/ScrollToTop";
-import useIsMobile from "./hooks/usIsMobile";
+import useIsMobile from "./hooks/useIsMobile";
 import { Arrhythmology } from "./pages/Arrhythmology";
 import { CardiacSurgery } from "./pages/CardiacSurgery";
 import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";

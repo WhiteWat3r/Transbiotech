@@ -28,7 +28,7 @@ import person7 from "../assets/team/7.png";
 import person8 from "../assets/team/8.png";
 import person9 from "../assets/team/9.png";
 import useIntersection from "../hooks/useIntersection";
-import useIsMobile from "../hooks/usIsMobile";
+import useIsMobile from "../hooks/useIsMobile";
 const imageCache = new Map();
 
 const preloadImagesToDOM = (imageSources: string[]) => {

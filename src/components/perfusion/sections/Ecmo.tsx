@@ -1,6 +1,6 @@
 import ecmoMobile from "@/assets/bg/ecmo-mobile.png";
 import ecmo from "@/assets/bg/ecmo.png";
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
 
 export const Ecmo = () => {
   const breakpoint = useBreakpoint();

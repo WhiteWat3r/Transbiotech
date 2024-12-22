@@ -1,24 +1,26 @@
 import transbiotechMobile from "@/assets/perfusion/transbiotech-mobile-bg.svg";
 import transbiotech from "@/assets/perfusion/transbiotech.svg";
 
-import biosoftMobile from "@/assets/perfusion/biosoft-mobile.svg";
-import biosoft from "@/assets/perfusion/biosoft.svg";
+
 import energoArmMobile from "@/assets/logos/energo-arm-mobile.svg";
 import energoArm from "@/assets/logos/energo-arm.svg";
 
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
+import { BiosoftLogo } from "@/components/icons/BiosoftLogo";
+import { TransbiotechLogo } from "@/components/icons/TransbiotechLogo";
+import { EnergoArmLogo } from "@/components/icons/EnergoArmLogo";
 
 const companies = [
   {
     id: 1,
-    img: transbiotech,
+    img: <TransbiotechLogo />,
     alt: "transbiotech",
   },
-  { id: 2, img: biosoft,  alt: "biosoft" },
-  { id: 3, img: energoArm, alt: "energoArm" },
+  { id: 2, img: <BiosoftLogo />,  alt: "biosoft" },
+  { id: 3, img: <EnergoArmLogo />, alt: "energoArm" },
 ];
 
-export const TransbiotechBiosoftList = ({ logos }: { logos?: string[] }) => {
+export const LogosList = ({ logos }: { logos?: string[] }) => {
   const breakpoint = useBreakpoint();
   const isDesktop = breakpoint !== "mobile";
 
@@ -29,11 +31,7 @@ export const TransbiotechBiosoftList = ({ logos }: { logos?: string[] }) => {
         : companies.slice(0, 2)
       ).map((company) => (
         <li key={company.id}>
-          <img
-          className="desktop:h-[39px]"
-            src={company.img}
-            alt={company.alt}
-          />
+{company.img}
         </li>
       ))}
     </ul>

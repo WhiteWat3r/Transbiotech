@@ -4,8 +4,8 @@ import ecmoTransplantationDesc from "@/assets/perfusion/ecmo-transplantation-des
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { TransbiotechBiosoftList } from "../components/TransbiotechBiosoftList";
-import useBreakpoint from "@/hooks/usIsMobile";
+import { LogosList } from "../components/LogosList";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
 
 export const EcmoTransplantation = () => {
@@ -29,7 +29,7 @@ export const EcmoTransplantation = () => {
             firstChapter={"ЭКМО"}
             secondChapter={`в трансплантации органов`}
           />
-          <TransbiotechBiosoftList />
+          <LogosList />
           <DeviceInfo
             description={{
               mainText:

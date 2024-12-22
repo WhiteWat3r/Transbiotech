@@ -17,7 +17,7 @@ export const PerfusionTechnologies = () => {
           // <li key={card.id} className="backdrop-blur-[40px] bg-[#FFFFFF]">
           <li
             key={card.id}
-            className={` flex h-[149px] flex-col justify-between rounded-[25px] bg-[#FFFFFF] bg-opacity-30 p-[20px] desktop:h-[177px] desktop:p-[30px] 
+            className={` flex h-[149px] flex-col justify-between rounded-[25px] bg-[#FFFFFF] bg-opacity-30 p-[20px] desktop:h-[177px] desktop:p-[30px] desktop:cursor-pointer
               desktop:hover:translate-y-[-10px] duration-500 desktop:hover:bg-opacity-100
               ${
               card.id === 7  ? "desktop:col-start-2" : ""

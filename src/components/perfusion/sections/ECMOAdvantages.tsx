@@ -1,6 +1,6 @@
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import perfusionEcmo from "@/assets/perfusion/perfusion-ecmo.png";
-import useBreakpoint from "@/hooks/usIsMobile";
+import useBreakpoint from "@/hooks/useIsMobile";
 import { useRef } from "react";
 import useIntersection from "@/hooks/useIntersection";
 

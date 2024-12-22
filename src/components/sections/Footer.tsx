@@ -1,7 +1,7 @@
 import footerDesktopBg from "@/assets/bg/footer-desktop.png";
 import footerBg from "@/assets/bg/footer.png";
 import footerLogo from "@/assets/logos/footer-logo.svg";
-import useIsMobile from "@/hooks/usIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const requisites = [
   {

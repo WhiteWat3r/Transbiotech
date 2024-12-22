@@ -1,9 +1,12 @@
 import { useRef } from "react";
 
 import bgMainDesktop from "@/assets/bg/perfusion-desc.png";
+
+
+
 import bgMain from "@/assets/bg/perfusion.png";
 import { useSectionSizeFromImageHeight } from "@/hooks/useSectionSizeFromImageHeight";
-import useIsMobile from "@/hooks/usIsMobile";
+import useIsMobile from "@/hooks/useIsMobile";
 import { mainSectionButtons } from "@/utils/constants";
 
 export const PerfusionMain = () => {
@@ -19,7 +22,7 @@ export const PerfusionMain = () => {
 
   return (
     <div
-      className={`relative mt-[-75px] h-[750px] w-full bg-indigo bg-cover text-white desktop:h-[650px]`}
+      className={`relative mt-[-75px] h-[750px] w-full bg-indigo bg-cover text-white desktop:h-[650px] overflow-x-clip `}
       // style={{
       //   height: isDesktop ? `${sectionHeight}px` : "750px",
       // }}
@@ -28,9 +31,10 @@ export const PerfusionMain = () => {
         ref={imgRef}
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Transbiotech"
-        className="absolute right-0 top-0 z-[2] object-contain desktop:h-[114%] desktop:animate-perfusion-main"
+        className="absolute right-0 top-0 z-[2] object-contain desktop:h-[125%] desktop:right-[-170px] desktop:top-[-65px] desktop:animate-perfusion-main"
         onLoad={handleImageLoad}
       />
+
       <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col gap-[15px] px-5 desktop:gap-[25px] desktop:px-[80px]">
         <h1 className="z-1 mob-head-2 desktop:head-1-1 z-30 mt-auto">
           Перфузионные <span className="block">технологии</span>
