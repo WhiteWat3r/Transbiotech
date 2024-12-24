@@ -11,6 +11,7 @@ import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";
 import { Home } from "./pages/Home";
 import { Perfusion } from "./pages/Perfusion";
 import { Technologies } from "./pages/Technologies";
+import { Products } from "./pages/Products";
 
 function App() {
   const breakpoint = useIsMobile();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/perfusion" element={<Perfusion />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
           <Route path="/arrhythmology" element={<Arrhythmology />} />
           <Route path="/ems" element={<EmergencyMedicalServices />} />

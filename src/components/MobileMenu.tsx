@@ -7,10 +7,10 @@ import { MobileLogo } from "./icons/MobileLogo";
 import { menuItems } from "../utils/constants";
 
 export const MobileMenu = ({
-  isHomePage,
+  isPerfPage,
   toggleMenu,
 }: {
-  isHomePage: boolean;
+  isPerfPage: boolean;
   toggleMenu: () => void;
 }) => {
   const [openAccordionId, setOpenAccordionId] = useState<number | null>(null);

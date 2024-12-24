@@ -1,9 +1,10 @@
 import bgThird from "@/assets/bg/bg-third.png";
+import { MoreButton } from "../ui/MoreButton";
 
 export const SectionService = () => {
   return (
     <div className="h-[750px] desktop:h-[800px] desktop:bg-[#dddddd]">
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col desktop:flex-row h-[750px] desktop:h-[800px]">
+      <div className="relative mx-auto flex h-[750px] w-full max-w-[1440px] flex-col desktop:h-[800px] desktop:flex-row">
         <img
           src={bgThird}
           alt="Сервис"
@@ -22,11 +23,7 @@ export const SectionService = () => {
               обслуживание ко всей поставляемой нами продукции.
             </span>
           </p>
-          <div>
-            <button className="flex items-center justify-center rounded-[45px] bg-indigo px-[14px] text-[13px] font-medium leading-[28px] text-white transition-all duration-500 hover:bg-indigo hover:text-white desktop:h-[38px] desktop:bg-[white] desktop:text-[18px] desktop:leading-[22px] desktop:text-black-default desktop:hover:translate-y-[-10px]">
-              подробнее
-            </button>
-          </div>
+          <MoreButton />
         </div>
       </div>
     </div>

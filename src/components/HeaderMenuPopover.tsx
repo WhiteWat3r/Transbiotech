@@ -7,11 +7,11 @@ import { IMenuItem } from "../utils/types";
 export const HeaderMenuPopover = ({
   chapter,
   isScrolled,
-  isHomePage
+  isPerfPage
 }: {
   chapter: IMenuItem;
   isScrolled: boolean;
-  isHomePage: boolean
+  isPerfPage: boolean
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -57,7 +57,7 @@ export const HeaderMenuPopover = ({
       <button
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter ${isHomePage || isScrolled ? "text-grey-2" : "text-gainsboro"} transition-colors duration-300 hover:text-black-default`}
+        className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter ${!isPerfPage || isScrolled ? "text-grey-2" : "text-gainsboro"} transition-colors duration-300 hover:text-black-default`}
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
         onClick={() => chapter.id === 2 && navigate("/technologies")}

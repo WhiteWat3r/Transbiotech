@@ -16,7 +16,8 @@ export const MobileHeader = () => {
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
-  const isHomePage = pathname.pathname === "/";
+  const isPerfPage = pathname.pathname === "/perfusion" ;
+
 
   return (
     <>
@@ -24,15 +25,15 @@ export const MobileHeader = () => {
         className={`bg-blur-[30px] sticky left-0 top-0 z-40 flex h-[75px] items-center justify-between px-[20px] ${isScrolled ? "bg-[#E9E9E94D] backdrop-blur-[30px]" : ""}`}
       >
         <Link to="/">
-          <MobileLogo color={isHomePage ? "#6A78C1" : "white"} />
+          <MobileLogo color={!isPerfPage ? "#6A78C1" : "white"} />
         </Link>
         <MenuIcon
-          color={isHomePage ? "#929292" : "white"}
+          color={!isPerfPage ? "#929292" : "white"}
           onClick={toggleMenu}
         />
       </header>
       {isMenuOpen && (
-        <MobileMenu isHomePage={isHomePage} toggleMenu={toggleMenu} />
+        <MobileMenu isPerfPage={isPerfPage} toggleMenu={toggleMenu} />
       )}
     </>
   );

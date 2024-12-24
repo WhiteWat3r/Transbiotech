@@ -14,7 +14,7 @@ export const Header = () => {
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
   const pathname = useLocation();
-  const isHomePage = pathname.pathname === "/" || pathname.pathname === "/technologies";
+  const isPerfPage = pathname.pathname === "/perfusion" ;
   const [currentLogo, setCurrentLogo] = useState<JSX.Element | null>(null);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const Header = () => {
     const logo = isScrolled ? (
       <MobileLogo width="26" height="24" />
     ) : (
-      <FullLogo color={isHomePage ? "#6A78C1" : "#DDDDDD"} />
+      <FullLogo color={!isPerfPage ? "#6A78C1" : "#DDDDDD"} />
     );
 
     // const timer = setTimeout(() => {
@@ -44,7 +44,7 @@ export const Header = () => {
     // }, 100);
 
     // return () => clearTimeout(timer);
-  }, [isScrolled, isHomePage]);
+  }, [isScrolled, isPerfPage]);
 
   return (
     <header
@@ -82,7 +82,7 @@ export const Header = () => {
               chapter={item}
               key={item.id}
               isScrolled={isScrolled}
-              isHomePage={isHomePage}
+              isPerfPage={isPerfPage}
             />
           ))}
         </ul>
