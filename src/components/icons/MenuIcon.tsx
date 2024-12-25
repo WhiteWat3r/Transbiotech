@@ -16,20 +16,20 @@ export const MenuIcon = ({
     <path
       d="M3 3H41.6622"
       stroke={color}
-      stroke-width="5.5"
-      stroke-linecap="round"
+      strokeWidth="5.5"
+      strokeLinecap="round"
     />
     <path
       d="M3 16.7524H41.6622"
       stroke={color}
-      stroke-width="5.5"
-      stroke-linecap="round"
+      strokeWidth="5.5"
+      strokeLinecap="round"
     />
     <path
       d="M3 30.5H41.6622"
       stroke={color}
-      stroke-width="5.5"
-      stroke-linecap="round"
+      strokeWidth="5.5"
+      strokeLinecap="round"
     />
   </svg>
 );

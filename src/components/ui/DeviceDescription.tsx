@@ -53,7 +53,7 @@ export const DeviceDescription = ({
 
         {description.additionalText && isExpanded && (
           <>
-            {".. "}
+            {" "}
             <span
               className="cursor-pointer text-grey-2 underline"
               onClick={handleToggle}

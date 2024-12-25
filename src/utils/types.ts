@@ -4,3 +4,8 @@ export interface IMenuItem {
     links: { linkId: number; text: string; href: string }[];
   }
   
+  export interface IAdvantage {
+    id: number;
+    title: string;
+    text?: JSX.Element;
+  }

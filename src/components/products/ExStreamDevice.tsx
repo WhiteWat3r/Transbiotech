@@ -2,8 +2,8 @@ import React from "react";
 import device from "@/assets/products/ex-stream-device.png";
 import shadow from "@/assets/products/shadow.png";
 import text from "@/assets/products/ex-stream-text.svg";
-import { ExStreamSlider } from "./ExStreamSlider";
 import { DeviceDescription } from "../ui/DeviceDescription";
+import { ProductSlider } from "./ProductSlider";
 
 const exStreamDeviceDescription = {
   mainText: `Ex-Stream применяется в отделениях многопрофильных лечебных учреждений, в том числе в отделениях реанимации\nи интенсивной терапии, скорой медицинской помощи, кардиохирургии, рентген-эндовас-кулярной хирургии, сосудистой хирургии, медицины катастроф, военной медицины.`,
@@ -20,7 +20,7 @@ const exStreamDeviceDescription = {
 
 export const ExStreamDevice = () => {
   return (
-    <div className="mx-auto w-full max-w-[1440px]">
+    <div className="mx-auto w-full max-w-[1440px] ">
       <div className="relative mt-[86px] h-[475px] w-full">
         <img
           src={device}
@@ -35,11 +35,11 @@ export const ExStreamDevice = () => {
         <img src={text} alt="" />
       </div>
 
-      <div className="mt-[40px] w-full px-[20px]">
-        <p className="mob-head-2 mb-[15px] whitespace-pre-wrap text-grey-2">{`аппарат\nEx-Stream`}</p>
+      <div className="mt-[40px] w-full px-[20px] mb-[102px]">
+        <h2 className="mob-head-2 mb-[15px] whitespace-pre-wrap text-grey-2">{`аппарат\nEx-Stream`}</h2>
 
         <p className="mob-text-3 mb-[80px] text-grey-2">{`Аппарат предназначен для организации искусственного кровообращения для повышения эффективности оказания помощи\nв реаниматологии, трансплантологии, онкологии, кардиологии.`}</p>
-        <ExStreamSlider />
+        <ProductSlider type={'ex-stream'} />
         <p className="mob-head-3 mb-[18px] mt-[31px]">
           где используется продукт?
         </p>

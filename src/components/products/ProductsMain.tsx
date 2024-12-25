@@ -31,7 +31,7 @@ export const ProductsMain = () => {
       <SectionTitle firstChapter={"продукты"} />
       <ul className="mt-[70px] flex w-full flex-col gap-[30px]">
         {products.map((product) => (
-          <li className="relative mx-auto flex w-full max-w-[370px] flex-col gap-[10px] px-[25px] pb-[30px]">
+          <li className="relative mx-auto flex w-full max-w-[370px] flex-col gap-[10px] px-[25px] pb-[30px]" key={product.id}>
             <img src={grad} alt="" className="absolute right-0 bottom-0"/>
             <img
               src={product.img}

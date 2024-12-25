@@ -11,12 +11,19 @@ import third from "@/assets/products/swiper-3.png";
 import four from "@/assets/products/swiper-4.png";
 import five from "@/assets/products/swiper-5.png";
 
-const devicePhotos = [first, second, third, four, five];
+import tableFirst from "@/assets/products/swiper-6.png";
+import tableSecond from "@/assets/products/swiper-7.png";
+import tableThird from "@/assets/products/swiper-8.png";
+import tableFour from "@/assets/products/swiper-9.png";
+import tableFive from "@/assets/products/swiper-10.png";
 
-export const ExStreamSlider = () => {
+const exStreamPhotos = [first, second, third, four, five];
+const backtablePhotos = [tableFirst, tableSecond, tableThird, tableFour, tableFive];
+
+export const ProductSlider = ({type} : {type: "back-table" | "ex-stream"}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperInstance | null>(null);
-
+  const devicePhotos = type === "back-table" ? backtablePhotos : exStreamPhotos
   return (
     <div className="relative flex flex-col items-center rounded-[28px] bg-gradient-to-br from-[#E9E9E9] to-[#FFFFFF] p-[2px]">
       <div className="relative flex w-full flex-col items-center rounded-[28px] bg-gainsboro bg-opacity-45 p-[25px]">
