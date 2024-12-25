@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Accordion } from "./Accordion";
@@ -26,12 +26,6 @@ export const MobileMenu = ({
           </Link>
           <CloseIcon onClick={toggleMenu} />
         </div>
-        {/* <button
-        onClick={toggleMenu}
-        className="mb-[45px] ml-auto mt-[28px] text-right text-gray-700"
-      >
-        <img src={close} alt="Закрыть" />
-      </button> */}
 
         <h2 className="geologica-text mb-[40px] text-[46px] font-semibold leading-[44px] text-grey-1">
           Меню

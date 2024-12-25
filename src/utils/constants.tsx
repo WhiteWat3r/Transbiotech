@@ -4,15 +4,17 @@ export const menuItems: IMenuItem[] = [
   {
     id: 1,
     title: "о компании",
+    href: "/",
     links: [
-      { linkId: 1, text: "документы", href: "" },
-      { linkId: 2, text: `миссия\nи\u00A0ценности`, href: "" },
-      { linkId: 3, text: "новости", href: "" },
+      // { linkId: 1, text: "документы", href: "" },
+      // { linkId: 2, text: `миссия\nи\u00A0ценности`, href: "" },
+      // { linkId: 3, text: "новости", href: "" },
     ],
   },
   {
     id: 2,
     title: "технологии",
+    href: "/technologies",
     links: [
       { linkId: 1, text: "перфузионные технологии", href: "/perfusion" },
       // {
@@ -28,6 +30,7 @@ export const menuItems: IMenuItem[] = [
   {
     id: 3,
     title: "продукты",
+    href: "/products",
     links: [
       // { linkId: 1, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
       // { linkId: 2, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
@@ -36,11 +39,7 @@ export const menuItems: IMenuItem[] = [
   {
     id: 4,
     title: "контакты",
-    links: [{ linkId: 1, text: "документы", href: "" }],
-  },
-  {
-    id: 5,
-    title: "новости",
+    href: '#',
     links: [{ linkId: 1, text: "документы", href: "" }],
   },
 ];
@@ -167,7 +166,7 @@ export const exStreamAdvantages = [
   },
 ];
 
-export const backTableAdvantages:IAdvantage[] = [
+export const backTableAdvantages: IAdvantage[] = [
   {
     id: 1,
     title: "Оптимальная высота и удобная рабочая зона",

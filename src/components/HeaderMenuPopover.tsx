@@ -7,11 +7,11 @@ import { IMenuItem } from "../utils/types";
 export const HeaderMenuPopover = ({
   chapter,
   isScrolled,
-  isPerfPage
+  isPerfPage,
 }: {
   chapter: IMenuItem;
   isScrolled: boolean;
-  isPerfPage: boolean
+  isPerfPage: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
@@ -54,18 +54,18 @@ export const HeaderMenuPopover = ({
 
   return (
     <li className="relative" onMouseLeave={handleMouseLeave}>
-      <button
+      <Link
+        to={chapter.href}
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
         className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter ${!isPerfPage || isScrolled ? "text-grey-2" : "text-gainsboro"} transition-colors duration-300 hover:text-black-default`}
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
-        onClick={() => chapter.id === 2 && navigate("/technologies")}
       >
         {chapter.title}
-      </button>
+      </Link>
 
-      {chapter.id < 3 && (
+      {chapter.links.length > 0 && (
         <div
           ref={popoverRef}
           className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}
@@ -81,8 +81,8 @@ export const HeaderMenuPopover = ({
         >
           {/* backdrop-blur-[10px] */}
 
-          <div className="rounded-[42px]  backdrop-blur-[10px] bg-[#F8F8F8D9]">
-            <span className="absolute left-0 top-0 h-full w-full rounded-[42px] border-2 border-white  backdrop-blur-[10px]" />
+          <div className="rounded-[42px] bg-[#F8F8F8D9] backdrop-blur-[10px]">
+            <span className="absolute left-0 top-0 h-full w-full rounded-[42px] border-2 border-white backdrop-blur-[10px]" />
 
             <ul
               className={`relative z-10 flex flex-col gap-[20px] rounded-[42px] px-[44px] py-[25px]`}

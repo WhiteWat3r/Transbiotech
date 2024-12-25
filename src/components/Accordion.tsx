@@ -62,7 +62,7 @@ export const Accordion = ({
           />
         </button>
   
-        <div
+        {menuItem.links.length > 0 && <div
           className={`transition-all duration-300 ease-in-out overflow-hidden ${
             isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
           }`}
@@ -84,7 +84,7 @@ export const Accordion = ({
               </li>
             ))}
           </ul>
-        </div>
+        </div>}
       </li>
     );
   };
