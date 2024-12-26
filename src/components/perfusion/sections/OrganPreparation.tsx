@@ -5,19 +5,19 @@ import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { LogosList } from "../components/LogosList";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
 import { DeviceDescription } from "@/components/ui/DeviceDescription";
 
 export const OrganPreparation = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint !== "mobile";
+  const { isDesktop } = useBreakpoint();
+
   return (
     <div className="relative mt-[80px] flex w-full flex-col desktop:mt-0">
       <img
         src={isDesktop ? organPreparationDesk : organPreparation}
         // alt="desktop:w-[1037px]"
-         className="desktop:w-[1200px] mx-auto"
+        className="mx-auto desktop:w-[1200px]"
       />
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pt-0">
         <SectionNumber number={7} />
@@ -31,7 +31,7 @@ export const OrganPreparation = () => {
         <div className="z-20 flex flex-col gap-[25px] desktop:gap-[45px]">
           <div className="desktop:w-[860px]">
             <DeviceDescription
-            maxWidth={"desktop:w-[597px]"}
+              maxWidth={"desktop:w-[597px]"}
               description={{
                 mainText:
                   "Наша задача – помочь организовать рабочее пространство во время операций. Для этого мы разработали удобное и эргономичное решение для подготовки органа к трансплантации – стол трансплантолога Back Table.",

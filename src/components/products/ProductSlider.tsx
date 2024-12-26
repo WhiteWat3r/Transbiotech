@@ -18,20 +18,37 @@ import tableFour from "@/assets/products/swiper-9.png";
 import tableFive from "@/assets/products/swiper-10.png";
 
 const exStreamPhotos = [first, second, third, four, five];
-const backtablePhotos = [tableFirst, tableSecond, tableThird, tableFour, tableFive];
+const backtablePhotos = [
+  tableFirst,
+  tableSecond,
+  tableThird,
+  tableFour,
+  tableFive,
+];
 
-export const ProductSlider = ({type} : {type: "back-table" | "ex-stream"}) => {
+export const ProductSlider = ({
+  type,
+}: {
+  type: "back-table" | "ex-stream";
+}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperInstance | null>(null);
-  const devicePhotos = type === "back-table" ? backtablePhotos : exStreamPhotos
+  const devicePhotos = type === "back-table" ? backtablePhotos : exStreamPhotos;
+
   return (
-    <div className="relative flex flex-col items-center rounded-[28px] bg-gradient-to-br from-[#E9E9E9] to-[#FFFFFF] p-[2px]">
-      <div className="relative flex w-full flex-col items-center rounded-[28px] bg-gainsboro bg-opacity-45 p-[25px]">
+    <div
+      className="relative flex flex-col items-center rounded-[28px] from-[#E9E9E9] to-[#FFFFFF] p-[2px] desktop:rounded-[45px]"
+      style={{
+        background:
+          "linear-gradient(to bottom right, rgba(233, 233, 233, 0.45), rgba(255, 255, 255, 0.45))",
+      }}
+    >
+      <div className="relative flex w-full flex-col items-center rounded-[28px] bg-gainsboro bg-opacity-45 p-[25px] desktop:pt-[42px] desktop:rounded-[45px] desktop:pb-[40px]">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="w-full max-w-[500px]"
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          className="w-full max-w-[450px]"
           loop
           onSwiper={(swiper) => (swiperRef.current = swiper)}
         >
@@ -46,17 +63,17 @@ export const ProductSlider = ({type} : {type: "back-table" | "ex-stream"}) => {
           ))}
         </Swiper>
 
-        <div className="mt-[31px] flex justify-between gap-[15px] w-full">
+        <div className="mt-[31px] flex w-full justify-between gap-[15px] desktop:gap-[25px] desktop:mt-[52px] desktop:px-[12px]">
           {devicePhotos.map((_, index) => (
             <span
               key={index}
-              className={`h-[1px] w-full transition-all bg-grey-2 ${
+              className={`h-[1px] w-full bg-grey-2 transition-all ${
                 activeIndex === index ? "opacity-100" : "opacity-35"
-              }`}
+              }`} 
             />
           ))}
         </div>
-        <ul className="mt-[25px] flex justify-between gap-[15px]">
+        <ul className="mt-[25px] flex justify-between gap-[15px] desktop:gap-[25px]  desktop:mt-[40px] desktop:px-[12px]">
           {devicePhotos.map((photo, index) => (
             <li
               key={index}
@@ -66,7 +83,7 @@ export const ProductSlider = ({type} : {type: "back-table" | "ex-stream"}) => {
               <img
                 src={photo}
                 alt={`Slide ${index + 1}`}
-                className="h-auto w-full object-contain"
+                className="h-auto w-full object-contain desktop:rounded-[15px]"
               />
             </li>
           ))}

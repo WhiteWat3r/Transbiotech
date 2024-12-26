@@ -1,4 +1,4 @@
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { ReactNode, useState } from "react";
 
 export const DeviceDescription = ({
@@ -11,9 +11,7 @@ export const DeviceDescription = ({
   noTitle?: boolean;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
-
+  const {isDesktop} = useBreakpoint();
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
   };

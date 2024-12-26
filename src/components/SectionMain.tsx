@@ -3,7 +3,7 @@ import { CSSProperties, useEffect, useRef, useState } from "react";
 import bgMain from "../../public/tailwindBackgrounds/bg-main.png";
 import bgMainDesktop from "../../public/tailwindBackgrounds/main-desktop.png";
 import { useSectionSizeFromImageHeight } from "../hooks/useSectionSizeFromImageHeight";
-import useIsMobile from "../hooks/useIsMobile";
+import useIsMobile from "../hooks/useBreakpoint";
 
 const buttons = [
   {

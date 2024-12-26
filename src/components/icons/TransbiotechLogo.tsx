@@ -1,5 +1,5 @@
 import { FullLogo } from "./FullLogo";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const TransbiotechLogo = () => {
   const breakpoint = useBreakpoint();

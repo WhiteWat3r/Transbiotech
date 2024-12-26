@@ -5,12 +5,12 @@ import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { LogosList } from "../components/LogosList";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
 
 export const EcmoTransplantation = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
+  const { isDesktop } = useBreakpoint();
+
   const textContent = `В методике есть возможность реализовать «диагностическое» ЭКМО – оценить жизнеспособность донорских органов до их пересадки. Это открытие в трансплантологии.`;
 
   const { highlightedText, elementRef } = useHighlightedText({ textContent });

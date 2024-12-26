@@ -1,6 +1,5 @@
-import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import perfusionEcmo from "@/assets/perfusion/perfusion-ecmo.png";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { useRef } from "react";
 import useIntersection from "@/hooks/useIntersection";
 
@@ -13,8 +12,7 @@ const ecmoAdvayanges = [
 ];
 
 export const ECMOAdvantages = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
+  const { isDesktop } = useBreakpoint();
 
   const sectionRef = useRef(null);
 
@@ -29,24 +27,26 @@ export const ECMOAdvantages = () => {
     >
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pb-[44px] desktop:pt-[43px]">
         {/* {isDesktop ? ( */}
-          <div className="flex flex-col gap-[15px] desktop:gap-[45px]">
-            <span className="mob-head-4 desktop:text-2 max-w-[170px] text-grey-2 opacity-50">
-              преимущества методики
-            </span>
-            <ul className={"flex flex-col gap-[25px] desktop:gap-[18px] uppercase"}>
-              {ecmoAdvayanges.map((advantage, index) => (
-                <li
-                  key={index}
-                  className={`mob-head-5 desktop:text-3 relative w-[276px]  desktop:w-[430px] text-indigo ${index > 1 ? "desktop:ml-auto desktop:text-end" : " "} ${index === 2 ? "desktop:mt-[160px]" : " "}`}
-                >
-                  <p className={"whitespace-pre-wrap"}>{advantage}</p>
-                  <span
-                    className={`mt-[1px] block h-[1px] bg-indigo transition-all desktop:mt-[3px] ${isVisible ? "animate-flashing-border" : "opacity-0"}`}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex flex-col gap-[15px] desktop:gap-[45px]">
+          <span className="mob-head-4 desktop:text-2 max-w-[170px] text-grey-2 opacity-50">
+            преимущества методики
+          </span>
+          <ul
+            className={"flex flex-col gap-[25px] uppercase desktop:gap-[18px]"}
+          >
+            {ecmoAdvayanges.map((advantage, index) => (
+              <li
+                key={index}
+                className={`mob-head-5 desktop:text-3 relative w-[276px] text-indigo desktop:w-[430px] ${index > 1 ? "desktop:ml-auto desktop:text-end" : " "} ${index === 2 ? "desktop:mt-[160px]" : " "}`}
+              >
+                <p className={"whitespace-pre-wrap"}>{advantage}</p>
+                <span
+                  className={`mt-[1px] block h-[1px] bg-indigo transition-all desktop:mt-[3px] ${isVisible ? "animate-flashing-border" : "opacity-0"}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
         {/* // )
         //  : (
         //   <DeviceInfo advantages={ecmoAdvayanges} marginLeft={false} />

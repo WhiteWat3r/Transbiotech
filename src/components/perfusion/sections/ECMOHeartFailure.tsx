@@ -1,4 +1,4 @@
-import perfusion4 from "@/assets/perfusion/perfusion-4.png";
+import tube from "@/assets/perfusion/perfusion-4.png";
 
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
@@ -9,7 +9,7 @@ export const ECMOHeartFailure = () => {
   return (
     <div className="relative flex w-full flex-col desktop:flex-row">
       <img
-        src={perfusion4}
+        src={tube}
         alt="ЭКМО при внезапной сердечной смерти"
         className="w-[75%] desktop:absolute desktop:left-[-95px] desktop:top-[188px] desktop:h-[484px] desktop:w-[564px]"
       />

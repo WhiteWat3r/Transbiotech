@@ -1,10 +1,9 @@
 import ecmoMobile from "@/assets/bg/ecmo-mobile.png";
 import ecmo from "@/assets/bg/ecmo.png";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const Ecmo = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
+  const { isDesktop } = useBreakpoint();
 
   return (
     <div
@@ -15,8 +14,7 @@ export const Ecmo = () => {
         alt=""
         className={`h-full w-full object-cover desktop:h-auto`}
       />
-      <p className="text-[60px] leading-[52px] bottom-[202px] right-[50%] translate-x-[50%] desktop:translate-x-0 font-semibold geologica-text desktop:head-1 bg-ecmo-gradient 
-      absolute bg-clip-text uppercase text-transparent desktop:bottom-[10.2%] desktop:right-[6.8%]">
+      <p className="geologica-text desktop:head-1 absolute bottom-[202px] right-[50%] translate-x-[50%] bg-ecmo-gradient bg-clip-text text-[60px] font-semibold uppercase leading-[52px] text-transparent desktop:bottom-[10.2%] desktop:right-[6.8%] desktop:translate-x-0">
         экмо
       </p>
     </div>

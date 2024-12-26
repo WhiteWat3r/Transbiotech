@@ -6,7 +6,7 @@ import getinge from "@/assets/perfusion/getinge.svg";
 import insightraMobile from "@/assets/perfusion/insightra-mobile.svg";
 import insightra from "@/assets/perfusion/insightra.svg";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
 
@@ -37,18 +37,16 @@ const description = {
 };
 
 export const IABPInfo = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint !== "mobile";
+  const { isDesktop } = useBreakpoint();
 
   return (
     <div className="mx-auto my-[80px] flex w-full max-w-[1440px] flex-col desktop:mt-[210px] desktop:flex-row desktop:gap-[45px] desktop:pb-[20px]">
-
       <div className="relative desktop:h-[600px] desktop:min-w-[301px]">
-        <span className="absolute desktop:w-[296px] left-[0] top-[50%] h-[250px]  w-full translate-y-[-50%] bg-white desktop:h-full desktop:rounded-r-[45px]" />
+        <span className="absolute left-[0] top-[50%] h-[250px] w-full translate-y-[-50%] bg-white desktop:h-full desktop:w-[296px] desktop:rounded-r-[45px]" />
         <img
           src={iabp}
           alt="О нас"
-          className="relative z-20 px-[95px] desktop:ml-[50px] desktop:w-[265px] desktop:h-[459px] desktop:px-0 desktop:mt-[64px]"
+          className="relative z-20 px-[95px] desktop:ml-[50px] desktop:mt-[64px] desktop:h-[459px] desktop:w-[265px] desktop:px-0"
         />
       </div>
 
@@ -60,7 +58,7 @@ export const IABPInfo = () => {
           secondChapter={"контрпульсация"}
         />
 
-        <ul className="mb-[26px] mt-[15px] flex justify-between desktop:mt-[27px] desktop:justify-start desktop:gap-[19px] desktop:mb-[38px]">
+        <ul className="mb-[26px] mt-[15px] flex justify-between desktop:mb-[38px] desktop:mt-[27px] desktop:justify-start desktop:gap-[19px]">
           {companies.map((company) => (
             <li key={company.id}>
               <img

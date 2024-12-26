@@ -16,7 +16,8 @@ export const menuItems: IMenuItem[] = [
     title: "технологии",
     href: "/technologies",
     links: [
-      { linkId: 1, text: "перфузионные технологии", href: "/perfusion" },
+      { linkId: 1, text: "все технологии", href: "/technologies" },
+      { linkId: 2, text: "перфузионные технологии", href: "/perfusion" },
       // {
       //   linkId: 2,
       //   text: "Просмотр страницы технологии (тест)",
@@ -32,15 +33,19 @@ export const menuItems: IMenuItem[] = [
     title: "продукты",
     href: "/products",
     links: [
-      // { linkId: 1, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
-      // { linkId: 2, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
+      { linkId: 1, text: "все продукты", href: "/products" },
+
+      { linkId: 2, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
+      { linkId: 3, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
     ],
   },
   {
     id: 4,
     title: "контакты",
-    href: '#',
-    links: [{ linkId: 1, text: "документы", href: "" }],
+    href: "#",
+    links: [
+      // { linkId: 1, text: "документы", href: "" }
+    ],
   },
 ];
 
@@ -82,7 +87,7 @@ export const mainSectionButtons = [
 export const exStreamAdvantages = [
   {
     id: 1,
-    title: "Удобство и простота эксплуатации",
+    title: "Удобство и\u00A0простота эксплуатации",
     text: (
       <>
         Не требующая специального обучения.{" "}
@@ -139,6 +144,9 @@ export const exStreamAdvantages = [
         </span>
       </>
     ),
+  },
+  {
+    id: 99,
   },
   {
     id: 6,

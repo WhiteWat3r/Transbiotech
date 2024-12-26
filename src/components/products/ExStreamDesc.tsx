@@ -8,7 +8,7 @@ export const ExStreamDesc = () => {
     <div className="w-full px-[20px] py-[80px]">
       <p
         ref={elementRef}
-        className="mob-head-3 desktop:head-4 my-[50px] flex flex-wrap text-grey-2 desktop:my-[85px] desktop:max-w-[895px]"
+        className="mob-head-3 desktop:head-4 flex flex-wrap text-grey-2 desktop:my-[85px] desktop:max-w-[895px]"
       >
         {highlightedText}
       </p>

@@ -9,7 +9,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
 import { LogosList } from "../components/LogosList";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { useScrollFrameBySteps } from "@/hooks/useScrollFrameByFrame";
 
 const advantages = [
@@ -31,8 +31,8 @@ const advantages = [
 ];
 
 export const ExStream = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
+  const { isDesktop } = useBreakpoint();
+
 
   const frames = [exStream, exStreamSecond, exStreamThird];
   const { currentFrame, elementRef } = useScrollFrameBySteps(frames);

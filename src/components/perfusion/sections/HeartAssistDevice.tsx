@@ -4,13 +4,13 @@ import bgMainDesc from "@/assets/bg/perfusion-desktop.png";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { DeviceInfo } from "../../ui/DeviceInfo";
 import { SectionNumber } from "../../ui/SectionNumber";
-import useBreakpoint from "@/hooks/useIsMobile";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
 import { LogosList } from "../components/LogosList";
 
 export const HeartAssistDevice = () => {
-  const breakpoint = useBreakpoint();
-  const isDesktop = breakpoint === "desktop";
+  const { isDesktop } = useBreakpoint();
+
 
   const textContent = `Технология VAD с помощью Stream Cardio – первый и единственный в\u00A0мире
   универсальный комплекс для\u00A0механической поддержки насосной функции

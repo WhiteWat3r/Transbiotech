@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 type Breakpoint = "mobile" | "tablet" | "desktop";
 
-const useBreakpoint = (): Breakpoint => {
+const useBreakpoint = (): { breakpoint: Breakpoint; isDesktop: boolean } => {
   const [breakpoint, setBreakpoint] = useState<Breakpoint>(() => {
     const width = window.innerWidth;
     if (width < 640) return "mobile";
@@ -26,7 +26,8 @@ const useBreakpoint = (): Breakpoint => {
     };
   }, []);
 
-  return breakpoint;
+  const isDesktop = breakpoint === "desktop";
+  return { isDesktop, breakpoint };
 };
 
 export default useBreakpoint;

@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperInstance } from "swiper";
 
+import arrow from "@/assets/products/arrow-right.svg";
+
 import exStream from "@/assets/products/ex-stream.png";
 import exStreamSecond from "@/assets/perfusion/ex-stream-second.png";
 import exStreamThird from "@/assets/perfusion//ex-stream-third.png";
@@ -129,8 +131,22 @@ export const ProductSwiperWithTooltips = () => {
         </Swiper>
 
         <div className="flex justify-center gap-[43px]">
-          <button onClick={handlePrev}>nazad</button>
-          <button onClick={handleNext}>vpered</button>
+          <button
+            onClick={handlePrev}
+            className="flex items-center justify-center"
+          >
+            <img
+              src={arrow}
+              alt="Previous"
+              className="w-[11px] scale-x-[-1] transform"
+            />
+          </button>
+          <button
+            onClick={handleNext}
+            className="flex w-[11px] items-center justify-center"
+          >
+            <img src={arrow} alt="Next" />
+          </button>
         </div>
       </div>
     </div>
