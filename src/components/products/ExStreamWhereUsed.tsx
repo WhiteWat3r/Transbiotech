@@ -18,7 +18,7 @@ const exStreamDeviceDescription = {
 
 export const ExStreamWhereUsed = () => {
   return (
-    <div className="relative w-full max-w-[1440px] desktop:mt-[190px]">
+    <div className="relative w-full desktop:mt-[190px] max-w-[1440px] mx-auto">
       <img
         src={tube}
         alt="ЭКМО при внезапной сердечной смерти"
