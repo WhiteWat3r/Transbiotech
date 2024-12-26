@@ -28,7 +28,7 @@ import person7 from "../assets/team/7.png";
 import person8 from "../assets/team/8.png";
 import person9 from "../assets/team/9.png";
 import useIntersection from "../hooks/useIntersection";
-import useIsMobile from "../hooks/useBreakpoint";
+import useBreakpoint from "../hooks/useBreakpoint";
 const imageCache = new Map();
 
 const preloadImagesToDOM = (imageSources: string[]) => {
@@ -217,15 +217,14 @@ const persons: IPerson[] = [
 const ANIMATION_INTERVAL = 3000;
 
 export const TeamSwiper = () => {
-  const breakpoint = useIsMobile();
-  const isMobile = breakpoint === "mobile";
+  const { isDesktop } = useBreakpoint();
   const sectionRef = useRef(null);
 
   const { isVisible } = useIntersection(sectionRef, {
     threshold: 0.7,
   });
 
-  const visibleCount = isMobile ? 6 : 18;
+  const visibleCount = isDesktop ? 18 : 6;
   const [visibleDoctors, setVisibleDoctors] = useState(
     persons.slice(0, visibleCount),
   );
@@ -332,7 +331,7 @@ const DoctorInfo = memo(
       >
         {person && (
           <>
-            <p className="geologica-text 1200:text-[24px] 1200:leading-[24px] mt-auto text-[18px] font-medium leading-[18px] tracking-tighter">
+            <p className="geologica-text mt-auto text-[18px] font-medium leading-[18px] tracking-tighter 1200:text-[24px] 1200:leading-[24px]">
               {person.name}
             </p>
             <p className="text-[15px] font-normal leading-[18px] tracking-tighter">

@@ -13,7 +13,7 @@ import techLogoSecond from "@/assets/technologies/tech-logo-second.svg";
 import techLogoThirdMobile from "@/assets/technologies/tech-logo-third-mobile.svg";
 import techLogoThird from "@/assets/technologies/tech-logo-third.svg";
 import useIntersection from "@/hooks/useIntersection";
-import useIsMobile from "@/hooks/useBreakpoint";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 const technologies = [
   {
@@ -28,7 +28,7 @@ const technologies = [
   },
   {
     id: 2,
-    title:`Кардио\u00ADхирургия`,
+    title: `Кардио\u00ADхирургия`,
     keys: ["Инфо", "Продукция", "Сопровождение"],
     color: "#90882B",
     logo: techLogoSecondMobile,
@@ -65,11 +65,10 @@ export const SectionTechnologies = ({
 }) => {
   const sectionRef = useRef(null);
 
-  const breakpoint = useIsMobile();
+  const { isDesktop } = useBreakpoint();
   const { hasAnimated } = useIntersection(sectionRef, {
     threshold: 0.7,
   });
-  const isDesktop = breakpoint === "desktop";
 
   return (
     <div

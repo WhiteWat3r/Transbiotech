@@ -30,51 +30,58 @@ const achievements = [
 ];
 
 export const AboutUsSection = () => {
-  // const [open, setOpen] = useState(false);
-  const breakpoint = useIsMobile();
+  const { isDesktop } = useIsMobile();
   const sectionRef = useRef(null);
 
   const { isVisible } = useIntersection(sectionRef, {
     threshold: 0.9,
   });
   return (
-    <div className="relative h-[750px] desktop:h-[800px] w-full pb-[20px]">
+    <div className="relative h-[750px] w-full pb-[20px] desktop:h-[800px]">
       <img
-        src={breakpoint === "desktop" ? bgDesktop : bg}
+        src={isDesktop ? bgDesktop : bg}
         alt="О нас"
         className="cover absolute right-0 top-0 z-[1] h-full desktop:top-[-22%] desktop:h-[105%]"
         // onClick={() => setOpen(!open)}
       />
       <img
-        src={breakpoint === "desktop" ? bubbleDesktop : bubble}
+        src={isDesktop ? bubbleDesktop : bubble}
         alt="О нас"
         className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[4%] desktop:left-[5%] desktop:top-auto"
       />
-      <div className="flex flex-col mx-auto w-full max-w-[1440px] px-[20px] desktop:px-[80px]">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col px-[20px] desktop:px-[80px]">
         <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
           о нас
         </h2>
 
         {/* {open && ( */}
-        <ul className="flex w-full flex-col gap-[30px] desktop:gap-[65px] desktop:pl-[245px]"
-        ref={sectionRef}
+        <ul
+          className="flex w-full flex-col gap-[30px] desktop:gap-[65px] desktop:pl-[245px]"
+          ref={sectionRef}
         >
           {achievements.map((item, index) => (
-          
             <li
-              className={`relative flex translate-x-[-50px]  justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${isVisible ? "animate-slideIn" : "animate-slideOut"}`}
+              className={`relative flex translate-x-[-50px] justify-between border-t-[2px] border-solid border-[#92929280] opacity-0 ${isVisible ? "animate-slideIn" : "animate-slideOut"}`}
               key={item.id}
               // style={{ animationDelay: `${index * 0.1}s` }}
             >
               <span
-                className={`z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292] ${index !== 0 &&  isVisible ? "animate-circle-slideIn" : "animate-circle-slideOut"}`}
-                style={{
-                  // animationDelay: `${index * 0.1}s`
-                  "--init-left": item.id === 1 ? "0" : item.id === 2 ? "35%" : item.id === 3 ? "58%" :  "92%",
-                } as CSSProperties}
-                
+                className={`z-2 absolute top-[-6px] h-[10px] w-[10px] rounded-[50%] bg-[#929292] ${index !== 0 && isVisible ? "animate-circle-slideIn" : "animate-circle-slideOut"}`}
+                style={
+                  {
+                    // animationDelay: `${index * 0.1}s`
+                    "--init-left":
+                      item.id === 1
+                        ? "0"
+                        : item.id === 2
+                          ? "35%"
+                          : item.id === 3
+                            ? "58%"
+                            : "92%",
+                  } as CSSProperties
+                }
               />
-              <span className="geologica-text text-[46px] mt-[20px] font-semibold leading-[46px] text-[#808080] opacity-30 desktop:font-normal desktop:mt-[10px] desktop:text-[56px] desktop:leading-[56px]">
+              <span className="geologica-text mt-[20px] text-[46px] font-semibold leading-[46px] text-[#808080] opacity-30 desktop:mt-[10px] desktop:text-[56px] desktop:font-normal desktop:leading-[56px]">
                 0{item.id}
               </span>
               <p className="mt-[20px] max-w-[217px] text-[14px] font-semibold uppercase leading-[17px] text-indigo desktop:min-w-[600px] desktop:text-[18px] desktop:leading-[22px]">

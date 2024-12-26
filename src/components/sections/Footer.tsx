@@ -1,6 +1,7 @@
 import footerDesktopBg from "@/assets/bg/footer-desktop.png";
 import footerBg from "@/assets/bg/footer.png";
 import footerLogo from "@/assets/logos/footer-logo.svg";
+import useBreakpoint from "@/hooks/useBreakpoint";
 import useIsMobile from "@/hooks/useBreakpoint";
 
 const requisites = [
@@ -19,21 +20,21 @@ const requisites = [
 ];
 
 export const Footer = () => {
-  const breakpoint = useIsMobile();
+  const { isDesktop } = useBreakpoint();
 
   return (
-    <footer className="relative flex h-screen w-full flex-col justify-center px-[20px] desktop:pl-[80px] desktop:pr-0 overflow-hidden desktop:justify-end desktop:h-[770px]">
+    <footer className="relative flex h-screen w-full flex-col justify-center overflow-hidden px-[20px] desktop:h-[770px] desktop:justify-end desktop:pl-[80px] desktop:pr-0">
       <img
-        src={breakpoint === "mobile" ? footerBg : footerDesktopBg}
+        src={!isDesktop ? footerBg : footerDesktopBg}
         alt="asd"
-        className="absolute left-[50%] z-20 translate-x-[-50%] object-contain bottom-0 desktop:bottom-auto desktop:top-[50px] 1440:top-[-200px]"
+        className="absolute bottom-0 left-[50%] z-20 translate-x-[-50%] object-contain desktop:bottom-auto desktop:top-[50px] 1440:top-[-200px]"
       />
 
-      <div className="relative flex flex-col mt-[115px] h-[635px] w-full rounded-[25px] bg-white p-[40px] pb-[25px] desktop:p-[80px] desktop:mt-[30px] desktop:rounded-0 desktop:rounded-t-none 
-      desktop:rounded-tl-[45px] desktop:pl-[29.5vw] desktop:h-[600px]">
-        <div className="geologica-text desktop:text-grey-1 relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:font-medium desktop:text-[72px] desktop:leading-[72px]">
+      <div className="desktop:rounded-0 relative mt-[115px] flex h-[635px] w-full flex-col rounded-[25px] bg-white p-[40px] pb-[25px] desktop:mt-[30px] desktop:h-[600px] desktop:rounded-t-none desktop:rounded-tl-[45px] desktop:p-[80px] desktop:pl-[29.5vw]">
+        <div className="geologica-text relative z-30 text-[32px] font-semibold leading-[36px] text-[#929292] desktop:text-[72px] desktop:font-medium desktop:leading-[72px] desktop:text-grey-1">
           {`Продлевая жизнь`}
-          <p className="">{`вместе `}
+          <p className="">
+            {`вместе `}
             <span className="text-indigo">{`с\u00A0вами`}</span>
           </p>
         </div>
@@ -43,23 +44,21 @@ export const Footer = () => {
             <p className="geologica-text text-[14px] font-medium leading-[17px] text-grey-2 desktop:text-[24px] desktop:leading-[29px]">
               контакты
             </p>
-            <div className="text-grey-1 flex flex-col gap-[10px] text-[14px] desktop:max-w-[444px] desktop:gap-[15px] 
-            desktop:text-[18px] desktop:leading-[22px] desktop:flex-row desktop:mt-1">
+            <div className="flex flex-col gap-[10px] text-[14px] text-grey-1 desktop:mt-1 desktop:max-w-[444px] desktop:flex-row desktop:gap-[15px] desktop:text-[18px] desktop:leading-[22px]">
               <span>
                 г. Санкт-Петербург, Звенигородская ул., д. 8-10, лит. Б, офис 42
               </span>
               <div className="flex flex-col gap-[10px] desktop:gap-[25px]">
+                <span className="underline desktop:no-underline">
+                  +7 (915) 291-75-19
+                </span>
 
-              <span className="underline desktop:no-underline">
-                +7 (915) 291-75-19
-              </span>
-          
-              <a
-                className="mb-[20px] underline"
-                href="mailto:info@transbiotech.ru"
-              >
-                info@transbiotech.ru
-              </a>
+                <a
+                  className="mb-[20px] underline"
+                  href="mailto:info@transbiotech.ru"
+                >
+                  info@transbiotech.ru
+                </a>
               </div>
             </div>
           </li>
@@ -79,14 +78,14 @@ export const Footer = () => {
           {requisites.map((req) => (
             <li
               key={req.id}
-              className="text-[10px] font-semibold leading-[12px] text-[#D9D9D9] desktop:text-[15px] desktop:leading-[18px] uppercase"
+              className="text-[10px] font-semibold uppercase leading-[12px] text-[#D9D9D9] desktop:text-[15px] desktop:leading-[18px]"
             >
               {req.text}
             </li>
           ))}
         </ul>
 
-        {breakpoint === "desktop" && (
+        {isDesktop && (
           <img
             src={footerLogo}
             alt={"Transbiotech"}
@@ -94,7 +93,6 @@ export const Footer = () => {
           />
         )}
       </div>
-
     </footer>
   );
 };

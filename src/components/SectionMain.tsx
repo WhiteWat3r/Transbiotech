@@ -3,7 +3,7 @@ import { CSSProperties, useEffect, useRef, useState } from "react";
 import bgMain from "../../public/tailwindBackgrounds/bg-main.png";
 import bgMainDesktop from "../../public/tailwindBackgrounds/main-desktop.png";
 import { useSectionSizeFromImageHeight } from "../hooks/useSectionSizeFromImageHeight";
-import useIsMobile from "../hooks/useBreakpoint";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const buttons = [
   {
@@ -29,8 +29,7 @@ const buttons = [
 ];
 
 export const SectionMain = () => {
-  const breakpoint = useIsMobile();
-  const isDesktop = breakpoint !== "mobile";
+  const { isDesktop } = useBreakpoint();
 
   const imgRef = useRef<HTMLImageElement | null>(null);
 
@@ -38,8 +37,6 @@ export const SectionMain = () => {
     imgRef,
     isDesktop,
   );
-
-  console.log("sectionHeight", sectionHeight);
 
   return (
     <div
@@ -52,7 +49,7 @@ export const SectionMain = () => {
     >
       <img
         ref={imgRef}
-        src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
+        src={isDesktop ? bgMainDesktop : bgMain}
         alt="Задний фон"
         className="absolute left-[50%] z-[2] translate-x-[-50%] object-contain"
         style={{

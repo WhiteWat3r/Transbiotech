@@ -4,7 +4,6 @@ import { Footer } from "./components/sections/Footer";
 import { Header } from "./components/sections/Header";
 import { MobileHeader } from "./components/sections/MobileHeader";
 import ScrollToTop from "./hooks/ScrollToTop";
-import useIsMobile from "./hooks/useBreakpoint";
 import { Arrhythmology } from "./pages/Arrhythmology";
 import { CardiacSurgery } from "./pages/CardiacSurgery";
 import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";
@@ -12,15 +11,15 @@ import { Home } from "./pages/Home";
 import { Perfusion } from "./pages/Perfusion";
 import { Technologies } from "./pages/Technologies";
 import { Products } from "./pages/Products";
+import useBreakpoint from "./hooks/useBreakpoint";
 
 function App() {
-  const breakpoint = useIsMobile();
-  console.log("breakpoint", breakpoint);
+  const { isDesktop } = useBreakpoint();
 
   return (
     <Router>
       <ScrollToTop />
-      {breakpoint !== "desktop" ? <MobileHeader /> : <Header />}
+      {isDesktop ? <Header /> : <MobileHeader />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
