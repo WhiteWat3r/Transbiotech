@@ -65,7 +65,7 @@ export const HeaderMenuPopover = ({
         {chapter.title}
       </Link>
 
-      {chapter.links.length > 0 && (
+      {chapter.links.length > 0 && chapter.links[0].text !== 'контакты' && (
         <div
           ref={popoverRef}
           className={`absolute z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"} pt-[10px]`}
