@@ -34,8 +34,8 @@ export const menuItems: IMenuItem[] = [
     href: "/products",
     links: [
       { linkId: 1, text: "все продукты", href: "/products" },
-      { linkId: 2, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
-      { linkId: 3, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
+      { linkId: 2, text: "аппарат Ex\u2011Stream", href: "/in-progress" },
+      { linkId: 3, text: "Back\u2011Table\u00A01.0", href: "/in-progress" },
     ],
   },
   {

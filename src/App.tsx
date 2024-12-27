@@ -13,6 +13,7 @@ import { Technologies } from "./pages/Technologies";
 import { Products } from "./pages/Products";
 import useBreakpoint from "./hooks/useBreakpoint";
 import { Contacts } from "./pages/Contacts";
+import { InProgress } from "./pages/InProgress";
 
 function App() {
   const { isDesktop } = useBreakpoint();
@@ -31,6 +32,7 @@ function App() {
           <Route path="/arrhythmology" element={<Arrhythmology />} />
           <Route path="/ems" element={<EmergencyMedicalServices />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/in-progress" element={<InProgress />} />
         </Routes>
       </main>
       <Footer />
