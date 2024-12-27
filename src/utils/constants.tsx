@@ -42,7 +42,9 @@ export const menuItems: IMenuItem[] = [
     id: 4,
     title: "контакты",
     href: "/contacts",
-    links: [{ linkId: 1, text: "контакты", href: "/contacts" }],
+    links: [
+      // { linkId: 1, text: "контакты", href: "/contacts" }
+    ],
   },
 ];
 

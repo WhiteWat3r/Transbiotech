@@ -1,70 +1,82 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import arrowBottom from "../assets/arrows/arrow-botom.svg";
 import { IMenuItem } from "../utils/types";
 
 export const Accordion = ({
   menuItem,
-    delay,
-    isOpen,
-    onToggle,
-    isDisabled,
-    handleCloseMenu
-  }: {
-    menuItem: IMenuItem;
-    delay: number;
-    isOpen: boolean;
-    onToggle: (id: number) => void;
-    isDisabled: boolean;
-    handleCloseMenu: () => void;
-  }) => {
-    const contentRef = useRef<HTMLDivElement | null>(null);
-    const [height, setHeight] = useState(0);
-  
-    const toggleAccordion = () => {
-      if (!isDisabled) {
-        onToggle(menuItem.id);
-      }
-    };
-  
-    useEffect(() => {
-      if (contentRef.current) {
-        setHeight(contentRef.current.scrollHeight);
-      }
-    }, [isOpen]);
-  
-    return (
-      <li
-        className={`opacity-0 translate-x-[-50px] animate-slideIn ${
-          isDisabled ? "opacity-50" : ""
+  delay,
+  isOpen,
+  onToggle,
+  isDisabled,
+  handleCloseMenu,
+}: {
+  menuItem: IMenuItem;
+  delay: number;
+  isOpen: boolean;
+  onToggle: (id: number) => void;
+  isDisabled: boolean;
+  handleCloseMenu: () => void;
+}) => {
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [height, setHeight] = useState(0);
+
+  const toggleAccordion = () => {
+    if (!isDisabled) {
+      onToggle(menuItem.id);
+    }
+  };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(contentRef.current.scrollHeight);
+    }
+  }, [isOpen]);
+  const navigate = useNavigate();
+
+  const handleNavigate = (to: string) => {
+    navigate(to);
+    handleCloseMenu();
+  };
+
+  return (
+    <li
+      className={`translate-x-[-50px] animate-slideIn opacity-0 ${
+        isDisabled ? "opacity-50" : ""
+      }`}
+      style={{ animationDelay: `${delay}s` }}
+    >
+      <button
+        onClick={
+          menuItem.links.length > 0
+            ? toggleAccordion
+            : () => handleNavigate(menuItem.href)
+        }
+        className={`geologica-text flex w-full items-center justify-between border-b-2 border-[#929292] pb-[5px] text-[36px] font-medium leading-[36px] text-grey-2 ${
+          isDisabled ? "cursor-not-allowed" : ""
         }`}
-        style={{ animationDelay: `${delay}s` }}
+        style={{
+          opacity: isDisabled ? 0.3 : 1,
+          transition: "opacity 0.3s ease-in-out",
+        }}
+        disabled={isDisabled}
       >
-        <button
-          onClick={toggleAccordion}
-          className={`w-full font-medium text-grey-2 text-[36px] geologica-text leading-[36px] flex justify-between 
-            items-center border-b-2 border-[#929292] pb-[5px] ${
-              isDisabled ? "cursor-not-allowed" : ""
-            }`}
-          style={{
-            opacity: isDisabled ? 0.3 : 1,
-            transition: "opacity 0.3s ease-in-out",
-          }}
-          disabled={isDisabled}
-        >
-          {menuItem.title}
+        {menuItem.title}
+        {menuItem.links.length > 0 && (
           <img
             src={arrowBottom}
             alt="Подробнее"
             style={{ transform: isOpen ? "rotate(180deg)" : "" }}
             className="transition-transform duration-300 ease-in-out"
           />
-        </button>
-  
-        {menuItem.links.length > 0 && <div
-          className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
+        )}
+      </button>
+
+      {menuItem.links.length > 0 && (
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0"
           }`}
           ref={contentRef}
           style={{
@@ -72,20 +84,23 @@ export const Accordion = ({
             height: isOpen ? `${height}px` : "0",
           }}
         >
-          <ul className="pl-[30px] mt-5 space-y-[10px] flex flex-col">
+          <ul className="mt-5 flex flex-col space-y-[10px] pl-[30px]">
             {menuItem.links.map((item) => (
               <li
                 key={item.linkId}
-                className="text-grey-2 text-[27px] leading-[27px] geologica-text font-normal"
+                className="geologica-text text-[27px] font-normal leading-[27px] text-grey-2"
               >
-                <Link to={item.href ? item.href : '/'} onClick={handleCloseMenu}>
-                {item.text}
+                <Link
+                  to={item.href ? item.href : "/"}
+                  onClick={handleCloseMenu}
+                >
+                  {item.text}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>}
-      </li>
-    );
-  };
-  
+        </div>
+      )}
+    </li>
+  );
+};
