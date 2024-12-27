@@ -1,5 +1,6 @@
 import { BackTableInfo } from "@/components/products/BackTableInfo";
 import { BackTableMain } from "@/components/products/BackTableMain";
+import { BackTableWhereUsed } from "@/components/products/BackTableWhereUsed";
 import { ExStreamDesc } from "@/components/products/ExStreamDesc";
 import { ExStreamDevice } from "@/components/products/ExStreamDevice";
 import { ExStreamWhereUsed } from "@/components/products/ExStreamWhereUsed";
@@ -17,6 +18,7 @@ export const Products = () => {
       <ProductSwiperWithTooltips />
       <ExStreamDesc />
       <BackTableMain />
+      <BackTableWhereUsed />
       <ProductAdvantages type={'Back-Table 1.0'}/>
       <BackTableInfo />
     </>

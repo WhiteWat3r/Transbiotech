@@ -1,14 +1,14 @@
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
 
 export const ExStreamDesc = () => {
-  const textContent = `Аппарат Ex-Stream – современный высокотехнологичный медицинский аппарат, разработанный\nи произведенный в России`;
+  const textContent = `Аппарат Ex-Stream – современный высокотехнологичный медицинский аппарат, разработанный и\u00A0произведенный в России`;
   const { highlightedText, elementRef } = useHighlightedText({ textContent });
 
   return (
-    <div className="w-full px-[20px] py-[80px]">
+    <div className="w-full px-[20px] py-[80px] desktop:px-[80px] max-w-[1440px] mx-auto desktop:py-[95px]">
       <p
         ref={elementRef}
-        className="mob-head-3 desktop:head-4 flex flex-wrap text-grey-2 desktop:my-[85px] desktop:max-w-[895px]"
+        className="mob-head-3 desktop:head-4 flex flex-wrap text-grey-2 desktop:my-[85px] max-w-[500px] desktop:max-w-[895px]"
       >
         {highlightedText}
       </p>

@@ -34,7 +34,6 @@ export const menuItems: IMenuItem[] = [
     href: "/products",
     links: [
       { linkId: 1, text: "все продукты", href: "/products" },
-
       { linkId: 2, text: "аппарат Ex\u2011Stream", href: "/ex-stream" },
       { linkId: 3, text: "Back\u2011Table\u00A01.0", href: "/black-table-1-0" },
     ],
@@ -42,10 +41,8 @@ export const menuItems: IMenuItem[] = [
   {
     id: 4,
     title: "контакты",
-    href: "#",
-    links: [
-      // { linkId: 1, text: "документы", href: "" }
-    ],
+    href: "/contacts",
+    links: [{ linkId: 1, text: "контакты", href: "/contacts" }],
   },
 ];
 

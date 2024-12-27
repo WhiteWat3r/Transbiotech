@@ -12,6 +12,7 @@ import { Perfusion } from "./pages/Perfusion";
 import { Technologies } from "./pages/Technologies";
 import { Products } from "./pages/Products";
 import useBreakpoint from "./hooks/useBreakpoint";
+import { Contacts } from "./pages/Contacts";
 
 function App() {
   const { isDesktop } = useBreakpoint();
@@ -29,6 +30,7 @@ function App() {
           <Route path="/cardiac-surgery" element={<CardiacSurgery />} />
           <Route path="/arrhythmology" element={<Arrhythmology />} />
           <Route path="/ems" element={<EmergencyMedicalServices />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </main>
       <Footer />

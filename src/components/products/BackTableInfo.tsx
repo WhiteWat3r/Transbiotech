@@ -4,12 +4,12 @@ import { Tooltip } from "../ui/Tooltip";
 
 export const BackTableInfo = () => {
   return (
-    <div className="w-full bg-gainsboro pb-[82px] pt-[40px]">
-      <div className="relative flex w-full flex-col gap-[31px] px-[20px]">
+    <div className="w-full bg-gainsboro pb-[82px] pt-[40px] desktop:pt-[94px] desktop:pb-[145px]">
+      <div className="relative flex w-full flex-col gap-[31px] px-[20px] tablet:w-[413px] tablet:mx-auto">
         <img
           src={BackTable}
           alt={`Back table`}
-          className="h-auto w-full object-contain"
+          className="h-auto w-full object-contain "
         />
 
         <Tooltip text="Инфузионная стойка" top="7%" left="39%" />

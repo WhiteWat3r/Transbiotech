@@ -11,7 +11,8 @@ export const DeviceDescription = ({
   noTitle?: boolean;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const {isDesktop} = useBreakpoint();
+  const {breakpoint} = useBreakpoint();
+  const isMobile = breakpoint === 'mobile'
   const handleToggle = () => {
     setIsExpanded((prev) => !prev);
   };
@@ -28,7 +29,7 @@ export const DeviceDescription = ({
       >
         {description.mainText}
 
-        {!isDesktop ? (
+        {isMobile ? (
           <>
             {description.additionalText && !isExpanded && (
               <>

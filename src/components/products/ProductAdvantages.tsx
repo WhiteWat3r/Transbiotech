@@ -15,7 +15,7 @@ export const ProductAdvantages = ({
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="w-bull relative mx-auto mb-[80px] max-w-[1440px] px-[20px] desktop:mt-[155px] desktop:px-[80px] desktop:pb-[243px]">
+    <div className={`w-bull relative mx-auto mb-[80px] max-w-[1440px] px-[20px] ${isExStream  ? 'desktop:mt-[150px] desktop:pb-[243px]': "desktop:mt-[155px] desktop:pb-[235px]"}  desktop:px-[80px] `}>
       <p className="mob-head-1 absolute top-0 tracking-[-1px] text-gainsboro desktop:bottom-[90px] desktop:top-auto desktop:head-1">
         преимущества {`${type}`}
       </p>
@@ -24,24 +24,24 @@ export const ProductAdvantages = ({
           return adv.id === 99 && isExStream ? (
             <li
               key={8}
-              className={`${isExStream ? "h-[250px]" : "h-[130px]"} desktop:h-[307px] `}
+              className={` h-[250px]  desktop:h-[307px] `}
             >
               <img
                 src={isDesktop ? advantageTableDesl : advantagePic}
                 alt=""
-                className="desktop:h-full"
+                className="h-full w-full object-cover rounded-[25px]"
               />
             </li>
           ) : adv.id === 7 && !isExStream ? (
             <li
               key={7}
-              className={`mb-[60px] h-[250px] desktop:h-[307px] `}
+              className={`mb-[60px] h-[250px] desktop:h-[257px] desktop:mb-0 desktop:col-span-2`}
             >
-              <img src={advantageTable} alt="" />
+              <img src={advantageTable} alt="" className="h-full object-cover rounded-[25px] w-full" />
             </li>
           ) : (
             <li
-              className={`flex ${isExStream ? "h-[250px]" : "h-[130px]"} flex-col rounded-[25px] bg-white p-[20px] desktop:h-[307px] desktop:px-[28px] desktop:pt-[40px]`}
+              className={`flex ${isExStream ? "h-[250px] desktop:h-[307px]" : "h-[130px] desktop:h-[257px]"} flex-col rounded-[25px] bg-white p-[20px]  desktop:px-[28px] desktop:pt-[40px]`}
               key={adv.id}
             >
               <h3 className="mob-head-4 desktop:text-2 text-black-default">

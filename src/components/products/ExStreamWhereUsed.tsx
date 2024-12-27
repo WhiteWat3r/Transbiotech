@@ -21,10 +21,10 @@ export const ExStreamWhereUsed = () => {
     <div className="relative w-full desktop:mt-[190px] max-w-[1440px] mx-auto">
       <img
         src={tube}
-        alt="ЭКМО при внезапной сердечной смерти"
+        alt=""
         className="w-[75%] absolute left-[-95px] top-[370px] desktop:left-[-95px] desktop:top-[240px] desktop:h-[484px] desktop:w-[564px]"
       />
-      <div className="mb-[102px] flex w-full flex-col px-[20px] desktop:flex-row-reverse desktop:gap-[72px] desktop:px-[80px]">
+      <div className="mb-[102px] flex w-full flex-col px-[20px] 1200:flex-row-reverse 1200:gap-[72px] 1200:px-[80px]">
         <ProductSlider type={"ex-stream"} />
 
         <div className="flex flex-col desktop:min-w-[438px]">
