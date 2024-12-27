@@ -32,7 +32,9 @@ function App() {
           <Route path="/arrhythmology" element={<Arrhythmology />} />
           <Route path="/ems" element={<EmergencyMedicalServices />} />
           <Route path="/contacts" element={<Contacts />} />
+
           <Route path="/in-progress" element={<InProgress />} />
+          <Route path="*" element={<InProgress />} />
         </Routes>
       </main>
       <Footer />
