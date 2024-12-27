@@ -8,15 +8,15 @@ import useBreakpoint from "@/hooks/useBreakpoint";
 export const ProductAdvantages = ({
   type,
 }: {
-  type: "Back-Table 1.0" | "Ex-Stream";
+  type: "Back-Table 1.0" | "Ex\u2011Stream";
 }) => {
-  const isExStream = type === "Ex-Stream";
+  const isExStream = type === "Ex\u2011Stream";
   const advantages = isExStream ? exStreamAdvantages : backTableAdvantages;
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="w-bull relative mx-auto mb-[80px] max-w-[1440px] px-[20px] desktop:mt-[155px] desktop:px-[80px]">
-      <p className="mob-head-1 absolute top-0 tracking-[-1px] text-gainsboro desktop:bottom-0 desktop:top-auto">
+    <div className="w-bull relative mx-auto mb-[80px] max-w-[1440px] px-[20px] desktop:mt-[155px] desktop:px-[80px] desktop:pb-[243px]">
+      <p className="mob-head-1 absolute top-0 tracking-[-1px] text-gainsboro desktop:bottom-[90px] desktop:top-auto desktop:head-1">
         преимущества {`${type}`}
       </p>
       <ul className="relative z-20 grid grid-cols-1 desktop:grid-cols-4 gap-[10px] pt-[75px] desktop:flex-row desktop:flex-wrap desktop:gap-[20px] justify-between">

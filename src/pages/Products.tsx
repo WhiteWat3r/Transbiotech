@@ -13,7 +13,7 @@ export const Products = () => {
       <ProductsMain />
       <ExStreamDevice />
       <ExStreamWhereUsed />
-      <ProductAdvantages type={'Ex-Stream'}/>
+      <ProductAdvantages type={'Ex\u2011Stream'}/>
       <ProductSwiperWithTooltips />
       <ExStreamDesc />
       <BackTableMain />

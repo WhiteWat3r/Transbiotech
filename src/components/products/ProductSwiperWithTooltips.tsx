@@ -8,10 +8,11 @@ import exStream from "@/assets/products/ex-stream.png";
 import exStreamSecond from "@/assets/perfusion/ex-stream-second.png";
 import exStreamThird from "@/assets/perfusion//ex-stream-third.png";
 import { Tooltip } from "../ui/Tooltip";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const ProductSwiperWithTooltips = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperInstance | null>(null);
+  const { isDesktop } = useBreakpoint();
 
   const handlePrev = () => {
     if (swiperRef.current) {
@@ -26,21 +27,21 @@ export const ProductSwiperWithTooltips = () => {
   };
 
   return (
-    <div className="w-full bg-gainsboro pb-[30px] pt-[81px]">
-      <div className="flex w-full flex-col gap-[31px] px-[20px]">
+    <div className="w-full bg-gainsboro pb-[30px] pt-[81px] desktop:pt-[164px] desktop:pb-[80px]">
+      <div className="flex w-full flex-col gap-[31px]] max-w-[1440px] mx-auto">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
           className="w-full"
           loop
           onSwiper={(swiper) => (swiperRef.current = swiper)}
         >
-          <SwiperSlide key={1} className="relative">
+          <SwiperSlide key={1}>
+            <div className="relative desktop:!w-[670px] desktop:mx-auto">
             <img
               src={exStream}
               alt={`Slide 1`}
-              className="h-auto w-full object-contain"
+              className="h-auto w-full object-contain "
             />
 
             <Tooltip
@@ -66,23 +67,27 @@ export const ProductSwiperWithTooltips = () => {
 
             <Tooltip
               text="Ручкa для перемещения аппарата"
-              top="35%"
-              left="50%"
-            />
-            <Tooltip
-              text="Функциональные клавиши"
-              top="80%"
-              left="8%"
-              textLeft="400%"
+              top="40%"
+              left="73%"
             />
             <Tooltip
               text="ЖК дисплей"
               top="80%"
+              left="8%"
+              textLeft={"200%"}
+            />
+            <Tooltip
+              text="Функциональные клавиши"
+              top="80%"
               left="35%"
               //   textLeft="-200%"
+              
             />
+            </div>
           </SwiperSlide>
           <SwiperSlide key={2} className="relative">
+          <div className="relative desktop:!w-[670px] desktop:mx-auto">
+
             <img
               src={exStreamSecond}
               alt={`Slide 1`}
@@ -106,8 +111,11 @@ export const ProductSwiperWithTooltips = () => {
               left="63%"
               maxWidth="196px"
             />
+            </div>
           </SwiperSlide>
           <SwiperSlide key={3} className="relative">
+          <div className="relative desktop:!w-[670px] desktop:mx-auto">
+
             <img
               src={exStreamThird}
               alt={`Slide 1`}
@@ -127,10 +135,11 @@ export const ProductSwiperWithTooltips = () => {
               maxWidth={"276px"}
               textLeft="-200%"
             />
+            </div>
           </SwiperSlide>
         </Swiper>
 
-        <div className="flex justify-center gap-[43px]">
+        <div className="flex justify-center gap-[43px] desktop:mt-[60px]">
           <button
             onClick={handlePrev}
             className="flex items-center justify-center"

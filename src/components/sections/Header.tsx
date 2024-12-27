@@ -20,7 +20,7 @@ export const Header = () => {
   useEffect(() => {
     const calculateHeaderWidth = () => {
       const logoWidth = 82;
-      const menuWidth = 671;
+      const menuWidth = 563;
       const totalWidth = logoWidth + menuWidth;
 
       setHeaderWidth(`${totalWidth + 86}px`);

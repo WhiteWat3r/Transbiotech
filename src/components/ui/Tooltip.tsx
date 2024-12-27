@@ -23,7 +23,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
       style={{ top, left }} // Позиционирование самого тултипа
     >
       {/* Вопросительный знак */}
-      <div className="flex h-[25px] w-[25px] cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white text-[11px] leading-[11px] text-gray-500">
+      <div className="flex h-[25px] w-[25px] desktop:w-[29px] desktop:h-[29px] cursor-pointer items-center justify-center rounded-full border text-indigo border-gray-300 bg-white   group-hover:opacity-0">
         ?
       </div>
 
