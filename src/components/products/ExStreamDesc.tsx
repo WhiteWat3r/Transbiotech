@@ -5,10 +5,10 @@ export const ExStreamDesc = () => {
   const { highlightedText, elementRef } = useHighlightedText({ textContent });
 
   return (
-    <div className="w-full px-[20px] py-[80px] desktop:px-[80px] max-w-[1440px] mx-auto desktop:py-[95px]">
+    <div className="mx-auto w-full max-w-[1440px] px-[20px] pt-[80px] desktop:px-[80px]">
       <p
         ref={elementRef}
-        className="mob-head-3 desktop:head-4 flex flex-wrap text-grey-2 desktop:my-[85px] max-w-[500px] desktop:max-w-[895px]"
+        className="mob-head-3 desktop:head-4 flex max-w-[500px] flex-wrap text-grey-2 desktop:my-[85px] desktop:max-w-[895px]"
       >
         {highlightedText}
       </p>

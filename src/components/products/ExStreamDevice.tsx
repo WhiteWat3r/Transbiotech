@@ -13,7 +13,7 @@ export const ExStreamDevice = () => {
 
   return (
     <div className="mx-auto flex w-full max-w-[1440px] flex-col desktop:px-[80px]">
-      <div className="relative mt-[86px] w-full desktop:mt-[232px]">
+      <div className="relative w-full mt-[86px] desktop:mt-[232px]">
         <img
           src={device}
           alt=""

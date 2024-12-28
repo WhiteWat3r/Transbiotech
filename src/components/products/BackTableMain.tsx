@@ -9,7 +9,7 @@ export const BackTableMain = () => {
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="mx-auto w-full max-w-[1440px] px-[20px] desktop:px-[80px]">
+    <div className="mx-auto w-full max-w-[1440px] px-[20px] pt-[80px] desktop:px-[80px] desktop:py-[95px]">
       <div className="flex w-full flex-col desktop:mb-[172px] desktop:flex-row">
         <div className="relative w-full desktop:mt-[12px]">
           <img
