@@ -18,6 +18,7 @@ export const BackTableInfo = () => {
           text="Дополнительный универсальный столик"
           top="46%"
           left="18%"
+          textLeft="250%"
           maxWidth="240px"
         />
         <Tooltip text="Рабочая кювета" top="53%" left="55%" />
