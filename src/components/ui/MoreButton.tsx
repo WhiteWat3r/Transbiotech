@@ -3,7 +3,7 @@ export const MoreButton = ({
   onClick,
 }: {
   type?: "filled" | "ghost ";
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <button

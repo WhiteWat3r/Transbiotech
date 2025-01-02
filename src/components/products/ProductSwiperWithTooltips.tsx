@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperInstance } from "swiper";
 
-import arrow from "@/assets/products/arrow-right.svg";
+import arrow from "@/assets/images/products/arrow-right.svg";
 
-import exStream from "@/assets/products/ex-stream.png";
-import exStreamSecond from "@/assets/perfusion/ex-stream-second.png";
-import exStreamThird from "@/assets/perfusion//ex-stream-third.png";
+import exStream from "@/assets/images/products/ex-stream.png";
+import exStreamSecond from "@/assets/images/perfusion/ex-stream-second.png";
+import exStreamThird from "@/assets/images/perfusion//ex-stream-third.png";
 import { Tooltip } from "../ui/Tooltip";
 import useBreakpoint from "@/hooks/useBreakpoint";
 

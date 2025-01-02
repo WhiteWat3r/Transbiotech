@@ -1,9 +1,9 @@
-import { AboutUsSection } from "../components/AboutUsSection";
-import { OurTeamSection } from "../components/OurTeamSection";
-import { SectionMain } from "../components/SectionMain";
-import { SectionPromo } from "../components/SectionPromo";
-import { SectionService } from "../components/sections/SectionService";
-import { SectionTechnologies } from "../components/sections/SectionTechnologies";
+import { SectionMain } from "@/components/home/SectionMain";
+import { SectionService } from "@/components/common-sections/SectionService";
+import { SectionTechnologies } from "@/components/common-sections/SectionTechnologies";
+import { SectionPromo } from "@/components/home/SectionPromo";
+import { AboutUsSection } from "@/components/home/AboutUsSection";
+import { OurTeamSection } from "@/components/home/OurTeamSection";
 
 export const Home = () => {
   return (

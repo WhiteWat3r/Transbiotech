@@ -8,9 +8,8 @@ import { ProductAdvantages } from "@/components/products/ProductAdvantages";
 import { ProductSwiperWithTooltips } from "@/components/products/ProductSwiperWithTooltips";
 import { ProductsMain } from "@/components/products/ProductsMain";
 import { useRef } from "react";
-import exStream from "@/assets/perfusion/ex-stream.png";
-import backTable from "@/assets/products/back-table.png";
-import useBreakpoint from "@/hooks/useBreakpoint";
+import exStream from "@/assets/images/perfusion/ex-stream.png";
+import backTable from "@/assets/images/products/back-table.png";
 
 export const Products = () => {
   const products = [

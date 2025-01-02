@@ -1,7 +1,7 @@
 import { ContactItem } from "@/components/contacts/ContactItem";
 
-import contactsImg from "@/assets/contacts/contacts.png";
-import contactsImgDesk from "@/assets/contacts/contacts-desk.png";
+import contactsImg from "@/assets/images/contacts/contacts.png";
+import contactsImgDesk from "@/assets/images/contacts/contacts-desk.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 const contacts = [

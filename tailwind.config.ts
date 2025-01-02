@@ -97,6 +97,30 @@ export default {
             backdropFilter: "blur(10px)",
           },
         },
+        changeLogo: {
+          "0%": {
+            // backgroundColor: "transparent",
+            // border: "2px solid transparent",
+            // backdropFilter: "blur(0px)",
+          },
+          // "60%": {
+          //   backgroundColor: "transparent",
+          //   border: "2px solid transparent",
+
+          //   backdropFilter: "blur(0px)",
+          // },
+          // "80%": {
+          //   backgroundColor: "#F8F8F8D9",
+          //   border: "2px solid white",
+          //   backdropFilter: "blur(10px)",
+          // },
+          "100%": {
+            backgroundColor: "#F8F8F8D9",
+            border: "2px solid white",
+            backdropFilter: "blur(10px)",
+            height: "50px",
+          },
+        },
         disappearBorder: {
           "0%": {
             backgroundColor: "#F8F8F8D9",
@@ -134,12 +158,12 @@ export default {
           },
         },
         "perfusion-main": {
-          "0%": { right: "-170px", top: "-65px" },// 1 Пауза
+          "0%": { right: "-170px", top: "-65px" }, // 1 Пауза
           "10%": { right: "-170px", top: "-65px" },
           "35%": { right: "-190px", top: "-45px" },
           "45%": { right: "-190px", top: "-45px" },
-          "65%": { right: "-210px", top: "-72px" },// 3 пауза 
-          "75%":  { right: "-210px", top: "-72px" }, 
+          "65%": { right: "-210px", top: "-72px" }, // 3 пауза
+          "75%": { right: "-210px", top: "-72px" },
           "100%": { right: "-170px", top: "-65px" }, // Окончание плавного возврата
         },
         fadeIn: {
@@ -186,6 +210,7 @@ export default {
         fadeOut: "fadeOut 0.3s ease-out",
         appearBorder: "appearBorder 0.5s ease-out forwards",
         disappearBorder: "disappearBorder 0.5s ease-out forwards",
+        changeLogo: "changeLogo 0.5s ease-out forwards",
         "circle-slideIn": "circle-slideIn 0.8s forwards",
         "circle-slideOut": "circle-slideOut 0.8s forwards",
         "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards",

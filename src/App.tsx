@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Footer } from "./components/sections/Footer";
-import { Header } from "./components/sections/Header";
-import { MobileHeader } from "./components/sections/MobileHeader";
+import { Footer } from "./components/layout/Footer";
+import { Header } from "./components/layout/header/Header";
+import { MobileHeader } from "./components/layout/header/MobileHeader";
 import ScrollToTop from "./hooks/ScrollToTop";
 import { Arrhythmology } from "./pages/Arrhythmology";
 import { CardiacSurgery } from "./pages/CardiacSurgery";
@@ -14,14 +14,18 @@ import { Products } from "./pages/Products";
 import useBreakpoint from "./hooks/useBreakpoint";
 import { Contacts } from "./pages/Contacts";
 import { InProgress } from "./pages/InProgress";
+import { useIsScrolled } from "./hooks/useIsScrolled";
+import { useState } from "react";
 
 function App() {
   const { isDesktop } = useBreakpoint();
 
+  const isScrolled = useIsScrolled();
+
   return (
     <Router>
       <ScrollToTop />
-      {isDesktop ? <Header /> : <MobileHeader />}
+      {isDesktop ? <Header isScrolled={isScrolled} /> : <MobileHeader />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

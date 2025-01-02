@@ -1,5 +1,4 @@
-import React from "react";
-import BackTable from "@/assets/products/back-table-tooltips.png";
+import BackTable from "@/assets/images/products/back-table-tooltips.png";
 import { Tooltip } from "../ui/Tooltip";
 
 export const BackTableInfo = () => {

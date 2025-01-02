@@ -1,8 +1,8 @@
 import React from "react";
 
-import backTable from "@/assets/products/back-table-main.png";
-import text from "@/assets/products/back-table-text.svg";
-import textDesktop from "@/assets/products/back-table-text-desktop.svg";
+import backTable from "@/assets/images/products/back-table-main.png";
+import text from "@/assets/images/products/back-table-text.svg";
+import textDesktop from "@/assets/images/products/back-table-text-desktop.svg";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const BackTableMain = () => {

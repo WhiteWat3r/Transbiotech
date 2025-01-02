@@ -1,7 +1,6 @@
-import React from "react";
 import { ProductSlider } from "./ProductSlider";
 import { DeviceDescription } from "../ui/DeviceDescription";
-import tube from "@/assets/products/tube.png";
+import tube from "@/assets/images/products/tube.png";
 
 const backTableDeviceDescription = {
   mainText: `Комплект стола весит 36 кг и выдерживает суммарную нагрузку до 150 кг. На стол можно размещать дополнительное навесное оборудование.`,
@@ -17,7 +16,7 @@ const backTableDeviceDescription = {
 export const BackTableWhereUsed = () => {
   return (
     <div className="relative mx-auto mb-[170px] desktop:mb-0">
-      <img src={tube} alt="" className="absolute" />
+      <img src={tube} alt="" className="absolute pointer-events-none" />
 
       <div className="flex w-full max-w-[1440px] mx-auto flex-col px-[20px] 1200:flex-row-reverse 1200:gap-[72px] 1200:px-[80px] 1200:pt-[50px]">
         <ProductSlider type={"back-table"} />

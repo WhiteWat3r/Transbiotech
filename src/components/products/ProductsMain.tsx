@@ -1,5 +1,5 @@
 import { SectionTitle } from "../ui/SectionTitle";
-import grad from "@/assets/products/grad-border.svg";
+import grad from "@/assets/images/products/grad-border.svg";
 
 import { MoreButton } from "../ui/MoreButton";
 import useBreakpoint from "@/hooks/useBreakpoint";

@@ -1,5 +1,5 @@
 import React from "react";
-import questionMarl from '@/assets/products/question-mark.svg'
+import questionMark from "@/assets/images/products/question-mark.svg";
 interface TooltipProps {
   text: string;
   top: string;
@@ -23,8 +23,8 @@ export const Tooltip: React.FC<TooltipProps> = ({
       style={{ top, left }} // Позиционирование самого тултипа
     >
       {/* Вопросительный знак */}
-      <div className="flex h-[25px] w-[25px] desktop:w-[29px] desktop:h-[29px] cursor-pointer items-center justify-center rounded-full border text-indigo border-gray-300 bg-white   group-hover:opacity-0">
-        <img src={questionMarl} alt="" />
+      <div className="flex h-[25px] w-[25px] cursor-pointer items-center justify-center rounded-full border border-gray-300 bg-white text-indigo group-hover:opacity-0 desktop:h-[29px] desktop:w-[29px]">
+        <img src={questionMark} alt="" />
       </div>
 
       {/* Тултип */}
