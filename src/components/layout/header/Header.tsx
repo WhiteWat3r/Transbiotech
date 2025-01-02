@@ -15,6 +15,7 @@ export const Header = () => {
   const pathname = useLocation();
   const isPerfPage = pathname.pathname === "/perfusion";
   const [currentLogo, setCurrentLogo] = useState<JSX.Element | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const calculateHeaderWidth = () => {
@@ -31,14 +32,30 @@ export const Header = () => {
   }, [isScrolled]);
 
   useEffect(() => {
+    if (isAnimating) return;
+    console.log("смена лого");
+
     const logo = isScrolled ? (
       <MobileLogo width="26" height="24" />
     ) : (
       <FullLogo color={!isPerfPage ? "#6A78C1" : "#DDDDDD"} />
     );
+    setTimeout(
+      () => {
+        setCurrentLogo(logo);
+      },
+      isScrolled ? 0 : 300,
+    );
+  }, [isScrolled, isPerfPage, isAnimating]);
 
-    setCurrentLogo(logo);
-  }, [isScrolled, isPerfPage]);
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
+  const startAnimation = () => {
+    setIsAnimating(true);
+  };
+  console.log("isAnimating", isAnimating);
 
   return (
     <header
@@ -49,8 +66,8 @@ export const Header = () => {
       }}
     >
       <Link
-        // onAnimationStart={startAnimation}
-        // onAnimationEnd={handleAnimationEnd}
+        onAnimationStart={startAnimation}
+        onAnimationEnd={handleAnimationEnd}
         className={`relative ml-[20px] flex items-center rounded-[42px] pl-[18px] pr-[14px] transition-all duration-500 ${
           isScrolled
             ? "animate-changeLogo"
