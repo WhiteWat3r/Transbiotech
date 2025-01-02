@@ -40,12 +40,15 @@ export const Header = () => {
     ) : (
       <FullLogo color={!isPerfPage ? "#6A78C1" : "#DDDDDD"} />
     );
-    setTimeout(
-      () => {
-        setCurrentLogo(logo);
-      },
-      isScrolled ? 0 : 300,
-    );
+    const timing = isScrolled ? 0 : 300;
+
+    const timeoutId = setTimeout(() => {
+      setCurrentLogo(logo);
+    }, timing);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [isScrolled, isPerfPage, isAnimating]);
 
   const handleAnimationEnd = () => {
@@ -55,7 +58,7 @@ export const Header = () => {
   const startAnimation = () => {
     setIsAnimating(true);
   };
-  console.log("isAnimating", isAnimating);
+  console.log("isScrolled", isScrolled);
 
   return (
     <header
@@ -66,8 +69,8 @@ export const Header = () => {
       }}
     >
       <Link
-        onAnimationStart={startAnimation}
-        onAnimationEnd={handleAnimationEnd}
+        // onAnimationStart={startAnimation}
+        // onAnimationEnd={handleAnimationEnd}
         className={`relative ml-[20px] flex items-center rounded-[42px] pl-[18px] pr-[14px] transition-all duration-500 ${
           isScrolled
             ? "animate-changeLogo"
