@@ -20,12 +20,10 @@ import { useState } from "react";
 function App() {
   const { isDesktop } = useBreakpoint();
 
-  const isScrolled = useIsScrolled();
-
   return (
     <Router>
       <ScrollToTop />
-      {isDesktop ? <Header isScrolled={isScrolled} /> : <MobileHeader />}
+      {isDesktop ? <Header /> : <MobileHeader />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />

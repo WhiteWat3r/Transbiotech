@@ -7,13 +7,14 @@ import { HeaderMenuPopover } from "./HeaderMenuPopover";
 import { FullLogo } from "../../ui/icons/FullLogo";
 import { MobileLogo } from "../../ui/icons/MobileLogo";
 
-export const Header = ({ isScrolled }: { isScrolled: boolean }) => {
+export const Header = () => {
+  const isScrolled = useIsScrolled();
+
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
   const pathname = useLocation();
   const isPerfPage = pathname.pathname === "/perfusion";
   const [currentLogo, setCurrentLogo] = useState<JSX.Element | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const calculateHeaderWidth = () => {
@@ -28,11 +29,8 @@ export const Header = ({ isScrolled }: { isScrolled: boolean }) => {
     window.addEventListener("resize", calculateHeaderWidth);
     return () => window.removeEventListener("resize", calculateHeaderWidth);
   }, [isScrolled]);
-  // устанавливать src картинки через useEffect
 
   useEffect(() => {
-    if (isAnimating) return;
-
     const logo = isScrolled ? (
       <MobileLogo width="26" height="24" />
     ) : (
@@ -40,16 +38,7 @@ export const Header = ({ isScrolled }: { isScrolled: boolean }) => {
     );
 
     setCurrentLogo(logo);
-  }, [isScrolled, isPerfPage, isAnimating]);
-
-  const handleAnimationEnd = () => {
-    setIsAnimating(false);
-  };
-
-  const startAnimation = () => {
-    setIsAnimating(true);
-  };
-  console.log("isAnimating", isAnimating);
+  }, [isScrolled, isPerfPage]);
 
   return (
     <header
