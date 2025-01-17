@@ -25,7 +25,7 @@ export const ECMOAdvantages = () => {
       ref={sectionRef}
       className="relative flex w-full flex-col overflow-hidden bg-gainsboro"
     >
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pb-[44px] desktop:pt-[43px]">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pb-[44px] desktop:pt-[43px]">
         {/* {isDesktop ? ( */}
         <div className="flex flex-col gap-[15px] desktop:gap-[45px]">
           <span className="mob-head-4 desktop:text-2 max-w-[170px] text-grey-2 opacity-50">

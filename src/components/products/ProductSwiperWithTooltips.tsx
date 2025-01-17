@@ -28,7 +28,7 @@ export const ProductSwiperWithTooltips = () => {
 
   return (
     <div className="w-full bg-gainsboro pb-[30px] pt-[81px] desktop:pb-[80px] desktop:pt-[164px]">
-      <div className="gap-[31px]] mx-auto flex w-full max-w-[1440px] flex-col">
+      <div className="gap-[31px]] mx-auto flex w-full max-w-[1200px] flex-col">
         <Swiper
           spaceBetween={10}
           slidesPerView={1}

@@ -19,7 +19,7 @@ export const ProductsMain = ({
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="mx-auto mt-[5px] flex w-full max-w-[1440px] flex-col px-[20px] desktop:mt-[38px] desktop:px-[80px]">
+    <div className="mx-auto mt-[5px] flex w-full max-w-[1200px] flex-col px-[20px] desktop:mt-[38px] desktop:px-[80px]">
       <SectionTitle firstChapter={"продукты"} />
       <ul className="mt-[70px] flex w-full flex-col gap-[30px] desktop:mt-0 desktop:flex-row">
         {products.map((product) => (

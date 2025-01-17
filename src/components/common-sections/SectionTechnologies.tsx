@@ -72,7 +72,7 @@ export const SectionTechnologies = ({
 
   return (
     <div
-      className={`relative flex w-full flex-col justify-center bg-platinum px-[20px] pb-[20px] desktop:px-[80px] ${fromTechPage ? "h-[calc(750px-75px)] desktop:h-[calc(800px-75px)]" : "h-[750px] desktop:h-[800px]"} mx-auto w-full max-w-[1440px]`}
+      className={`relative flex w-full flex-col justify-center bg-platinum px-[20px] pb-[20px] desktop:px-[80px] ${fromTechPage ? "h-[calc(750px-75px)] desktop:h-[calc(800px-75px)]" : "h-[750px] desktop:h-[800px]"} mx-auto w-full max-w-[1200px]`}
       ref={sectionRef}
     >
       <h2

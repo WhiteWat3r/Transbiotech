@@ -7,7 +7,7 @@ export const SectionService = () => {
   
   return (
     <div className="h-[750px] desktop:h-[800px] desktop:bg-[#dddddd]">
-      <div className="relative mx-auto flex h-[750px] w-full max-w-[1440px] flex-col desktop:h-[800px] desktop:flex-row">
+      <div className="relative mx-auto flex h-[750px] w-full max-w-[1200px] flex-col desktop:h-[800px] desktop:flex-row">
         <img
           src={bgThird}
           alt="Сервис"

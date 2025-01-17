@@ -27,7 +27,7 @@ export const HeartAssistDevice = () => {
         className="absolute left-[50%] translate-x-[-50%] object-contain desktop:top-[314px]"
         // onLoad={handleImageLoad}
       />
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[84px]">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[84px]">
         <SectionNumber number={2} />
 
         <SectionTitle

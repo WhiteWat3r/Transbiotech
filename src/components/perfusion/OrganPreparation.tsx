@@ -17,7 +17,7 @@ export const OrganPreparation = () => {
         // alt="desktop:w-[1037px]"
         className="mx-auto desktop:w-[1200px]"
       />
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pt-0">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:pt-0">
         <SectionNumber number={7} />
 
         <SectionTitle

@@ -32,7 +32,7 @@ export const Contacts = () => {
   const { isDesktop } = useBreakpoint();
   return (
     <div className="mt-[6px] desktop:mt-[40px]">
-      <div className="mx-auto mb-[45px] flex w-full max-w-[1440px] flex-col gap-[25px] px-[20px] desktop:mb-[40px] desktop:gap-[38px] desktop:px-[80px]">
+      <div className="mx-auto mb-[45px] flex w-full max-w-[1200px] flex-col gap-[25px] px-[20px] desktop:mb-[40px] desktop:gap-[38px] desktop:px-[80px]">
         <h2 className="mob-head-2 desktop:head-2 text-grey-1">контакты</h2>
         <div className="flex flex-col gap-[25px] desktop:flex-row desktop:gap-[82px]">
           <p className="geologica-text whitespace-pre-wrap text-[18px] font-semibold leading-[100%] text-black-default desktop:min-w-[360px] desktop:text-[24px] desktop:tracking-[-0.4px]">{`Располагаемся в Петербурге.\nРаботаем по всей России.`}</p>
@@ -50,7 +50,7 @@ export const Contacts = () => {
       <img
         src={isDesktop ? contactsImgDesk : contactsImg}
         alt=""
-        className="mx-auto w-full max-w-[1440px] object-cover 1440:rounded-xl"
+        className="mx-auto w-full max-w-[1200px] object-cover 1440:rounded-xl"
       />
     </div>
   );

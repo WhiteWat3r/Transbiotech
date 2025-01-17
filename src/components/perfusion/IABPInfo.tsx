@@ -40,7 +40,7 @@ export const IABPInfo = () => {
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="mx-auto my-[80px] flex w-full max-w-[1440px] flex-col desktop:mt-[210px] desktop:flex-row desktop:gap-[45px] desktop:pb-[20px]">
+    <div className="mx-auto my-[80px] flex w-full max-w-[1200px] flex-col desktop:mt-[210px] desktop:flex-row desktop:gap-[45px] desktop:pb-[20px]">
       <div className="relative desktop:h-[600px] desktop:min-w-[301px]">
         <span className="absolute left-[0] top-[50%] h-[250px] w-full translate-y-[-50%] bg-white desktop:h-full desktop:w-[296px] desktop:rounded-r-[45px]" />
         <img

@@ -15,7 +15,7 @@ export const ProductAdvantages = ({
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className={`w-bull relative mx-auto mb-[80px] max-w-[1440px] px-[20px] ${isExStream  ? 'desktop:mt-[150px] desktop:pb-[243px]': "desktop:mt-[155px] desktop:pb-[235px]"}  desktop:px-[80px] `}>
+    <div className={`w-bull relative mx-auto mb-[80px] max-w-[1200px] px-[20px] ${isExStream  ? 'desktop:mt-[150px] desktop:pb-[243px]': "desktop:mt-[155px] desktop:pb-[235px]"}  desktop:px-[80px] `}>
       <p className="mob-head-1 absolute top-0 tracking-[-1px] text-gainsboro desktop:bottom-[90px] desktop:top-auto desktop:head-1">
         преимущества {`${type}`}
       </p>

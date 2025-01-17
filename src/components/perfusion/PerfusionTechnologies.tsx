@@ -3,7 +3,7 @@ import { MobileLogo } from "../ui/icons/MobileLogo";
 
 export const PerfusionTechnologies = () => {
   return (
-    <div className="relative mx-auto mt-[80px] flex w-full max-w-[1440px] flex-col gap-[45px] px-[20px] desktop:mt-[185px] desktop:px-[80px]">
+    <div className="relative mx-auto mt-[80px] flex w-full max-w-[1200px] flex-col gap-[45px] px-[20px] desktop:mt-[185px] desktop:px-[80px]">
       <h2 className={`head-1 absolute bottom-[-40px] text-gainsboro`}>
         техн
         <wbr />

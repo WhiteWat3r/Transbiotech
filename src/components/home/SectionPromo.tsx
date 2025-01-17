@@ -26,7 +26,7 @@ export const SectionPromo = () => {
           isVisible ? "animate-slideIn" : "animate-slideOut"
         }`}
       />
-      <div className="desktop:px-40px relative z-10 mx-auto flex w-full max-w-[1440px] justify-end px-[40px]">
+      <div className="desktop:px-40px relative z-10 mx-auto flex w-full max-w-[1200px] justify-end px-[40px]">
         <div
           className={`geologica-text flex flex-col text-center text-[27px] leading-[27px] tracking-tighter before:px-[30px] desktop:ml-auto desktop:mr-[77px] desktop:max-w-[350px] desktop:gap-[40px] desktop:text-start desktop:text-[46px] desktop:leading-[40px]`}
         >

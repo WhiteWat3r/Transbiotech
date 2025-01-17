@@ -14,7 +14,7 @@ export const ECMOHeartFailure = () => {
         className="w-[75%] desktop:absolute desktop:left-[-95px] desktop:top-[188px] desktop:h-[484px] desktop:w-[564px]"
       />
 
-      <div className="relative mx-auto w-full max-w-[1440px] px-[20px] py-[40px] desktop:ml-auto desktop:self-end desktop:px-[80px] desktop:py-0 desktop:pb-[170px]">
+      <div className="relative mx-auto w-full max-w-[1200px] px-[20px] py-[40px] desktop:ml-auto desktop:self-end desktop:px-[80px] desktop:py-0 desktop:pb-[170px]">
         <div className="flex flex-col desktop:ml-auto desktop:max-w-[775px]">
           <SectionNumber number={4} />
 

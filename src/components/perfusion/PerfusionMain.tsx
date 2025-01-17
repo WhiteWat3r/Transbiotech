@@ -28,7 +28,7 @@ export const PerfusionMain = () => {
         // onLoad={handleImageLoad}
       />
 
-      <div className="mx-auto flex h-full w-full max-w-[1440px] flex-col gap-[15px] px-5 desktop:gap-[25px] desktop:px-[80px]">
+      <div className="mx-auto flex h-full w-full max-w-[1200px] flex-col gap-[15px] px-5 desktop:gap-[25px] desktop:px-[80px]">
         <h1 className="z-1 mob-head-2 desktop:head-1-1 z-30 mt-auto">
           Перфузионные <span className="block">технологии</span>
         </h1>

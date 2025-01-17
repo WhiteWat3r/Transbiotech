@@ -50,7 +50,7 @@ export const AboutUsSection = () => {
         alt="О нас"
         className="absolute left-0 top-[510px] h-[190px] desktop:bottom-[4%] desktop:left-[5%] desktop:top-auto"
       />
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col px-[20px] desktop:px-[80px]">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col px-[20px] desktop:px-[80px]">
         <h2 className="geologica-text mb-[40px] mt-[115px] text-[32px] font-medium leading-[22px] text-grey-1 desktop:mb-[48px] desktop:mt-[15.5%] desktop:text-[72px] desktop:leading-[65px]">
           о нас
         </h2>

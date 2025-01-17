@@ -16,7 +16,7 @@ export const EcmoTransplantation = () => {
   const { highlightedText, elementRef } = useHighlightedText({ textContent });
   return (
     <div className="flex flex-col">
-      <div className="relative mx-auto mt-[80px] flex w-full max-w-[1440px] flex-col desktop:mt-[170px] desktop:flex-row desktop:gap-[50px] desktop:pr-[80px]">
+      <div className="relative mx-auto mt-[80px] flex w-full max-w-[1200px] flex-col desktop:mt-[170px] desktop:flex-row desktop:gap-[50px] desktop:pr-[80px]">
         <img
           src={isDesktop ? ecmoTransplantationDesc : ecmoTransplantation}
           alt=""
@@ -44,7 +44,7 @@ export const EcmoTransplantation = () => {
           </p>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-[1440px] px-[20px] desktop:mb-[62px] desktop:px-[80px]">
+      <div className="mx-auto w-full max-w-[1200px] px-[20px] desktop:mb-[62px] desktop:px-[80px]">
         <DeviceInfo
           advantages={[
             "Оценка адекватности объемной перфузии внутренних органов",

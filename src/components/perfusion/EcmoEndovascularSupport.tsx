@@ -8,7 +8,7 @@ import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
 export const EcmoEndovascularSupport = () => {
   return (
     <div className="relative mt-[40px] w-full bg-white">
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[85px]">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[85px]">
         <SectionNumber number={6} />
 
         <SectionTitle

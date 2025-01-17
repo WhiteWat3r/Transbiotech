@@ -63,7 +63,7 @@ export const SectionMain = () => {
       />
       {/* </LazyLoad> */}
 
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="mx-auto w-full max-w-[1200px]">
         <div className="relative z-[3] flex min-h-[63%] w-full flex-col justify-between gap-[200px] px-5 pt-[38px] tablet:pt-[10px] desktop:min-h-[56%] desktop:gap-[140px] desktop:px-[80px] desktop:pt-0">
           <div className="ml-auto max-w-[218px] text-[14px] leading-[16px] text-grey-1 desktop:mb-[20px] desktop:mr-[260px] desktop:mt-[38px] desktop:max-w-[333px] desktop:text-[22px] desktop:leading-[26px]">
             <p className="">

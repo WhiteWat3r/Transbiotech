@@ -23,7 +23,7 @@ export const ExStreamWhereUsed = () => {
         alt=""
         className="w-[75%] absolute left-[-95px] top-[370px] desktop:left-[-95px] desktop:top-[240px] desktop:h-[484px] desktop:w-[564px] pointer-events-none"
       />
-      <div className="mb-[102px] flex w-full flex-col px-[20px] 1200:flex-row-reverse 1200:gap-[72px] 1200:px-[80px]  max-w-[1440px] mx-auto">
+      <div className="mb-[102px] flex w-full flex-col px-[20px] 1200:flex-row-reverse 1200:gap-[72px] 1200:px-[80px]  max-w-[1200px] mx-auto">
         <ProductSlider type={"ex-stream"} />
 
         <div className="flex flex-col desktop:min-w-[438px]">

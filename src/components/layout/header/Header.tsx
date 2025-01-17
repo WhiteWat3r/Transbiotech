@@ -63,7 +63,7 @@ export const Header = () => {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 mx-auto flex w-full max-w-[1440px] items-center justify-between px-[42px] pt-[25px] transition-all duration-1000 ease-out`}
+      className={`sticky top-0 z-40 mx-auto flex w-full max-w-[1200px] items-center justify-between px-[42px] pt-[25px] transition-all duration-1000 ease-out`}
       style={{
         width: isScrolled ? headerWidth : "100%",
       }}

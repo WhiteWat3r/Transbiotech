@@ -11,7 +11,7 @@ export const ExStreamDevice = () => {
   const { isDesktop } = useBreakpoint();
 
   return (
-    <div className="mx-auto flex w-full max-w-[1440px] flex-col desktop:px-[80px]">
+    <div className="mx-auto flex w-full max-w-[1200px] flex-col desktop:px-[80px]">
       <div className="relative w-full mt-[86px] desktop:mt-[232px]">
         <img
           src={device}

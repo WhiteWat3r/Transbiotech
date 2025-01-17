@@ -47,7 +47,7 @@ export const ExStream = () => {
 
         // onLoad={handleImageLoad}
       />
-      <div className="relative mx-auto flex w-full max-w-[1440px] flex-col px-[20px] py-[80px] desktop:px-[80px] desktop:py-[170px]">
+      <div className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] py-[80px] desktop:px-[80px] desktop:py-[170px]">
         <SectionNumber number={3} />
 
         <SectionTitle
