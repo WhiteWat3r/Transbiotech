@@ -11,14 +11,14 @@ export const CloseIcon = ({onClick}: {onClick: () => void}) => (
       <path
         d="M6.33008 3.323L33.007 29.9999"
         stroke="#808080"
-        stroke-width="5.5"
-        stroke-linecap="round"
+        strokeWidth="5.5"
+        strokeLinecap="round"
       />
       <path
         d="M6.33008 29.677L33.007 3.00006"
         stroke="#808080"
-        stroke-width="5.5"
-        stroke-linecap="round"
+        strokeWidth="5.5"
+        strokeLinecap="round"
       />
     </g>
   </svg>

@@ -25,6 +25,7 @@ const technologies = [
     mobileLogo: techLogoFirst,
     bg: techBgFirst,
     desc: "Эффективное протезирование функции сердца и легких.",
+    mobileTitleClass: ""
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ const technologies = [
     mobileLogo: techLogoSecond,
     bg: techBgSecond,
     desc: "Лечение острых и хронических заболеваний сердечно-сосудистой системы.",
+    mobileTitleClass: ""
   },
   {
     id: 3,
@@ -45,6 +47,7 @@ const technologies = [
     mobileLogo: techLogoThird,
     bg: techBgThird,
     desc: "Работа над восстановлением сердечного ритма.",
+    mobileTitleClass: "max-desktop:mt-[10px]"
   },
   {
     id: 4,
@@ -55,6 +58,7 @@ const technologies = [
     mobileLogo: techLogoFourth,
     bg: techBgFourth,
     desc: "Оптимизация рабочего пространства в машинах скорой помощи.",
+    mobileTitleClass: "max-desktop:mt-[10px]"
   },
 ];
 
@@ -108,29 +112,39 @@ export const SectionTechnologies = ({
                 }}
               />
             )}
+
             <img
               src={isDesktop ? tech.logo : tech.mobileLogo}
               alt={tech.title}
-              className="absolute right-[30px] desktop:left-[30px] desktop:right-auto"
+              className="hidden desktop:block absolute right-[30px] desktop:left-[30px] desktop:right-auto"
             />
-            <div className="mt-[10px relative z-10 flex flex-col desktop:mt-auto">
-              <h3
-                className={`geologica-text mb-[10px] flex max-w-[210px] justify-between text-[27px] font-light leading-[27px] tracking-[-0.5px] transition-all duration-500 desktop:text-[24px] desktop:font-medium desktop:leading-[24px] ${isDesktop ? "text-grey-1" : ""}`}
-                style={{
-                  color: isDesktop ? "#565656" : tech.color,
-                }}
-              >
-                {tech.title}
-              </h3>
 
-              <ul className="flex gap-[6px] desktop:mb-[20px] desktop:flex-wrap">
+            <div className="mt-[10px relative z-10 flex flex-col desktop:mt-auto">
+              <div className={"flex w-full"}>
+                <h3
+                  className={`${tech.mobileTitleClass} geologica-text mb-[10px] flex max-w-[210px] justify-between text-[27px] font-light leading-[27px] tracking-[-0.5px] transition-all duration-500 desktop:text-[24px] desktop:font-medium desktop:leading-[24px] ${isDesktop ? "text-grey-1" : ""}`}
+                  style={{
+                    color: isDesktop ? "#565656" : tech.color
+                  }}
+                >
+                  {tech.title}
+                </h3>
+
+                <img
+                  src={isDesktop ? tech.logo : tech.mobileLogo}
+                  alt={tech.title}
+                  className="ml-auto max-desktop:w-[50px] max-desktop:h-[50px] desktop:hidden"
+                />
+              </div>
+
+              <ul className="flex gap-[6px] max-desktop:mt-[20px] desktop:mb-[20px] desktop:flex-wrap">
                 {tech.keys.map((key, index) => (
                   <li
                     key={index}
                     className={`flex h-[22px] flex-col items-center justify-center rounded-[25px] border-[0.5px] px-[5px] pt-[1px] text-[12px] font-semibold leading-[14px] tracking-[-0.5px] transition-all duration-500 desktop:h-[18px] desktop:text-[12px] desktop:leading-[12.5px]`}
                     style={{
                       borderColor: isDesktop ? "#808080" : tech.color,
-                      color: isDesktop ? "#808080" : tech.color,
+                      color: isDesktop ? "#808080" : tech.color
                     }}
                   >
                     {key}
@@ -138,7 +152,8 @@ export const SectionTechnologies = ({
                 ))}
               </ul>
               {isDesktop && (
-                <p className="line-clamp-4 h-[72px] text-[15px] leading-[18px] tracking-[-0.5px] text-[#565656] transition-all duration-500">
+                <p
+                  className="line-clamp-4 h-[72px] text-[15px] leading-[18px] tracking-[-0.5px] text-[#565656] transition-all duration-500">
                   {tech.desc}
                 </p>
               )}

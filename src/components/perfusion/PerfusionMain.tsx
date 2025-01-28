@@ -24,7 +24,7 @@ export const PerfusionMain = () => {
         // ref={imgRef}
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Transbiotech"
-        className="absolute right-0 top-0 z-[2] object-contain desktop:right-[-170px] desktop:top-[-65px] desktop:h-[125%] desktop:animate-perfusion-main"
+        className="absolute right-0 top-0 z-[2] object-contain desktop:right-[-170px] desktop:top-[-65px] desktop:h-[125%] max-desktop:animate-perfusion-main-mobile desktop:animate-perfusion-main"
         // onLoad={handleImageLoad}
       />
 

@@ -4,9 +4,9 @@ import { Swiper as SwiperInstance } from "swiper";
 
 import arrow from "@/assets/images/products/arrow-right.svg";
 
-import exStream from "@/assets/images/products/ex-stream.png";
+import exStream from "@/assets/images/perfusion/ex-stream.png";
 import exStreamSecond from "@/assets/images/perfusion/ex-stream-second.png";
-import exStreamThird from "@/assets/images/perfusion//ex-stream-third.png";
+import exStreamThird from "@/assets/images/perfusion/ex-stream-third.png";
 import { Tooltip } from "../ui/Tooltip";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
@@ -46,41 +46,40 @@ export const ProductSwiperWithTooltips = () => {
 
               <Tooltip
                 text="Посадочное гнездо головки перфузионного насоса"
-                top="15%"
-                left="45%"
+                top="5%"
+                left="43%"
                 maxWidth={"276px"}
               />
               <Tooltip
                 text="Узел модуля мониторинга объёмной скорости"
-                top="15%"
-                left="71%"
+                top="5%"
+                left="69%"
                 maxWidth={"265px"}
                 textLeft="-200%"
               />
               <Tooltip
                 text="Ручка регулировки настроек (энкодер)"
-                top="65%"
-                left="70%"
+                top="55%"
+                left="68%"
                 textLeft="-200%"
                 maxWidth="281px"
               />
 
               <Tooltip
                 text="Ручкa для перемещения аппарата"
-                top="40%"
-                left="73%"
+                top="30%"
+                left="71%"
               />
               <Tooltip
                 text="ЖК дисплей"
-                top="80%"
-                left="8%"
+                top="70%"
+                left="6%"
                 textLeft={"200%"}
               />
               <Tooltip
                 text="Функциональные клавиши"
-                top="80%"
-                left="35%"
-                //   textLeft="-200%"
+                top="70%"
+                left="33%"
               />
             </div>
           </SwiperSlide>
@@ -93,20 +92,20 @@ export const ProductSwiperWithTooltips = () => {
               />
               <Tooltip
                 text="Разъём модуля мониторинга давления 1"
-                top="38%"
-                left="52%"
+                top="28%"
+                left="50%"
                 maxWidth={"276px"}
               />
               <Tooltip
                 text="Разъём модуля мониторинга давления 2"
-                top="71%"
-                left="40%"
+                top="56%"
+                left="38%"
                 maxWidth={"276px"}
               />
               <Tooltip
                 text="Разъём модуля пульсоксиметра"
-                top="71%"
-                left="63%"
+                top="56%"
+                left="61%"
                 maxWidth="196px"
               />
             </div>
@@ -120,15 +119,15 @@ export const ProductSwiperWithTooltips = () => {
               />
               <Tooltip
                 text="Кнопка включения/выключения аппарата"
-                top="63%"
-                left="35%"
+                top="40%"
+                left="33%"
                 maxWidth={"276px"}
                 textLeft="200%"
               />
               <Tooltip
                 text="Разъем подключения шнура электропитания"
-                top="63%"
-                left="60%"
+                top="40%"
+                left="58%"
                 maxWidth={"276px"}
                 textLeft="-200%"
               />

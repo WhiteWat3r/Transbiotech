@@ -77,7 +77,7 @@ export const ExStream = () => {
           <img
             src={currentFrame}
             alt="Ex-Stream"
-            className=" relative z-10 mb-[56px] transition-opacity duration-300 desktop:h-[322px] desktop:w-[500px]"
+            className=" relative z-10 mb-[56px] transition-opacity duration-300 desktop:h-[352px]"
           />
 </div>
         </div>

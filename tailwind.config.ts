@@ -165,6 +165,15 @@ export default {
           "75%": { right: "-210px", top: "-72px" },
           "100%": { right: "-170px", top: "-65px" }, // Окончание плавного возврата
         },
+        "perfusion-main-mobile": {
+          "0%": { right: "0px", top: "0px" }, // 1 Пауза
+          "10%": { right: "0px", top: "0px" },
+          "35%": { right: "-20px", top: "20px" },
+          "45%": { right: "-20px", top: "20px" },
+          "65%": { right: "-40px", top: "-7px" }, // 3 пауза
+          "75%": { right: "-40px", top: "-7px" },
+          "100%": { right: "0px", top: "0px" }, // Окончание плавного возврата
+        },
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 },
@@ -214,6 +223,7 @@ export default {
         "circle-slideOut": "circle-slideOut 0.8s forwards",
         "technologies-slide-in": "technologies-slide-in 1.2s ease-out forwards",
         "perfusion-main": "perfusion-main 14s ease-out",
+        "perfusion-main-mobile": "perfusion-main-mobile 14s ease-out",
         "advantages-show": "advantages-show 0.5s ease-out forwards",
         "flashing-border": "flashing-border 0.5s ease-out forwards",
       },

@@ -33,7 +33,6 @@ export const Header = () => {
 
   useEffect(() => {
     if (isAnimating) return;
-    console.log("смена лого");
 
     const logo = isScrolled ? (
       <MobileLogo width="26" height="24" />
@@ -58,7 +57,6 @@ export const Header = () => {
   const startAnimation = () => {
     setIsAnimating(true);
   };
-  console.log("isScrolled", isScrolled);
 
   return (
     <header

@@ -244,11 +244,9 @@ export const TeamSwiper = () => {
         const remainingDoctors = persons.filter(
           (doctor) => !visibleDoctors.some((v) => v.id === doctor.id),
         );
-        console.log("remainingDoctors", remainingDoctors);
 
         const newDoctor =
           remainingDoctors[Math.floor(Math.random() * remainingDoctors.length)];
-        console.log("newDoctor", newDoctor);
 
         updatedDoctors[activeIndex] = newDoctor ? newDoctor : persons[30];
 
@@ -283,7 +281,6 @@ export const TeamSwiper = () => {
       return () => clearInterval(interval);
     }
   }, [activeIndex, persons, visibleDoctors, isVisible]);
-  console.log("visibleDoctors", visibleDoctors);
 
   return (
     <div

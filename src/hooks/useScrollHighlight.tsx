@@ -10,7 +10,7 @@ interface UseHighlightedTextParams {
 
 export const useHighlightedText = ({
   textContent,
-  offset = 0.5,
+  offset = 0.15,
   highlightClass = "text-black-default",
   defaultClass = "text-grey-2",
   wordStyle = { marginRight: "5px" },
