@@ -23,7 +23,7 @@ export const menuItems: IMenuItem[] = [
       //   text: "Просмотр страницы технологии (тест)",
       //   href: "/technologies",
       // },
-      // { linkId: 1, text: "кардиохирургия", href: "/cardiac-surgery" },
+      { linkId: 3, text: "кардиохирургия", href: "/cardiac-surgery" },
       // { linkId: 1, text: "аритмология", href: "/arrhythmology" },
       // { linkId: 1, text: "скорая помощь", href: "/ems" },
     ],
@@ -77,9 +77,16 @@ export const perfusionCards = [
   { id: 8, text: "Изолированная перфузия\u00A0лёгкого" },
 ];
 
+export const cardiacSurgeryCards = [
+  { id: 1, type: "normal", title: "CPB", text: "Искусственное кровообращение" },
+  { id: 2, type: "normal", title: "CABG", text: "Аортокоронарное шунтирование" },
+  { id: 3, type: "normal", title: "Vascular Protheses ", text: "Протезирование сосудов" },
+  { id: 4, type: "normal", title: "Протезирование клапанов сердца", text: "" },
+];
+
 export const mainSectionButtons = [
   { id: 1, text: "Инфо" },
-  { id: 2, text: "Продукция" },
+  { id: 2, text: "Технологии" },
   { id: 3, text: "Сопровождение" },
 ];
 

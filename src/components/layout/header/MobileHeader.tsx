@@ -19,7 +19,7 @@ export const MobileHeader = () => {
     document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   };
 
-  const isPerfPage = pathname.pathname === "/perfusion" ;
+  const isPerfPage = pathname.pathname === "/perfusion" || pathname.pathname === "/cardiac-surgery" ;
 
 
   return (
