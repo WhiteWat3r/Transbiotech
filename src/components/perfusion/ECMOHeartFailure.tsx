@@ -1,9 +1,11 @@
-import tube from "@/assets/images/perfusion/perfusion-4.png";
 
+import tube from "@/assets/images/perfusion/perfusion-4.png";
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
-import { SectionNumber } from "../ui/SectionNumber";
-import { LogosList } from "./LogosList";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+
+import { LogosList } from "./LogosList";
+import { SectionNumber } from "../ui/SectionNumber";
+
 
 export const ECMOHeartFailure = () => {
   return (

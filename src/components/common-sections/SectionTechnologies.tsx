@@ -12,8 +12,8 @@ import techLogoSecondMobile from "@/assets/images/technologies/tech-logo-second-
 import techLogoSecond from "@/assets/images/technologies/tech-logo-second.svg";
 import techLogoThirdMobile from "@/assets/images/technologies/tech-logo-third-mobile.svg";
 import techLogoThird from "@/assets/images/technologies/tech-logo-third.svg";
-import useIntersection from "@/hooks/useIntersection";
 import useBreakpoint from "@/hooks/useBreakpoint";
+import useIntersection from "@/hooks/useIntersection";
 
 const technologies = [
   {

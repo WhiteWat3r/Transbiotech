@@ -1,14 +1,17 @@
 import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperInstance } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import arrow from "@/assets/images/products/arrow-right.svg";
 
-import exStream from "@/assets/images/perfusion/ex-stream.png";
+
 import exStreamSecond from "@/assets/images/perfusion/ex-stream-second.png";
 import exStreamThird from "@/assets/images/perfusion/ex-stream-third.png";
-import { Tooltip } from "../ui/Tooltip";
+import exStream from "@/assets/images/perfusion/ex-stream.png";
+import arrow from "@/assets/images/products/arrow-right.svg";
 import useBreakpoint from "@/hooks/useBreakpoint";
+
+import { Tooltip } from "../ui/Tooltip";
+
 
 export const ProductSwiperWithTooltips = () => {
   const swiperRef = useRef<SwiperInstance | null>(null);

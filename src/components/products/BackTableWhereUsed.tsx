@@ -1,6 +1,9 @@
+
+import tube from "@/assets/images/products/tube.png";
+
 import { ProductSlider } from "./ProductSlider";
 import { DeviceDescription } from "../ui/DeviceDescription";
-import tube from "@/assets/images/products/tube.png";
+
 
 const backTableDeviceDescription = {
   mainText: `Комплект стола весит 36 кг и выдерживает суммарную нагрузку до 150 кг. На стол можно размещать дополнительное навесное оборудование.`,

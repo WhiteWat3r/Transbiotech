@@ -1,7 +1,7 @@
-import useBreakpoint from "@/hooks/useBreakpoint";
 import { BiosoftLogo } from "@/components/ui/icons/BiosoftLogo";
-import { TransbiotechLogo } from "@/components/ui/icons/TransbiotechLogo";
 import { EnergoArmLogo } from "@/components/ui/icons/EnergoArmLogo";
+import { TransbiotechLogo } from "@/components/ui/icons/TransbiotechLogo";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 const companies = [
   {

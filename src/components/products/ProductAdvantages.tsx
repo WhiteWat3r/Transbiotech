@@ -1,9 +1,8 @@
+import advantageTableDesl from "@/assets/images/products/advantage-pic-desk.png";
 import advantagePic from "@/assets/images/products/advantage-pic.png";
 import advantageTable from "@/assets/images/products/table-advantage.png";
-import advantageTableDesl from "@/assets/images/products/advantage-pic-desk.png";
-
-import { backTableAdvantages, exStreamAdvantages } from "@/utils/constants";
 import useBreakpoint from "@/hooks/useBreakpoint";
+import { backTableAdvantages, exStreamAdvantages } from "@/utils/constants";
 
 export const ProductAdvantages = ({
   type,

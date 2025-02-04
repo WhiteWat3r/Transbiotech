@@ -1,10 +1,10 @@
 import { CSSProperties, useRef } from "react";
+import LazyLoad from "react-lazyload";
 
 import bgMain from "@/assets/images/home/bg-main.png";
 import bgMainDesktop from "@/assets/images/home/main-desktop.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useSectionSizeFromImageHeight } from "@/hooks/useSectionSizeFromImageHeight";
-import LazyLoad from "react-lazyload";
 
 const buttons = [
   {

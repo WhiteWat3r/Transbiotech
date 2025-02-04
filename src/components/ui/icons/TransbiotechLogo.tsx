@@ -1,5 +1,8 @@
-import { FullLogo } from "./FullLogo";
 import useBreakpoint from "@/hooks/useBreakpoint";
+
+import { FullLogo } from "./FullLogo";
+
+
 
 export const TransbiotechLogo = () => {
   const { isDesktop } = useBreakpoint();

@@ -1,3 +1,7 @@
+import { useRef } from "react";
+
+import exStream from "@/assets/images/perfusion/ex-stream.png";
+import backTable from "@/assets/images/products/back-table.png";
 import { BackTableInfo } from "@/components/products/BackTableInfo";
 import { BackTableMain } from "@/components/products/BackTableMain";
 import { BackTableWhereUsed } from "@/components/products/BackTableWhereUsed";
@@ -5,11 +9,8 @@ import { ExStreamDesc } from "@/components/products/ExStreamDesc";
 import { ExStreamDevice } from "@/components/products/ExStreamDevice";
 import { ExStreamWhereUsed } from "@/components/products/ExStreamWhereUsed";
 import { ProductAdvantages } from "@/components/products/ProductAdvantages";
-import { ProductSwiperWithTooltips } from "@/components/products/ProductSwiperWithTooltips";
 import { ProductsMain } from "@/components/products/ProductsMain";
-import { useRef } from "react";
-import exStream from "@/assets/images/perfusion/ex-stream.png";
-import backTable from "@/assets/images/products/back-table.png";
+import { ProductSwiperWithTooltips } from "@/components/products/ProductSwiperWithTooltips";
 
 export const Products = () => {
   const products = [

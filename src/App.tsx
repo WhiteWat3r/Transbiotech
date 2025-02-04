@@ -1,21 +1,21 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/header/Header";
 import { MobileHeader } from "./components/layout/header/MobileHeader";
 import ScrollToTop from "./hooks/ScrollToTop";
+import useBreakpoint from "./hooks/useBreakpoint";
+import { useIsScrolled } from "./hooks/useIsScrolled";
 import { Arrhythmology } from "./pages/Arrhythmology";
 import { CardiacSurgery } from "./pages/CardiacSurgery";
+import { Contacts } from "./pages/Contacts";
 import { EmergencyMedicalServices } from "./pages/EmergencyMedicalServices";
 import { Home } from "./pages/Home";
-import { Perfusion } from "./pages/Perfusion";
-import { Technologies } from "./pages/Technologies";
-import { Products } from "./pages/Products";
-import useBreakpoint from "./hooks/useBreakpoint";
-import { Contacts } from "./pages/Contacts";
 import { InProgress } from "./pages/InProgress";
-import { useIsScrolled } from "./hooks/useIsScrolled";
-import { useState } from "react";
+import { Perfusion } from "./pages/Perfusion";
+import { Products } from "./pages/Products";
+import { Technologies } from "./pages/Technologies";
 
 function App() {
   const { isDesktop } = useBreakpoint();

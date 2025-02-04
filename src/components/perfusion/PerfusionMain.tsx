@@ -1,7 +1,7 @@
 import bgMainDesktop from "@/assets/images/home/perfusion-desc.png";
 import bgMain from "@/assets/images/home/perfusion.png";
-import { mainSectionButtons } from "@/utils/constants";
 import useBreakpoint from "@/hooks/useBreakpoint";
+import { mainSectionButtons } from "@/utils/constants";
 
 export const PerfusionMain = () => {
   const { isDesktop, breakpoint } = useBreakpoint();

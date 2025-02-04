@@ -1,4 +1,5 @@
 import React from "react";
+
 import questionMark from "@/assets/images/products/question-mark.svg";
 interface TooltipProps {
   text: string;

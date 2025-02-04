@@ -1,6 +1,9 @@
+
+import tube from "@/assets/images/perfusion/perfusion-4.png";
+
 import { ProductSlider } from "./ProductSlider";
 import { DeviceDescription } from "../ui/DeviceDescription";
-import tube from "@/assets/images/perfusion/perfusion-4.png";
+
 
 const exStreamDeviceDescription = {
   mainText: `Ex-Stream применяется в отделениях многопрофильных лечебных учреждений, в том числе в отделениях реанимации\nи интенсивной терапии, скорой медицинской помощи, кардиохирургии, рентген-эндоваскулярной хирургии, сосудистой хирургии, медицины катастроф, военной медицины.`,

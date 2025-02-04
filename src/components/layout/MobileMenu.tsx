@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Accordion } from "./header/Accordion";
+import { menuItems } from "../../utils/constants";
 import { CloseIcon } from "../ui/icons/CloseIcon";
 import { MobileLogo } from "../ui/icons/MobileLogo";
-import { menuItems } from "../../utils/constants";
 
 export const MobileMenu = ({
   isPerfPage,

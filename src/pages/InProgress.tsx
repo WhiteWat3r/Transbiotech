@@ -1,6 +1,5 @@
-import inProgressImg from "@/assets/images/in-progress/in-progress-img.png";
 import inProgressDesk from "@/assets/images/in-progress/in-progress-desk.png";
-
+import inProgressImg from "@/assets/images/in-progress/in-progress-img.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const InProgress = () => {

@@ -1,12 +1,14 @@
-import bgMain from "@/assets/images/home/perfusion-mobile.png";
-import bgMainDesc from "@/assets/images/home/perfusion-desktop.png";
 
+import bgMainDesc from "@/assets/images/home/perfusion-desktop.png";
+import bgMain from "@/assets/images/home/perfusion-mobile.png";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { DeviceInfo } from "../ui/DeviceInfo";
-import { SectionNumber } from "../ui/SectionNumber";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
+
 import { LogosList } from "./LogosList";
+import { DeviceInfo } from "../ui/DeviceInfo";
+import { SectionNumber } from "../ui/SectionNumber";
+
 
 export const HeartAssistDevice = () => {
   const { isDesktop } = useBreakpoint();

@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+
 import { useIsScrolled } from "@/hooks/useIsScrolled";
 import { menuItems } from "@/utils/constants";
+
 import { HeaderMenuPopover } from "./HeaderMenuPopover";
 import { FullLogo } from "../../ui/icons/FullLogo";
 import { MobileLogo } from "../../ui/icons/MobileLogo";
+
 
 export const Header = () => {
   const isScrolled = useIsScrolled();

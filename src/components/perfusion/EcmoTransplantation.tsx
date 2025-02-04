@@ -1,12 +1,14 @@
-import ecmoTransplantation from "@/assets/images/perfusion/ecmo-transplantation.png";
-import ecmoTransplantationDesc from "@/assets/images/perfusion/ecmo-transplantation-desc.png";
 
+import ecmoTransplantationDesc from "@/assets/images/perfusion/ecmo-transplantation-desc.png";
+import ecmoTransplantation from "@/assets/images/perfusion/ecmo-transplantation.png";
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { LogosList } from "./LogosList";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
+
+import { LogosList } from "./LogosList";
+
 
 export const EcmoTransplantation = () => {
   const { isDesktop } = useBreakpoint();

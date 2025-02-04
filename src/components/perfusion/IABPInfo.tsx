@@ -1,3 +1,4 @@
+
 import iabp from "@/assets/images/home/iabp.png";
 import arrowMobile from "@/assets/images/perfusion/arrow-mobile.svg";
 import arrow from "@/assets/images/perfusion/arrow.svg";
@@ -7,8 +8,10 @@ import insightraMobile from "@/assets/images/perfusion/insightra-mobile.svg";
 import insightra from "@/assets/images/perfusion/insightra.svg";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
+
 import { DeviceInfo } from "../ui/DeviceInfo";
 import { SectionNumber } from "../ui/SectionNumber";
+
 
 const iABPDAdvantages = [
   "снижение риска развития серьезных коронарных осложнений у пациента",

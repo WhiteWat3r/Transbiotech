@@ -1,16 +1,17 @@
+
 import bgMain from "@/assets/images/home/ecmo-mobile-bg.png";
 import bgMainDesc from "@/assets/images/home/ex-stream-bg.png";
-
-import exStream from "@/assets/images/perfusion/ex-stream.png";
-import exStreamSecond from "@/assets/images/perfusion/ex-stream-second.png";
 import exStreamThird from "@/assets/images/perfusion//ex-stream-third.png";
-
+import exStreamSecond from "@/assets/images/perfusion/ex-stream-second.png";
+import exStream from "@/assets/images/perfusion/ex-stream.png";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { DeviceInfo } from "../ui/DeviceInfo";
-import { SectionNumber } from "../ui/SectionNumber";
-import { LogosList } from "./LogosList";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useScrollFrameBySteps } from "@/hooks/useScrollFrameByFrame";
+
+import { LogosList } from "./LogosList";
+import { DeviceInfo } from "../ui/DeviceInfo";
+import { SectionNumber } from "../ui/SectionNumber";
+
 
 const advantages = [
   {

@@ -1,11 +1,14 @@
-import organPreparation from "@/assets/images/perfusion/organ-preparation.png";
+
 import organPreparationDesk from "@/assets/images/perfusion/organ-preparation-desk.png";
-import { SectionNumber } from "@/components/ui/SectionNumber";
-import { SectionTitle } from "@/components/ui/SectionTitle";
-import { LogosList } from "./LogosList";
-import useBreakpoint from "@/hooks/useBreakpoint";
+import organPreparation from "@/assets/images/perfusion/organ-preparation.png";
 import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
 import { DeviceDescription } from "@/components/ui/DeviceDescription";
+import { SectionNumber } from "@/components/ui/SectionNumber";
+import { SectionTitle } from "@/components/ui/SectionTitle";
+import useBreakpoint from "@/hooks/useBreakpoint";
+
+import { LogosList } from "./LogosList";
+
 
 export const OrganPreparation = () => {
   const { isDesktop } = useBreakpoint();

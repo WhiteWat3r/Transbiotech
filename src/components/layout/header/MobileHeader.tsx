@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+
 import { useIsScrolled } from "@/hooks/useIsScrolled";
+
 import { MenuIcon } from "../../ui/icons/MenuIcon";
 import { MobileLogo } from "../../ui/icons/MobileLogo";
 import { MobileMenu } from "../MobileMenu";
+
 
 export const MobileHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

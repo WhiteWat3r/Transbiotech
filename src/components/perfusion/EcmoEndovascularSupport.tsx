@@ -1,9 +1,12 @@
+
+import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
+import { DeviceDescription } from "@/components/ui/DeviceDescription";
 import { DeviceInfo } from "@/components/ui/DeviceInfo";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+
 import { LogosList } from "./LogosList";
-import { DeviceDescription } from "@/components/ui/DeviceDescription";
-import { DeviceAdvantages } from "@/components/ui/DeviceAdvantages";
+
 
 export const EcmoEndovascularSupport = () => {
   return (

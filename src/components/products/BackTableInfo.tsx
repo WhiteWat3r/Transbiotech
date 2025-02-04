@@ -1,5 +1,8 @@
 import BackTable from "@/assets/images/products/back-table-tooltips.png";
+
 import { Tooltip } from "../ui/Tooltip";
+
+
 
 export const BackTableInfo = () => {
   return (

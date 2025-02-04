@@ -1,21 +1,20 @@
 import { useRef, useState } from "react";
+import { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper as SwiperInstance } from "swiper";
 
 import first from "@/assets/images/products/swiper-1.png";
+import tableFive from "@/assets/images/products/swiper-10.png";
 import second from "@/assets/images/products/swiper-2.png";
 import third from "@/assets/images/products/swiper-3.png";
 import four from "@/assets/images/products/swiper-4.png";
 import five from "@/assets/images/products/swiper-5.png";
-
 import tableFirst from "@/assets/images/products/swiper-6.png";
 import tableSecond from "@/assets/images/products/swiper-7.png";
 import tableThird from "@/assets/images/products/swiper-8.png";
 import tableFour from "@/assets/images/products/swiper-9.png";
-import tableFive from "@/assets/images/products/swiper-10.png";
 
 const exStreamPhotos = [first, second, third, four, five];
 const backtablePhotos = [

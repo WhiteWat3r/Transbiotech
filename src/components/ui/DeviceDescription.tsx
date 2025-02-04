@@ -1,5 +1,6 @@
-import useBreakpoint from "@/hooks/useBreakpoint";
 import { ReactNode, useState } from "react";
+
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const DeviceDescription = ({
   description,

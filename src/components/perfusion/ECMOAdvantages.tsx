@@ -1,6 +1,7 @@
+import { useRef } from "react";
+
 import perfusionEcmo from "@/assets/images/perfusion/perfusion-ecmo.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
-import { useRef } from "react";
 import useIntersection from "@/hooks/useIntersection";
 
 const ecmoAdvayanges = [

@@ -1,5 +1,6 @@
-import useIntersection from "@/hooks/useIntersection";
 import { useRef } from "react";
+
+import useIntersection from "@/hooks/useIntersection";
 
 export const DeviceAdvantages = ({
   advantages,

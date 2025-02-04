@@ -27,8 +27,8 @@ import person6 from "@/assets/images/team/6.png";
 import person7 from "@/assets/images/team/7.png";
 import person8 from "@/assets/images/team/8.png";
 import person9 from "@/assets/images/team/9.png";
-import useIntersection from "@/hooks/useIntersection";
 import useBreakpoint from "@/hooks/useBreakpoint";
+import useIntersection from "@/hooks/useIntersection";
 
 const imageCache = new Map();
 

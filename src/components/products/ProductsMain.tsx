@@ -1,8 +1,10 @@
-import { SectionTitle } from "../ui/SectionTitle";
 import grad from "@/assets/images/products/grad-border.svg";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 import { MoreButton } from "../ui/MoreButton";
-import useBreakpoint from "@/hooks/useBreakpoint";
+import { SectionTitle } from "../ui/SectionTitle";
+
+
 
 export const ProductsMain = ({
   products,

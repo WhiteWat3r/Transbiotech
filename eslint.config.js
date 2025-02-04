@@ -14,6 +14,15 @@ export default [
     plugins: {
       import: pluginImport,
     },
+    settings: {
+      "import/resolver": {
+        typescript: true,
+      },
+    },
+  },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
     rules: {
       "import/order": [
         "error",
@@ -24,13 +33,7 @@ export default [
         },
       ],
       "import/no-unresolved": "error",
+      "@typescript-eslint/no-unused-vars": "off"
     },
-    settings: {
-      "import/resolver": {
-        typescript: true,
-      },
-    },
-  },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  }
 ];

@@ -1,10 +1,9 @@
 import React from "react";
+
 import device from "@/assets/images/products/ex-stream-device.png";
-import shadow from "@/assets/images/products/shadow.png";
-
-import text from "@/assets/images/products/ex-stream-text.svg";
 import textDesktop from "@/assets/images/products/ex-stream-text-desktop.svg";
-
+import text from "@/assets/images/products/ex-stream-text.svg";
+import shadow from "@/assets/images/products/shadow.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 export const ExStreamDevice = () => {
