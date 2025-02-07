@@ -29,7 +29,7 @@ export const CardiacSurgeryCABG = () => {
         <SectionNumber number={2} />
 
         <p
-          className={`geologica-text text-[36px] leading-[36px] font-medium tracking-[-0.2px] text-grey-1 desktop:head-2`}>
+          className={`geologica-text text-[32px] leading-[32px] font-medium tracking-[-0.2px] text-grey-1 desktop:head-2`}>
           CABG —&nbsp;
           <span className="text-black-default">аортокоронарное шунтирование</span>
         </p>

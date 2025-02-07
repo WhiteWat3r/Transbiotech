@@ -30,7 +30,7 @@ export const CardiacSurgeryMain = () => {
         // ref={imgRef}
         src={breakpoint !== "mobile" ? bgMainDesktop : bgMain}
         alt="Transbiotech"
-        className="absolute right-0 top-0 z-[2] object-contain desktop:right-[-150px] desktop:top-[125px] desktop:h-[85%]"
+        className="absolute right-0 top-0 z-[2] object-contain desktop:right-[-150px] desktop:top-[125px] desktop:h-[85%] max-desktop:animate-cardiac-surgery-mobile animate-cardiac-surgery-main"
         // onLoad={handleImageLoad}
       />
 
