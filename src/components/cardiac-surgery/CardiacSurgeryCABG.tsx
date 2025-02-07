@@ -1,9 +1,6 @@
-import organPreparationDesk from "@/assets/images/perfusion/organ-preparation-desk.png";
-import organPreparation from "@/assets/images/perfusion/organ-preparation.png";
 import { DeviceAdvantages } from "@/components/../components/cardiac-surgery/ui/DeviceAdvantages";
 import { DeviceDescription } from "@/components/ui/DeviceDescription";
 import { SectionNumber } from "@/components/ui/SectionNumber";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
 import logo1 from "../../assets/images/cardio-surgery/cabg-logos/1.svg";
@@ -11,9 +8,8 @@ import logo2 from "../../assets/images/cardio-surgery/cabg-logos/2.svg";
 import logo3 from "../../assets/images/cardio-surgery/cabg-logos/3.svg";
 import logo4 from "../../assets/images/cardio-surgery/cabg-logos/4.svg";
 import logo5 from "../../assets/images/cardio-surgery/cabg-logos/5.svg";
-
-import men from "../../assets/images/cardio-surgery/cabg-men.jpg";
 import menMobile from "../../assets/images/cardio-surgery/cabg-men-mobile.jpg";
+import men from "../../assets/images/cardio-surgery/cabg-men.jpg";
 
 export const CardiacSurgeryCABG = () => {
   const { isDesktop } = useBreakpoint();

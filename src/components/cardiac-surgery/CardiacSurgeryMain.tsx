@@ -1,5 +1,5 @@
-import bgMainDesktop from "@/assets/images/cardio-surgery/cardio-surgery.png";
 import bgMain from "@/assets/images/cardio-surgery/cardio-surgery-mobile.png";
+import bgMainDesktop from "@/assets/images/cardio-surgery/cardio-surgery.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { mainSectionButtons } from "@/utils/constants";
 
