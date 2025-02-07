@@ -20,7 +20,7 @@ export const CardiacSurgeryVascularProtheses = () => {
   return (
     <div className="relative flex w-full flex-col">
       <div
-        className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] pt-[40px] desktop:px-[80px] desktop:py-[85px]">
+        className="relative mx-auto flex w-full max-w-[1200px] flex-col px-[20px] py-[40px] desktop:px-[80px] desktop:py-[85px]">
         <SectionNumber number={3} />
 
         <SectionTitle
