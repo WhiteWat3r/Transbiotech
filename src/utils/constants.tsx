@@ -20,7 +20,7 @@ export const menuItems: IMenuItem[] = [
       { linkId: 2, text: "перфузионные технологии", href: "/perfusion" },
       { linkId: 3, text: "кардиохирургия", href: "/cardiac-surgery" },
       { linkId: 4, text: "аритмология", href: "/arrhythmology" },
-      // { linkId: 1, text: "скорая помощь", href: "/ems" },
+      { linkId: 5, text: "скорая помощь", href: "/ems" },
     ],
   },
   {
@@ -84,6 +84,11 @@ export const arrhythmologyCards = [
   { id: 2, type: "normal", title: "Электрофизиологичес-кое исследование сердца", mobileTitle: "Электрофизиологическое исследование сердца" },
   { id: 3, type: "normal", title: "Технология дистанционного мониторинга", mobileTitle: "Технология дистанционного мониторинга" },
   { id: 4, type: "normal", title: "Технология кардиостимуляции", mobileTitle: "Технология кардиостимуляции" },
+];
+
+export const emsCards = [
+  { id: 1, type: "normal", title: "Технология механической компрессии сердца", mobileTitle: "Технология механической компрессии сердца" },
+  { id: 2, type: "normal", title: "Организация рабочего пространства врача", mobileTitle: "Организация рабочего пространства врача" },
 ];
 
 export const mainSectionButtons = [

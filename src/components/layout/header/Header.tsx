@@ -16,7 +16,7 @@ export const Header = () => {
   const [headerWidth, setHeaderWidth] = useState("100%");
   const headerRef = useRef<HTMLDivElement | null>(null);
   const pathname = useLocation();
-  const isPerfPage = pathname.pathname === "/perfusion" || pathname.pathname === "/cardiac-surgery" || pathname.pathname === "/arrhythmology";
+  const isPerfPage = pathname.pathname === "/perfusion" || pathname.pathname === "/cardiac-surgery" || pathname.pathname === "/arrhythmology" || pathname.pathname === "/ems";
   const [currentLogo, setCurrentLogo] = useState<JSX.Element | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
 

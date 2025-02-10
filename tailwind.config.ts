@@ -210,6 +210,24 @@ export default {
           "75%": { right: "-315px", top: "28px" },
           "100%": { right: "-275px", top: "35px" } // Окончание плавного возврата
         },
+        "ems-main": {
+          "0%": { right: "10px", top: "0px" }, // 1 Пауза
+          "10%": { right: "10px", top: "0px" },
+          "35%": { right: "30px", top: "-20px" },
+          "45%": { right: "30px", top: "-20px" },
+          "65%": { right: "50px", top: "-5px" }, // 3 пауза
+          "75%": { right: "50px", top: "-5px" },
+          "100%": { right: "10px", top: "0px" } // Окончание плавного возврата
+        },
+        "ems-main-mobile": {
+          "0%": { right: "-150px", top: "0px" }, // 1 Пауза
+          "10%": { right: "-150px", top: "0px" },
+          "35%": { right: "-130px", top: "-20px" },
+          "45%": { right: "-130px", top: "-20px" },
+          "65%": { right: "-110px", top: "-5px" }, // 3 пауза
+          "75%": { right: "-110px", top: "-5px" },
+          "100%": { right: "-150px", top: "0px" } // Окончание плавного возврата
+        },
         fadeIn: {
           from: { opacity: 0 },
           to: { opacity: 1 },
@@ -264,6 +282,8 @@ export default {
         "cardiac-surgery-mobile": "cardiac-surgery-mobile 14s ease-out",
         "arrhythmology-main": "arrhythmology-main 14s ease-out",
         "arrhythmology-main-mobile": "arrhythmology-main-mobile 14s ease-out",
+        "ems-main": "ems-main 14s ease-out",
+        "ems-main-mobile": "ems-main-mobile 14s ease-out",
         "advantages-show": "advantages-show 0.5s ease-out forwards",
         "flashing-border": "flashing-border 0.5s ease-out forwards",
       },

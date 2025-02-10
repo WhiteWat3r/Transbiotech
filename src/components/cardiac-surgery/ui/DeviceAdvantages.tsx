@@ -35,7 +35,7 @@ export const DeviceAdvantages = ({
         {advantages.map((advantage, index) => advantage ? (
           <li
             key={index}
-            className={`flex flex-col justify-end mob-head-5 desktop:text-3 relative text-${colorClassName}`}
+            className={`mob-head-5 desktop:text-3 relative text-${colorClassName}`}
           >
             <p
               className={`${isVisible ? "animate-advantages-show" : "opacity-0" } transition-all ${rowAdvantages ? "max-w-[245px]" : ""} ${rowAdvantages && index === 1 ? "tracking-[-0.8px]" : " "}`}
