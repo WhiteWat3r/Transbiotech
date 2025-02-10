@@ -5,27 +5,32 @@ import bgMain from "@/assets/images/home/bg-main.png";
 import bgMainDesktop from "@/assets/images/home/main-desktop.png";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useSectionSizeFromImageHeight } from "@/hooks/useSectionSizeFromImageHeight";
+import { Link } from "react-router-dom";
 
 const buttons = [
   {
     id: 1,
     text: "перфузионные технологии",
     color: "#6A78C1",
+    to: "/perfusion"
   },
   {
     id: 2,
     text: "кардиохирургия",
     color: "#90882B",
+    to: "/cardiac-surgery"
   },
   {
     id: 3,
     text: "аритмология",
     color: "#E04918",
+    to: "/arrhythmology"
   },
   {
     id: 4,
     text: "скорая помощь",
     color: "#EA7A92",
+    to: "/ems"
   },
 ];
 
@@ -79,7 +84,7 @@ export const SectionMain = () => {
           <ul className="mb-[20px] flex max-w-[400px] flex-wrap gap-[10px] desktop:mb-[25px] desktop:max-w-[540px] desktop:gap-[20px] 1440:max-w-[40%]">
             {buttons.map((btn, index) => (
               <li key={btn.id}>
-                <button
+                <Link to={btn.to}
                   className={`geologica-text " flex h-[30px] animate-glow items-center justify-center rounded-[45px] bg-white px-[11px] text-[12px] font-medium text-black-default transition-all duration-300 desktop:h-[38px] desktop:animate-glow-desc desktop:text-[18px] desktop:leading-[22px]`}
                   style={
                     {
@@ -89,7 +94,7 @@ export const SectionMain = () => {
                   }
                 >
                   {btn.text}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
