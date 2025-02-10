@@ -14,6 +14,7 @@ import techLogoThirdMobile from "@/assets/images/technologies/tech-logo-third-mo
 import techLogoThird from "@/assets/images/technologies/tech-logo-third.svg";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import useIntersection from "@/hooks/useIntersection";
+import { Link } from "react-router-dom";
 
 const technologies = [
   {
@@ -25,7 +26,8 @@ const technologies = [
     mobileLogo: techLogoFirst,
     bg: techBgFirst,
     desc: "Эффективное протезирование функции сердца и легких.",
-    mobileTitleClass: ""
+    mobileTitleClass: "",
+    to: "/perfusion"
   },
   {
     id: 2,
@@ -36,7 +38,8 @@ const technologies = [
     mobileLogo: techLogoSecond,
     bg: techBgSecond,
     desc: "Лечение острых и хронических заболеваний сердечно-сосудистой системы.",
-    mobileTitleClass: ""
+    mobileTitleClass: "",
+    to: "/cardiac-surgery"
   },
   {
     id: 3,
@@ -47,7 +50,8 @@ const technologies = [
     mobileLogo: techLogoThird,
     bg: techBgThird,
     desc: "Работа над восстановлением сердечного ритма.",
-    mobileTitleClass: "max-desktop:mt-[10px]"
+    mobileTitleClass: "max-desktop:mt-[10px]",
+    to: "/arrhythmology"
   },
   {
     id: 4,
@@ -58,7 +62,8 @@ const technologies = [
     mobileLogo: techLogoFourth,
     bg: techBgFourth,
     desc: "Оптимизация рабочего пространства в машинах скорой помощи.",
-    mobileTitleClass: "max-desktop:mt-[10px]"
+    mobileTitleClass: "max-desktop:mt-[10px]",
+    to: "/ems"
   },
 ];
 
@@ -89,9 +94,9 @@ export const SectionTechnologies = ({
         className={`flex w-full flex-col justify-between rounded-[45px] desktop:flex-row desktop:gap-[20px] 1440:gap-[60px] ${fromTechPage ? "mb-[72px]" : ""}`}
       >
         {technologies.map((tech, index) => (
-          <li
+          <Link to={tech.to}
             key={tech.id}
-            className={`card pointer-events-none relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] desktop:pointer-events-auto desktop:mt-0 desktop:h-[370px] desktop:w-full desktop:rounded-[36px] desktop:pb-[30px] desktop:shadow-none ${tech.id > 1 ? "mt-[-60px] shadow-tech-shadow" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""} animate-technologies-slide-in desktop:animate-none`}
+            className={`card relative flex w-full cursor-pointer flex-col overflow-hidden rounded-[45px] bg-[#dddddd] p-[30px] transition-all duration-500 hover:translate-y-[-10px] hover:bg-[var(--hover-color)] desktop:pointer-events-auto desktop:mt-0 desktop:h-[370px] desktop:w-full desktop:rounded-[36px] desktop:pb-[30px] desktop:shadow-none ${tech.id > 1 ? "mt-[-60px] shadow-tech-shadow" : ""} ${tech.id !== 4 ? "pb-[80px]" : ""} animate-technologies-slide-in desktop:animate-none`}
             style={
               {
                 animationDelay: !isDesktop ? `${index * 0.1}s` : "",
@@ -158,7 +163,7 @@ export const SectionTechnologies = ({
                 </p>
               )}
             </div>
-          </li>
+          </Link>
         ))}
       </ul>
     </div>
