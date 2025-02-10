@@ -6,10 +6,14 @@ export const DeviceDescription = ({
   description,
   maxWidth,
   noTitle,
+  titleColorClassName = 'grey-2',
+  textColorClassName = 'text-black-default',
 }: {
   description: { mainText: string; additionalText?: ReactNode };
   maxWidth?: string;
-  noTitle?: boolean;
+  noTitle?: boolean,
+  titleColorClassName?: string,
+  textColorClassName?: string
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const {breakpoint} = useBreakpoint();
@@ -20,13 +24,13 @@ export const DeviceDescription = ({
   return (
     <div className="flex flex-col gap-[15px] desktop:flex-row">
       {!noTitle && (
-        <span className="mob-head-4 desktop:text-2 text-grey-2 opacity-50">
+        <span className={`mob-head-4 desktop:text-2 text-${titleColorClassName} opacity-50`}>
           описание
         </span>
       )}
 
       <p
-        className={`mob-text-3 desktop:text-4 ml-auto w-[276px] text-black-default ${maxWidth ? maxWidth : "desktop:w-[510px]"} `}
+        className={`mob-text-3 desktop:text-4 ml-auto w-[276px] text-${textColorClassName} ${maxWidth ? maxWidth : "desktop:w-[510px]"} `}
       >
         {description.mainText}
 

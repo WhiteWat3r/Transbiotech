@@ -18,13 +18,8 @@ export const menuItems: IMenuItem[] = [
     links: [
       { linkId: 1, text: "все технологии", href: "/technologies" },
       { linkId: 2, text: "перфузионные технологии", href: "/perfusion" },
-      // {
-      //   linkId: 2,
-      //   text: "Просмотр страницы технологии (тест)",
-      //   href: "/technologies",
-      // },
       { linkId: 3, text: "кардиохирургия", href: "/cardiac-surgery" },
-      // { linkId: 1, text: "аритмология", href: "/arrhythmology" },
+      { linkId: 4, text: "аритмология", href: "/arrhythmology" },
       // { linkId: 1, text: "скорая помощь", href: "/ems" },
     ],
   },
@@ -82,6 +77,13 @@ export const cardiacSurgeryCards = [
   { id: 2, type: "normal", title: "CABG", text: "Аортокоронарное шунтирование" },
   { id: 3, type: "normal", title: "Vascular Protheses ", text: "Протезирование сосудов" },
   { id: 4, type: "normal", title: "Протезирование клапанов сердца", text: "" },
+];
+
+export const arrhythmologyCards = [
+  { id: 1, type: "normal", title: "Технология радиочастотной абляции", mobileTitle: "Технология радиочастотной абляции" },
+  { id: 2, type: "normal", title: "Электрофизиологичес-кое исследование сердца", mobileTitle: "Электрофизиологическое исследование сердца" },
+  { id: 3, type: "normal", title: "Технология дистанционного мониторинга", mobileTitle: "Технология дистанционного мониторинга" },
+  { id: 4, type: "normal", title: "Технология кардиостимуляции", mobileTitle: "Технология кардиостимуляции" },
 ];
 
 export const mainSectionButtons = [
