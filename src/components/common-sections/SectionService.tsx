@@ -23,7 +23,7 @@ export const SectionService = () => {
               обслуживание ко всей поставляемой нами продукции.
             </span>
           </p>
-          <MoreButton />
+          <MoreButton onClick={() => window.open('tel:+79152917519', '_self')} />
         </div>
       </div>
     </div>

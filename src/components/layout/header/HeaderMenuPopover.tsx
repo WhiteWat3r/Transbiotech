@@ -1,6 +1,6 @@
 import { createPopper } from "@popperjs/core";
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { IMenuItem } from "../../../utils/types";
 
@@ -18,6 +18,10 @@ export const HeaderMenuPopover = ({
   const popoverRef = useRef(null);
   const timeoutId = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  console.log(location.pathname)
+  console.log(chapter.href)
 
   useEffect(() => {
     if (buttonRef.current && popoverRef.current) {
@@ -58,7 +62,7 @@ export const HeaderMenuPopover = ({
         to={chapter.href}
         ref={buttonRef}
         onMouseEnter={handleMouseEnter}
-        className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter ${!isPerfPage || isScrolled ? "text-grey-2" : "text-gainsboro"} transition-colors duration-300 hover:text-black-default`}
+        className={`geologica-text text-[18px] font-medium leading-[21.6px] tracking-tighter transition-colors duration-300 hover:text-black-default ${location.pathname === chapter.href ? 'text-black-default' : !isPerfPage || isScrolled ? "text-grey-2" : "text-gainsboro"}`}
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
       >
