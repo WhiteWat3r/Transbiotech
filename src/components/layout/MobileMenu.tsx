@@ -46,6 +46,12 @@ export const MobileMenu = ({
             />
           ))}
         </ul>
+
+        <a href={"https://transbiotech.ru/en/"}
+           className={"absolute block left-[20px] bottom-[20px] mob-head-3 text-grey-2"}>
+          <span className={"underline"}>ru</span>
+          <span> | en</span>
+        </a>
       </div>
     </div>
   );

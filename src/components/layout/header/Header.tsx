@@ -103,6 +103,11 @@ export const Header = () => {
             />
           ))}
         </ul>
+
+        <a href={"https://transbiotech.ru/en/"} className={"absolute hidden desktop:block right-0 top-full text-4 text-grey-1 text-4 translate-y-[16px] px-[16px] py-[8px] rounded-[64px] bg-opacity-50 bg-gainsboro"}>
+          <span className={"underline"}>ru</span>
+          <span> | en</span>
+        </a>
       </nav>
     </header>
   );
