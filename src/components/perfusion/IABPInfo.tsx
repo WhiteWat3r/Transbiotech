@@ -1,11 +1,8 @@
 
 import iabp from "@/assets/images/home/iabp.png";
-import arrowMobile from "@/assets/images/perfusion/arrow-mobile.svg";
-import arrow from "@/assets/images/perfusion/arrow.svg";
-import getingeMobile from "@/assets/images/perfusion/getinge-mobile.svg";
-import getinge from "@/assets/images/perfusion/getinge.svg";
-import insightraMobile from "@/assets/images/perfusion/insightra-mobile.svg";
-import insightra from "@/assets/images/perfusion/insightra.svg";
+import arrow from "@/assets/images/perfusion/arrow.png";
+import getinge from "@/assets/images/perfusion/getinge.png";
+import insightra from "@/assets/images/perfusion/insightra.png";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
@@ -19,9 +16,9 @@ const iABPDAdvantages = [
 ];
 
 const companies = [
-  { id: 1, descImg: insightra, mobileImg: insightraMobile, alt: "insightra" },
-  { id: 2, descImg: getinge, mobileImg: getingeMobile, alt: "getinge" },
-  { id: 3, descImg: arrow, mobileImg: arrowMobile, alt: "arrow" },
+  { id: 1, descImg: insightra, mobileImg: insightra, alt: "insightra" },
+  { id: 2, descImg: getinge, mobileImg: getinge, alt: "getinge" },
+  { id: 3, descImg: arrow, mobileImg: arrow, alt: "arrow" },
 ];
 const description = {
   mainText:
@@ -67,6 +64,7 @@ export const IABPInfo = () => {
               <img
                 src={isDesktop ? company.descImg : company.mobileImg}
                 alt={company.alt}
+                className={"h-[38px] max-desktop:h-[25px]"}
               />
             </li>
           ))}

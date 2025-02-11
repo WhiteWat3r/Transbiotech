@@ -5,7 +5,7 @@ import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
-import abbott from "@/assets/images/arrhythmology/technology-of-cardio/abbott.svg";
+import abbott from "@/assets/images/arrhythmology/technology-of-cardio/abbott.png";
 
 export const EMSProducts = () => {
   const { isDesktop } = useBreakpoint();

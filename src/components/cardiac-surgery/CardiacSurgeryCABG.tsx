@@ -3,11 +3,11 @@ import { DeviceDescription } from "@/components/ui/DeviceDescription";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
-import logo1 from "../../assets/images/cardio-surgery/cabg-logos/1.svg";
-import logo2 from "../../assets/images/cardio-surgery/cabg-logos/2.svg";
-import logo3 from "../../assets/images/cardio-surgery/cabg-logos/3.svg";
-import logo4 from "../../assets/images/cardio-surgery/cabg-logos/4.svg";
-import logo5 from "../../assets/images/cardio-surgery/cabg-logos/5.svg";
+import logo1 from "../../assets/images/cardio-surgery/cabg-logos/1.png";
+import logo2 from "../../assets/images/cardio-surgery/cabg-logos/2.png";
+import logo3 from "../../assets/images/cardio-surgery/cabg-logos/3.png";
+import logo4 from "../../assets/images/cardio-surgery/cabg-logos/4.png";
+import logo5 from "../../assets/images/cardio-surgery/cabg-logos/5.png";
 import menMobile from "../../assets/images/cardio-surgery/cabg-men-mobile.jpg";
 import men from "../../assets/images/cardio-surgery/cabg-men.jpg";
 
@@ -37,7 +37,7 @@ export const CardiacSurgeryCABG = () => {
         <div
           className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
           {(logos).map((logo, index) => (
-            <img alt={""} src={logo} key={index} className={"max-desktop:h-[25px]"} />
+            <img alt={""} src={logo} key={index} className={"h-[38px] max-desktop:h-[25px]"} />
           ))}
         </div>
 

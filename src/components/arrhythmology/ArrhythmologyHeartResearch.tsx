@@ -5,7 +5,7 @@ import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { useHighlightedText } from "@/hooks/useScrollHighlight";
-import abbott from "@/assets/images/arrhythmology/technology-of-cardio/abbott.svg";
+import abbott from "@/assets/images/arrhythmology/technology-of-cardio/abbott.png";
 
 export const ArrhythmologyHeartResearch = () => {
   const { isDesktop } = useBreakpoint();
@@ -28,7 +28,7 @@ export const ArrhythmologyHeartResearch = () => {
 
           <div
             className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
-            <img alt={""} src={abbott} className={"max-desktop:h-[25px]"} />
+            <img alt={""} src={abbott} className={"h-[38px] max-desktop:h-[25px]"} />
           </div>
 
           <DeviceInfo descriptionMarginClass={"desktop:ml-[158px]"} maxWidth={"desktop:w-[779px]"}

@@ -3,7 +3,7 @@ import { DeviceDescription } from "@/components/ui/DeviceDescription";
 import { SectionNumber } from "@/components/ui/SectionNumber";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
-import abbott from "../../assets/images/arrhythmology/distance-monitoring/abbott.svg";
+import abbott from "../../assets/images/arrhythmology/distance-monitoring/abbott.png";
 import spiralDesktop from "../../assets/images/arrhythmology/distance-monitoring/spiral-desktop.png"
 
 export const ArrhythmologyDistanceMonitoring = () => {
@@ -31,7 +31,7 @@ export const ArrhythmologyDistanceMonitoring = () => {
           <div
             className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
             {(logos).map((logo, index) => (
-              <img alt={""} src={logo} key={index} className={"max-desktop:h-[25px]"} />
+              <img alt={""} src={logo} key={index} className={"h-[38px] max-desktop:h-[25px]"} />
             ))}
           </div>
 

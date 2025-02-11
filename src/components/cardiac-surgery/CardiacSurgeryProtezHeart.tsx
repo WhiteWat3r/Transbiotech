@@ -7,9 +7,9 @@ import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
-import logo1 from "../../assets/images/cardio-surgery/pretez-logos/1.svg"
-import logo2 from "../../assets/images/cardio-surgery/pretez-logos/2.svg"
-import logo3 from "../../assets/images/cardio-surgery/pretez-logos/3.svg"
+import logo1 from "../../assets/images/cardio-surgery/pretez-logos/1.png"
+import logo2 from "../../assets/images/cardio-surgery/pretez-logos/2.png"
+import logo3 from "../../assets/images/cardio-surgery/pretez-logos/3.png"
 
 export const CardiacSurgeryProtezHeart = () => {
   const { isDesktop } = useBreakpoint();
@@ -34,7 +34,7 @@ export const CardiacSurgeryProtezHeart = () => {
         <div
           className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
           {(logos).map((logo, index) => (
-            <img alt={""} src={logo} key={index} className={"max-desktop:h-[25px]"} />
+            <img alt={""} src={logo} key={index} className={"h-[38px] max-desktop:h-[25px]"} />
           ))}
         </div>
 

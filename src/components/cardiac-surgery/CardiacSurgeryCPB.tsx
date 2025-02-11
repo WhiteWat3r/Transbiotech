@@ -5,12 +5,12 @@ import { useHighlightedText } from "@/hooks/useScrollHighlight";
 
 import { DeviceInfo } from "./ui/DeviceInfo";
 import logo1 from "../../assets/images/cardio-surgery/cpb-logos/1.svg"
-import logo2 from "../../assets/images/cardio-surgery/cpb-logos/2.svg"
-import logo3 from "../../assets/images/cardio-surgery/cpb-logos/3.svg"
-import logo4 from "../../assets/images/cardio-surgery/cpb-logos/4.svg"
-import logo5 from "../../assets/images/cardio-surgery/cpb-logos/5.svg"
-import logo6 from "../../assets/images/cardio-surgery/cpb-logos/6.svg"
-import logo7 from "../../assets/images/cardio-surgery/cpb-logos/7.svg"
+import logo2 from "../../assets/images/cardio-surgery/cpb-logos/2.png"
+import logo3 from "../../assets/images/cardio-surgery/cpb-logos/3.png"
+import logo4 from "../../assets/images/cardio-surgery/cpb-logos/4.png"
+import logo5 from "../../assets/images/cardio-surgery/cpb-logos/5.png"
+import logo6 from "../../assets/images/cardio-surgery/cpb-logos/6.png"
+import logo7 from "../../assets/images/cardio-surgery/cpb-logos/7.png"
 
 
 
@@ -44,7 +44,7 @@ export const CardiacSurgeryCPB = () => {
           <div
             className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
             {(logos).map((logo, index) => (
-              <img alt={""} src={logo} key={index} className={"max-desktop:h-[25px]"} />
+              <img alt={""} src={logo} key={index} className={"h-[38px] max-desktop:h-[25px]"} />
             ))}
           </div>
 

@@ -4,7 +4,7 @@ import { SectionNumber } from "@/components/ui/SectionNumber";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import useBreakpoint from "@/hooks/useBreakpoint";
 
-import angitecLogo from "../../assets/images/logos/angiteq.svg";
+import angitecLogo from "../../assets/images/logos/angiteq.png";
 
 
 export const CardiacSurgeryVascularProtheses = () => {
@@ -31,7 +31,7 @@ export const CardiacSurgeryVascularProtheses = () => {
 
         <div
           className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
-          <img alt={""} src={angitecLogo} className={"max-desktop:h-[25px]"} />
+          <img alt={""} src={angitecLogo} className={"h-[38px] max-desktop:h-[25px]"} />
         </div>
 
         <div className="z-20 flex flex-col gap-[25px] desktop:gap-[45px]">
