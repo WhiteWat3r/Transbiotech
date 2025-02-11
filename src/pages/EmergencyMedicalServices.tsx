@@ -6,6 +6,7 @@ import car from "@/assets/images/ems/car.jpg"
 import { EMSCompression } from "@/components/ems/EMSCompression";
 import { EMSWorkspace } from "@/components/ems/EMSWorkspace";
 import { EMSProducts } from "@/components/ems/EMSProducts";
+import ParallaxVideo from "@/components/ui/ParallaxVideo";
 
 export const EmergencyMedicalServices = () => {
   return (
@@ -14,7 +15,7 @@ export const EmergencyMedicalServices = () => {
       <EMSTechnologies />
       <EMSCompression />
       <EMSWorkspace />
-      <PhotoBlock desktopPhoto={car} mobilePhoto={car} />
+      <ParallaxVideo videoSrc={"/video.mp4"} />
       <EMSProducts />
     </>
   )
