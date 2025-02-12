@@ -32,7 +32,7 @@ export const EMSCompression = () => {
 
         <div
           className="mb-[26px] mt-[15px] flex justify-start gap-[10px] desktop:mb-[38px] desktop:mt-[27px] desktop:gap-[19px] desktop:max-w-[756px] flex-wrap">
-          <img alt={""} src={abbott} className={"h-[38px] max-desktop:h-[25px]"} />
+          {/*<img alt={""} src={abbott} className={"h-[38px] max-desktop:h-[25px]"} />*/}
         </div>
 
         <div className="z-20 flex flex-col gap-[25px] desktop:gap-[85px]">
